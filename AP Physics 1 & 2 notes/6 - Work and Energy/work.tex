@@ -1,0 +1,167 @@
+\documentclass[12pt, a4paper]{article}
+% \usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{hyperref}
+\usepackage{amssymb}
+% \graphicspath{{images/}}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=cyan
+}
+
+\title{Work and Energy Notes}
+\author{Franklin Chen}
+\date{14 October 2024}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\begin{document}
+\maketitle
+\newpage
+% comment
+
+\section{What is Work?}
+
+\begin{definition}[Work]
+Energy transferred to or from an object via the application of force along displacement. Work is equal to the dot product of force and displacement:
+\[W = \vec{F} \cdot{} \vec{s} = ||F|| * ||s|| * \cos(\theta)\]
+
+The SI unit for work is $\mathrm{Newtons \cdot{} Meters = Joules}$ (J).
+\end{definition}
+The second definition $W = ||F|| * ||s|| * \cos(\theta)$ can be obtained by the definition of the dot product, where $\theta$ represents the angle between the force and displacement vectors.
+
+Geometrically, the defintion of work can be thought of as the component of the force vector that has the same direction as the displacement vector multiplied by the displacement vector.
+
+\emph{No work does not imply no force or no displacement.} The definition of work suggests that if the entire force is perpendicular to the displacement, \emph{no work is done} (by the perpendicular component of the force)
+
+Work can also be negative, depending on whether the component of the force points in the same or opposite direction as the displacement. For example, a weight lifter lowering a barbell at a constant velocity supplies force upward (to counteract the force of gravity), yet the net displacement is downward, causing negative work.
+
+Note this definition of work only works for \emph{constant forces}. We can use intergration to find the net work for variable forces:
+
+\[W_{ab} = \int_{a}^{b} \mathrm{\vec{F} \, \vec{ds}} = \int_{a}^{b} \mathrm{F\cos{\theta}\, ds}\]
+\newpage
+
+\section{Kinetic Energy}
+In physics, whenever a net force performs work on an object, there is always a result from the effort; a change in the \emph{kinetic energy} of the object. The relationship that relates work to kinetic energy is known as the \emph{work-energy theorem.}\newline
+
+Multiplying Newton's Second Law $\sum F = ma$ by displacement \emph{s} yields
+
+\[(\sum F)s = mas\]
+
+\emph{as} can be related to $v_i$ and $v_f$ via the equation $v_f^2 = v_i^2 + 2as$:
+
+\[as = \frac{1}{2}(v_f^2 - v_i^2)\]
+
+This definition of \emph{as} can be substituted into the first equation to yield the \emph{work-energy theorem}:
+
+\begin{definition}[Work-Energy Theorem]
+\[W = \frac{1}{2}mv_f^2 - \frac{1}{2}mv_i^2\]
+When a net external force does work \emph{W} on an object, the work is equal to the difference between the final and initial kinetic energy. 
+\end{definition}
+
+As implied by the work-energy theorem, the quantity $\frac{1}{2}\mathrm{(mass)(velocity)^2}$ is known as \emph{kinetic energy}:
+
+\begin{definition}[Kinetic Energy]
+The kinetic energy \textbf{KE} of an object with mass $m$ and $v$ is given by
+\[\mathrm{KE} = \frac{1}{2}mv^2\]
+The SI unit for kinetic energy is the Joule.
+\end{definition}
+
+Note the work-energy theorem applies to \textbf{any} scenario where an object changes its velocity (and as such, its kinetic energy), as work \emph{must} be done to accelerate (or deccelerate) the object from initial speed $v_i$ to a final speed $v_f$. 
+
+\newpage
+
+\section{Gravitational Potential Energy}
+\subsection{Work done by Gravity}
+Using the equation $W = ||F|| * ||s|| * \cos(\theta)$, for an object dropping down due to gravity, as the only force acting on it is its weight $w = mg$ (assuming the objects are relatively close to earth),
+its displacement is equal to $h_0 - h_f$, and both weight and displacement are in the same direction, its work is equal to
+
+\[W_{grav} = mg(h_0 - h_f)\]
+
+Note this equation is valid for \emph{any path} between the initial and final heights, \emph{regardless of any curvature in the path} (i.e. throwing the ball up).
+
+\subsection{Gravitational Potential Energy}
+An object may posess energy by virtue of its position relative to the earth: it may be able to change its potential energy into kinetic energy by dropping.
+This "potential" energy is known as \emph{gravitational potential energy}.
+
+\begin{definition}[Gravitational Potential Energy (PE)]
+    The energy that an object of mass $m$ has by virtue of its position relative to the surface of the earth. That position is measured by the height $h$ of the object relative to an
+    abritary zero value:
+
+    \[\mathrm{PE} = mgh\]
+
+    The SI unity for PE is the Joule.
+\end{definition}
+
+PE is derived from the difference between two potential energies: that is, $W_{grav} = mgh_0 - mgh_f$.
+Note that the arbitary zero value can be defined anywhere, as long as both the initial and final heights are measured relative to that zero.
+
+\newpage
+
+\section{Conservative vs. Nonconservative forces}
+\begin{definition}[Conservative Force]
+    A force is conservative when the work it does on a moving object is independent of the path between the object's initial and final positions.
+    Alternatively, a force is conservative when it does no net work moving around a closed path (start position = end position).
+\end{definition}
+
+Gravity is one example of a conservative force, as the work done by an falling object is a function of purely the start and end positions. Some segmented parts of a conservative force may have some net work, but the sum of the work of the segments will always equal zero.
+
+\emph{Not all forces are conservative}. For example, friction; work done by friction \emph{does} depend on the path taken. Longer paths experience greater negative work from friction, so friction is non-conservative. \emph{\textbf{The concept of potential energy is not defined for nonconservative forces.}}
+
+In many situations, both conservative forces and nonconservative forces act on an object simultaneously.
+As such, we note the work done by the net work as $W_{net} = W_c + W_{nc}$, where $W_c$ denotes work by conservative forces and $W_{nc}$ denotes work by nonconservative forces.
+By substiuting this into the work-energy theorem, by assuming the only conservative force is gravity, we can get an especially useful alternate form of the work-energy theorem:
+
+\[W_{nc} = \Delta \mathrm{KE} + \Delta \mathrm{PE}\]
+
+\newpage
+
+
+\section{Conservation of Mechanical Energy}
+We define the \textbf{total mechanical energy} $E$ as the sum of both potential and kinetic an object has or may have.
+We can rewrite the work of nonconservative forces using $E$: $W_{nc} = E_f - E_0$.
+This can be algebraically obtained by rearranging for total energy in the definition of nonconservative work using kinetic and potential gravity energy.
+Intuitively, $W_{nc}$ accounts for the change in energy not accounted for by conservative forces. Note that this equation suggests that if $W_{nc} = 0$, then $E_f = E_0$: that is,
+
+\begin{definition}[The Principle of Conservation of Mechanical Energy]
+    The total mechanical energy of an object remains constant along a moving object's path as long as the net work done by
+    nonconservative forces is zero: $W_{nc} = 0$.
+\end{definition}
+
+Note that the principle of conservation of energy may be applied as long as the \emph{\textbf{net} nonconservative force is zero; nonconservative force doesn't always have to be zero!}
+(This typically applies when the non-conservative force is perpendicular to displacement, where the nonconservative force does no work.)
+
+While the sum of energies at any point is conserved, the forms of mechanical energy may be interconverted or transformed into one another.
+For example, kinetic energy is converted to potential energy when a moving object returns to rest.
+
+\emph{Including nonconservative forces}, when energy is transformed from one form into another, it is observed that no energy is gained or lost in the process:
+
+\begin{definition}[The Principle of Conservation of Energy]
+    Energy can neither be created nor destroyed, but can only be converted from one form to another.
+\end{definition}
+
+\newpage
+
+\section{Power}
+The time it takes to do work can also be important. For example, two engines may be able to accelerate to the same speed in the same distance, but one may be able to do it faster than the other.
+
+\begin{definition}[Average Power]
+    The average rate at which work is done. Obtained by dividing work by the time required to perform the work:
+    \[\overline{P} = \mathrm{\frac{Work}{Time}} = \frac{W}{t}\]
+
+    The SI unit for power is $\mathrm{\frac{joules}{seconds}} = \mathrm{watt}$ (W).
+\end{definition}
+
+Note that when net force is in the same direction as displacement ($W = Fs$), $W$ can be subsituted into the definition of power to get:
+
+\[\overline{P} = F\overline{v}\]
+
+where $\overline{v}$ represents the average speed.
+
+
+
+\end{document}

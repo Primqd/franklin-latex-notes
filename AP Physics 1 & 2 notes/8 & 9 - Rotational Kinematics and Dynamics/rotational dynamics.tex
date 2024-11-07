@@ -1,0 +1,94 @@
+\documentclass[12pt, a4paper]{article}
+% \usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{hyperref}
+\usepackage{amssymb}
+% \graphicspath{{images/}}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=cyan
+}
+
+\title{Rotational Dynamics}
+\author{Franklin Chen}
+\date{11 November 2024}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\begin{document}
+\maketitle
+\newpage
+% comment
+
+\section{What is Torque?}
+
+Objects can move in two primary ways: \emph{translational} and \emph{rotational} motion.
+
+In translational motion\footnote{ Also known as linear or curvilinear motion.}, an object is displaced from one location to another.
+In pure translation, all \emph{particles} of the object travel on the same path.
+
+In rotational motion, an object, well, rotates. Counterclockwise is typically considered positive, while clockwise is considered negative.
+
+Forces cause both translational motion and rotational motion, but the way they do so is different. While a net force will cause translational motion, net \textbf{torque} causes rotational motion.
+
+\begin{definition}[Torque, \(\tau\)]
+    The perpendicular component of a force applied at some distance away (\emph{lever arm}, \(\ell\)) from the \emph{axis of rotation.} The magnitude of torque can be calculate using the following formula.
+
+    \[\tau = F\ell\sin{\theta}\]
+
+    where \(\theta\) represents the angle between $\vec{F}$ and $\vec{\ell}$. Torque is positive if it will cause counterclockwise movement, and negative if it causes clockwise movement.
+\end{definition}
+
+The axis of rotation can be treated as a point in the case of 2d problems (as the axis is \emph{typically} perpendicular to any forces). Torque can also be thought of as the product of the distance of the \emph{line of action} (a line perpendicular to the force that passes through the axis of rotation) and the force. This can be shown to be equivelent to the definition given above.
+
+Torque is similar to the definition of work, $\vec{W} = Fd\cos{\theta}$. However, instead of getting the length of the force casted onto the distance vector, it can be thought of as the opposite; getting the perpendicular side of the triangle, hence the use of cosine instead of sine.
+
+For objects in equilibrium, keep in mind that $\sum{\tau} = 0$. It doesn't matter where the axis of rotation is defined; if an object is in equilibrium, the net torque at all points is zero.
+
+\newpage
+
+\section{Rotational Kinematics}
+
+Rotational kinematics can be thought of as a parallel of traditional kinematics. Torque parallels forces in that it causes \textbf{angular acceleration}:
+
+\begin{definition}[Angular Acceleration, $\alpha$]
+    The rate at which the \textbf{angular velocity} ($\omega$) changes. Alternatively, the rate of change of the speed at which an object rotates.
+\end{definition}
+
+Like traditional kinematics has the core kinematic equations, rotational kinematics has (almost) the same formulas:
+
+\[\theta_f = \theta_i + \omega_it + \frac{1}{2} \alpha t^2 \textrm{ or } \Delta\theta = \omega_it + \frac{1}{2} \alpha t^2\]
+\[\omega_f = \omega_i + \alpha t\]
+\[\omega_f^2 = \omega_i^2 + 2\alpha \Delta\theta\]
+
+Like mass can represent the tendency of an object to resist chagnes in velocity (inertia), the \textbf{moment of inertia} (I) represents the tendency of an object to resist changes to angular velocity. The moment of inertia can generally be thought of as the sum of all particles and their distance from the axis of rotation squared: that is,
+
+\[I \approx \sum m_i r_i^2\]
+
+With this, Newton's Second Law can be rewritten in terms of rotational kinematics:
+
+\[\tau = I\alpha\]
+
+Momentum, the moment-impulse theorem, and the conservation of momentum can all be defined this way as well:
+
+\begin{definition}[Angular Momentum (L), the Angular Momentum-Impulse Theorem, and the Angular Conservation of Momentum Theorem]
+    \[L = I\omega\]
+    \[\Delta L = \tau \Delta t\]
+    \[L_f = L_i\]
+\end{definition}
+
+Kinetic energy as well:
+
+\begin{definition}[Kinetic Energy of Rotation, $KE_r$]
+    The kinetic energy that an object has on virtue of rotating. Calculated using the following fomrula:
+
+    \[\textrm{KE}_r = \frac{1}{2}I\omega^2\]
+\end{definition}
+
+Note that because of this kinetic energy of rotation, for objects that rotate not all of the original energy is transfered into kinetic energy. Ironically enough, this means that balls sliding down ramps are slower than squares sliding down.
+
+\end{document}
