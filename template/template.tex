@@ -1,0 +1,105 @@
+\documentclass[12pt, a4paper]{article}
+% \usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{hyperref}
+\usepackage{amssymb}
+% \graphicspath{{images/}}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=cyan
+}
+
+\title{Work and Energy Notes}
+\author{Franklin Chen}
+\date{14 October 2024}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\begin{document}
+\maketitle
+\newpage
+% comment
+
+\section{What is Work?}
+
+\begin{definition}[Work]
+Energy transferred to or from an object via the application of force along displacement. Work is equal to the dot product of force and displacement:
+\[W = \vec{F} \cdot{} \vec{s} = ||F|| * ||s|| * \cos(\theta)\]
+
+The SI unit for work is $\mathrm{Newtons \cdot{} Meters = Joules}$ (J).
+\end{definition}
+The second definition $W = ||F|| * ||s|| * \cos(\theta)$ can be obtained by the definition of the dot product, where $\theta$ represents the angle between the force and displacement vectors.
+
+Geometrically, the defintion of work can be thought of as the component of the force vector that has the same direction as the displacement vector multiplied by the displacement vector.
+
+\emph{No work does not imply no force or no displacement.} The definition of work suggests that if the entire force is perpendicular to the displacement, \emph{no work is done} (by the perpendicular component of the force)
+
+Work can also be negative, depending on whether the component of the force points in the same or opposite direction as the displacement. For example, a weight lifter lowering a barbell at a constant velocity supplies force upward (to counteract the force of gravity), yet the net displacement is downward, causing negative work.
+
+Note this definition of work only works for \emph{constant forces}. We can use intergration to find the net work for variable forces:
+
+\[W_{ab} = \int_{a}^{b} \mathrm{\vec{F} \, \vec{ds}} = \int_{a}^{b} \mathrm{F\cos{\theta}\, ds}\]
+\newpage
+
+\section{Kinetic Energy}
+In physics, whenever a net force performs work on an object, there is always a result from the effort; a change in the \emph{kinetic energy} of the object. The relationship that relates work to kinetic energy is known as the \emph{work-energy theorem.}\newline
+
+Multiplying Newton's Second Law $\sum F = ma$ by displacement \emph{s} yields
+
+\[(\sum F)s = mas\]
+
+\emph{as} can be related to $v_i$ and $v_f$ via the equation $v_f^2 = v_i^2 + 2as$:
+
+\[as = \frac{1}{2}(v_f^2 - v_i^2)\]
+
+This definition of \emph{as} can be substituted into the first equation to yield the \emph{work-energy theorem}:
+
+\begin{definition}[Work-Energy Theorem]
+\[W = \frac{1}{2}mv_f^2 - \frac{1}{2}mv_i^2\]
+When a net external force does work \emph{W} on an object, the work is equal to the difference between the final and initial kinetic energy. 
+\end{definition}
+
+As implied by the work-energy theorem, the quantity $\frac{1}{2}\mathrm{(mass)(velocity)^2}$ is known as \emph{kinetic energy}:
+
+\begin{definition}[Kinetic Energy]
+The kinetic energy \textbf{KE} of an object with mass $m$ and $v$ is given by
+\[\mathrm{KE} = \frac{1}{2}mv^2\]
+The SI unit for kinetic energy is the Joule.
+\end{definition}
+
+Note the work-energy theorem applies to \textbf{any} scenario where an object changes its velocity (and as such, its kinetic energy), as work \emph{must} be done to accelerate (or deccelerate) the object from initial speed $v_i$ to a final speed $v_f$. 
+
+\newpage
+
+\section{Gravitational Potential Energy}
+\subsection{Work done by Gravity}
+Using the equation $W = ||F|| * ||s|| * \cos(\theta)$, for an object dropping down due to gravity, as the only force acting on it is its weight $w = mg$ (assuming the objects are relatively close to earth),
+its displacement is equal to $h_0 - h_f$, and both weight and displacement are in the same direction, its work is equal to
+
+\[W_{grav} = mg(h_0 - h_f)\]
+
+Note this equation is valid for \emph{any path} between the initial and final heights, \emph{regardless of any curvature in the path} (i.e. throwing the ball up).
+
+\subsection{Gravitational Potential Energy}
+An object may posess energy by virtue of its position relative to the earth: it may be able to change its potential energy into kinetic energy by dropping.
+This "potential" energy is known as \emph{gravitational potential energy}.
+
+\begin{definition}[Gravitational Potential Energy (PE)]
+    The energy that an object of mass $m$ has by virtue of its position relative to the surface of the earth. That position is measured by the height $h$ of the object relative to an
+    abritary zero value:
+
+    \[\mathrm{PE} = mgh\]
+
+    The SI unity for PE is the Joule.
+\end{definition}
+
+PE is derived from the difference between two potential energies: that is, $W_{grav} = mgh_0 - mgh_f$.
+Note that the arbitary zero value can be defined anywhere, as long as both the initial and final heights are measured relative to that zero.
+
+
+
+\end{document}
