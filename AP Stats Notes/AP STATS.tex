@@ -24,6 +24,9 @@
 \newpage
 % comment
 
+\tableofcontents
+\newpage
+
 using \textit{The Practice of Statistics for the AP Exam: 6th Edition} by Starnes and Tabor
 
 \section{Data Analysis}
@@ -124,8 +127,87 @@ Histograms divide the variable into many 'bins' (bars), with the height represen
 
 \textbf{Use percentages when comapring to distributions} in order to remove the effect of a larger sample.
 
+\subsection{Describing Quantative Data with Numbers}
+\begin{definition}[Mean: $\bar{x}, \mu$]
+    The average of all individual data values. If there are \textit{n} observations $x_1, x_2, ..., x_n$, the sample mean is calculated by
+    \[\bar{x} = \frac{\sum x_i}{n}\]
+    The mean of a \textbf{sample} is referred to using $\bar{x}$, while the mean of a \textbf{population} is referred to using $\mu$.
+\end{definition}
+
+\textbf{Statistics} come from \textbf{samples} (small subset of population) and \textbf{parameters} come from \textbf{populations} (all possible samples of what's being tested).
+
+The mean is not \textbf{resistant} as it is sensitive to strong outliers in a distribution. The median \textit{is} a resistant measure of the center of the distribution.
+
+\begin{definition}[Median]
+    The 'midpoint' of a distribution. Either the middle element ($n$ is odd) or the average of the two middle elements ($n$ is even) in a \textbf{SORTED} distribution.
+\end{definition}
+
+Using both the mean and the median, one can predict the skew of the data. If a distribution is rougly symmetric without outliers, \textbf{the mean and median will be similar}. If a distribution is strongly skewed, \textbf{the mean will be pulled in the direction of the skew}. (Mean $<$ Median for left-skewed, Mean $>$ Median for right-skewed)
+
+The \textbf{range} (max - min) is one way to show the variability of a distribution. Note that the range is \textit{not} resistant.
+
+\begin{definition}[Standard Deviation]
+    The \textbf{standard deviation} ($s_x, \sigma$) measures the 'average' distance of the values in a distribution from the mean. Standard deviation is calculated by
+
+    \[s_x = \sqrt{\frac{\sum{(x_i - \bar{x})^2}}{n - 1}}\]
+\end{definition}
+
+The squared stdev is known as \textbf{variance} ($s_x^2, \sigma^2$). Remember, $s_x$ refers to a sample while $\sigma$ refers to a population. Larger stdev indicates greater variation, but is not a resistant measure of variability. \textbf{Stdev measures variance around the mean; if the mean is skewed, so will stdev!}
+
+The \textbf{Interquartile Range (IQR)} is another way to measure variance, using $IQR = Q_3 - Q_1$ where Q represents the quartiles. IQR can be thought of as the range of the 'middle half' of the distribution. \textit{IQR is a resistant measure.}
+
+\[\textrm{Lower Outliers} < Q_1 - 1.5 \times IQR \textrm{ or High Outliers} > Q_3 + 1.5 \times IQR\]
+
+boxplots and the five-number summary = min, Q1, median, Q3, and max exist. \textbf{Boxplots don't show gaps, clusters, or multiple peaks.}
+
+be careful with language- 'skews' is a shape, IQR and range are single numbers (no 'in the middle of the IQR')
+
 \newpage
 
-\subsection{Describing Quantative Data with Numbers}
+\section{Modelling Distributions}
+
+\newpage
+
+\section{Two-Variable Data}
+
+\newpage
+
+\section{Collecting Data}
+
+\newpage
+
+\section{Probability}
+
+\newpage
+
+\section{Random Variables and Distributions}
+
+\newpage
+
+\section{Sampling Distributions}
+
+\newpage
+
+\section{Confidence Intervals}
+
+\newpage
+
+\section{Significance Tests}
+
+\newpage
+
+\section{Estimating Means}
+
+\newpage
+
+\section{Confidence with Means}
+
+\newpage
+
+\section{Chi-Square Tests}
+
+\newpage
+
+\section{Inference for Slopes and Tables}
 
 \end{document}

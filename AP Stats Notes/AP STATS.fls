@@ -137,15 +137,12 @@ INPUT d:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT d:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT d:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT d:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-INPUT d:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
 INPUT d:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT d:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT ./AP STATS.toc
+INPUT ./AP STATS.toc
+INPUT AP STATS.toc
 INPUT d:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT d:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT ./images/two way table.png
-INPUT ./images/two way table.png
-INPUT ./images/two way table.png
-INPUT ./images/two way table.png
 INPUT d:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT d:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
 INPUT d:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
@@ -163,6 +160,13 @@ INPUT d:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
 INPUT d:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT d:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT d:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+OUTPUT AP STATS.toc
+INPUT d:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
+INPUT d:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT ./images/two way table.png
+INPUT ./images/two way table.png
+INPUT ./images/two way table.png
+INPUT ./images/two way table.png
 INPUT ./images/dotplot.png
 INPUT ./images/dotplot.png
 INPUT ./images/dotplot.png
@@ -175,7 +179,9 @@ INPUT AP STATS.aux
 INPUT ./AP STATS.out
 INPUT ./AP STATS.out
 INPUT d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+INPUT d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+INPUT d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
 INPUT d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
 INPUT d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
