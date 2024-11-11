@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.6)  10 NOV 2024 18:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.6)  11 NOV 2024 14:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -246,7 +246,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 [2]
-<images/two way table.png, id=127, 576.1525pt x 243.91125pt>
+<images/two way table.png, id=142, 576.1525pt x 243.91125pt>
 File: images/two way table.png Graphic file (type png)
 <use images/two way table.png>
 Package pdftex.def Info: images/two way table.png  used on input line 72.
@@ -256,7 +256,7 @@ Package pdftex.def Info: images/two way table.png  used on input line 72.
 [3]
 
 [4 <./images/two way table.png (PNG copy)>]
-<images/dotplot.png, id=145, 451.6875pt x 325.215pt>
+<images/dotplot.png, id=160, 451.6875pt x 325.215pt>
 File: images/dotplot.png Graphic file (type png)
 <use images/dotplot.png>
 Package pdftex.def Info: images/dotplot.png  used on input line 92.
@@ -266,7 +266,7 @@ Overfull \hbox (3.90842pt too wide) in paragraph at lines 112--113
 []\OT1/cmr/m/n/12 When de-scrib-ing a dis-tri-bu-tion of quan-ta-tive data, use the acronym ROCS:
  []
 
-<images/histogram.png, id=146, 554.07pt x 436.63126pt>
+<images/histogram.png, id=161, 554.07pt x 436.63126pt>
 File: images/histogram.png Graphic file (type png)
 <use images/histogram.png>
 Package pdftex.def Info: images/histogram.png  used on input line 118.
@@ -294,34 +294,48 @@ Package pdftex.def Info: images/histogram.png  used on input line 118.
 [14]
 
 [15]
+Overfull \hbox (7.21399pt too wide) detected at line 245
+[] \OML/cmm/m/it/12 >  \OMS/cmsy/m/n/12 ) []\OML/cmm/m/it/12 H[]  \OMS/cmsy/m/n/12 ) []
+ []
 
-[16]
+
+Overfull \hbox (49.63112pt too wide) in paragraph at lines 264--265
+[]\OT1/cmr/m/n/12 Note $\OML/cmm/m/it/12 P\OT1/cmr/m/n/12 ([]) = \OML/cmm/m/it/12 $\OT1/cmr/m/n/12 . How-ever, as the sig-nif-i-cance de-creases, $\OML/cmm/m/it/12 P\OT1/cmr/m/n/12 ([])$
+ []
+
+
+
+[16{d:/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 
 [17]
 
 [18]
 
-[19] (./AP STATS.aux)
+[19]
+
+[20]
+
+[21] (./AP STATS.aux)
  ***********
 LaTeX2e <2024-11-01>
 L3 programming layer <2024-11-02>
  ***********
 Package rerunfilecheck Info: File `"AP STATS".out' has not changed.
-(rerunfilecheck)             Checksum: 0E716F0246FACFD50A15BEDA5463B290;3937.
+(rerunfilecheck)             Checksum: 870D2300F6C2264F3CB5BA17B5FC7120;4371.
  ) 
 Here is how much of TeX's memory you used:
- 9294 strings out of 473362
- 142284 string characters out of 5725051
- 535154 words of memory out of 5000000
- 32245 multiletter control sequences out of 15000+600000
- 567179 words of font info for 71 fonts, out of 8000000 for 9000
+ 9312 strings out of 473362
+ 142585 string characters out of 5725051
+ 536157 words of memory out of 5000000
+ 32253 multiletter control sequences out of 15000+600000
+ 567516 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,7n,79p,654b,571s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on "AP STATS.pdf" (19 pages, 268294 bytes).
+<d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on "AP STATS.pdf" (21 pages, 282971 bytes).
 PDF statistics:
- 277 PDF objects out of 1000 (max. 8388607)
- 232 compressed objects within 3 object streams
- 57 named destinations out of 1000 (max. 500000)
- 192 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 310 PDF objects out of 1000 (max. 8388607)
+ 261 compressed objects within 3 object streams
+ 65 named destinations out of 1000 (max. 500000)
+ 216 words of extra memory for PDF output out of 10000 (max. 10000000)
 

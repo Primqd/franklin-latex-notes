@@ -196,10 +196,11 @@ be careful with language- 'skews' is a shape, IQR and range are single numbers (
 \textbf{Significance Tests} are like the opposite of confidence intervals. Instead of using a statistic to find a parameter, significance tests use statistics to test claims about a parameter.
 
 \begin{definition}[Significance Test]
-    A formal procedure for using observed statistics in order to decide between to competing claims (\textit{hypotheses}), typically about parameters.
+    A formal procedure for using observed statistics in order to decide between to competing claims (\textit{hypotheses}) about parameters.
 \end{definition}
 
 \subsection{Basics of Significance Tests}
+\subsubsection{Hypotheses}
 \begin{definition}[Null Hypothesis, $H_0$]
     A claim about a parameter that we weigh evidence \textbf{against} in a significance test. Usually a statement of 'no difference' (as claimed).
 \end{definition}
@@ -208,9 +209,60 @@ be careful with language- 'skews' is a shape, IQR and range are single numbers (
     The claim that we are trying to find evidence for. Directly contradicts the null hypothesis.
 \end{definition}
 
+This "Null Hypothesis" and "Alternative Hypothesis" can be thought as trying to prove someone "guilty" or "not guilty."
+
 For example, if a player claims they're a 80\% free throw player, the null hypothesis would be $H_0: p = 0.80$, and the alternative hypothesis would be $H_a: p < 0.80$.
 
 The alternative hypothesis is \textbf{one-sided} because we suspect that the player makes less than 80\% of his free throws. If we believe that it's equally plausible that they make more than 80\% of their free throws, then we would use a \textbf{two-sided hypothesis}- $H_a: p \neq 0.80$.
+
+\textbf{Hypotheses express our beliefs before looking at the data}. Molding a hypothesis around data shows nothing.
+
+\subsubsection{P-values}
+\begin{definition}[P-value]
+    The probability of getting the values observed in the data under the assumption that the null hypothesis $H_0$ is true.
+\end{definition}
+
+Small P-values provide convincing evidence for the alternative hypothesis because small values suggest the observed result is unlikely to happen when the null hypothesis is true.
+Similarly, large P-values provide convincing evidence for the null hypothesis because large values suggest the observed result is likely to happen due to chance if the null hypothesis is true.
+
+In terms of probability notation: P-value = P(observed data $|$ null hypothesis is true).
+
+For two-sided tests, we look at the distance between the null hypothesis and the observed data.
+For example, if $H_0: p = 0.5$, $H_a: p \neq 0.5$ and $\hat{p} = 0.65$ (observed proportion), then the P-value = P($\hat{p} \leq 0.35$ or $\hat{p} \geq 0.6$ $|$  $p = 0.5$).
+We look at $\hat{p} \leq 0.35$ because $|p - 0.35| = |p - 0.65|$.
+
+Based on the P-value, we make a conclusion about data:
+\begin{itemize}
+    \item If the P-value is small (unlikely to happen by chance), then we "reject $H_0$" and conclude that there is convincing evidence for $H_a$ (in context).
+    \item If the P-value is large (likely to happen by chance), then we "fail to reject $H_0$" and conclude that there is not convincing evidence for $H_a$ (in context).
+\end{itemize}
+
+How small does a P-value have to be in order to reject $H_0$? We use a given \textbf{significance value} for this boundary.
+
+\begin{definition}[Significance Level, $\alpha$]
+    The value that we use as a boundary for deciding whether a P-value is significant enough to disqualify the null hypothesis. \textit{$\alpha$ should be stated before data is produced (cherrypicking).}
+    \[\textrm{P-value} < \alpha \Rightarrow \textrm{reject } H_0\ \Rightarrow \textrm{convincing evidence for $H_a$ in context}\]
+    \[\textrm{P-value} > \alpha \Rightarrow \textrm{fail to reject } H_0\ \Rightarrow \textrm{not convincing evidence for $H_a$ in context}\]
+\end{definition}
+
+If P is less than the significance level, we say that the result is "statistically significant at the $\alpha = \_\_\_\_$ level."
+Alternatively, "the results were significant ($P = 0.03 < \alpha = 0.05$)."
+\textit{Keep in mind a P-value is more informative than a statement of significance!}
+
+\textbf{NEVER "accept $H_0$" or conclude that $H_0$ is true!} Always use 'reject' or 'fail to reject!'
+
+\subsubsection{Type I and Type II Errors}
+When drawing a conclusion from a significance test, our conflusion may be wrong.
+There are two types we can make with the conclusion process, helpfully named "Type I" and "Type II" errors. Only one type of error is possible at once.
+
+\begin{definition}[Type I and II errors]
+    A \textbf{Type I error} occurs when we reject $H_0$ when $H_0$ is true; the data gives convincing evidence that $H_a$ is true despite being false.
+    
+    A \textbf{Type II error} occurs when we fail to reject $H_0$ when $H_a$ is true; the data fails to give convincing evidence that $H_a$ is true despite it being true.
+\end{definition}
+
+Note $P(\textrm{Type I error}) = \alpha$. However, as the significance decreases, $P(\textrm{Type II erorr})$ increases.
+
 
 \subsection{Tests About a Population Proportion}
 \subsection{Tests About a Difference in Proportions}
