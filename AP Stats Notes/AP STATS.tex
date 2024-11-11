@@ -193,7 +193,27 @@ be careful with language- 'skews' is a shape, IQR and range are single numbers (
 \newpage
 
 \section{Significance Tests}
+\textbf{Significance Tests} are like the opposite of confidence intervals. Instead of using a statistic to find a parameter, significance tests use statistics to test claims about a parameter.
 
+\begin{definition}[Significance Test]
+    A formal procedure for using observed statistics in order to decide between to competing claims (\textit{hypotheses}), typically about parameters.
+\end{definition}
+
+\subsection{Basics of Significance Tests}
+\begin{definition}[Null Hypothesis, $H_0$]
+    A claim about a parameter that we weigh evidence \textbf{against} in a significance test. Usually a statement of 'no difference' (as claimed).
+\end{definition}
+
+\begin{definition}[Alternative Hypothesis, $H_a$]
+    The claim that we are trying to find evidence for. Directly contradicts the null hypothesis.
+\end{definition}
+
+For example, if a player claims they're a 80\% free throw player, the null hypothesis would be $H_0: p = 0.80$, and the alternative hypothesis would be $H_a: p < 0.80$.
+
+The alternative hypothesis is \textbf{one-sided} because we suspect that the player makes less than 80\% of his free throws. If we believe that it's equally plausible that they make more than 80\% of their free throws, then we would use a \textbf{two-sided hypothesis}- $H_a: p \neq 0.80$.
+
+\subsection{Tests About a Population Proportion}
+\subsection{Tests About a Difference in Proportions}
 \newpage
 
 \section{Estimating Means}
