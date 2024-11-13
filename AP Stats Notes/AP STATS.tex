@@ -261,11 +261,70 @@ There are two types we can make with the conclusion process, helpfully named "Ty
     A \textbf{Type II error} occurs when we fail to reject $H_0$ when $H_a$ is true; the data fails to give convincing evidence that $H_a$ is true despite it being true.
 \end{definition}
 
-Note $P(\textrm{Type I error}) = \alpha$. However, as the significance decreases, $P(\textrm{Type II erorr})$ increases.
+Note $P(\textrm{Type I error}) = \alpha$.
+However, significance is inversely proportional to Type II error: as significance decreases, $P(\textrm{Type II error})$ increases.
 
+\subsubsection{Power}
+\begin{definition}[Power]
+    The \textbf{power} of a test is the probability that the test finds convincing evidence for $H_a$ given that the parameter is a specific value that does follow $H_a$. In other words:
+    \[\textrm{power} = P(\textrm{reject $H_0$ $|$ $H_0$ is false})\]
+\end{definition}
+
+\textit{Power depends on a specific value.} For example, if the power of a test to detect p = 0.08 is 0.29 given $H_0: p = 0.10$, if the true proportion in the population is p = 0.08, there is a 0.29 probability that researchers will find convincing evidence for $H_a$.
+
+Note Power = 1 - P(Type II Error), or written alternatively, P(Type II Error) = 1 - Power. Also note that the power of a test increases with higher sample number, higher signifiance level, further null and alternative parameter values, and 'wise choices when collecting data' (reducing variability).
+\textit{Larger signifiance values reduce the chance for Type II error, but increase the chance for Type I error.}
+
+\subsubsection{Steps for Signifiance Tests}
+Overall, significance tests can be summarized in four steps:
+\begin{enumerate}
+    \item \textbf{STATE} the hypotheses, signifiance level, and parameters.
+    \item \textbf{PLAN} the appropriate inference method and check conditions.
+    \item \textbf{DO} the signifiance test (see Section 7.2): \begin{itemize}
+        \item Give the sample statistic(s)
+        \item Calculate the standardized test statistic
+        \item Find the P-value.
+    \end{itemize}
+    \item \textbf{CONCLUDE} whether or not you believe in the null or alternate hypotheses, with reference to P-values, in the context of the problem. Make sure to reference the parameter, not the sample statistic!
+\end{enumerate}
 
 \subsection{Tests About a Population Proportion}
+
+Like confidence intervals, signfiicance tests should satisfy several conditions; random sampling, no bias, 10\% if applicable ($n < 0.10N$), and large counts ($np_0 \geq 10$ and $n(1-p_0) \geq 10$).
+Note that the large counts condition uses $p_0$: the number of successes and failures \textit{assuming the null hypothesis is true} are both greater than or equal to 10.
+
+To conduct a \textbf{one-sample z test for a proportion} (CITE THIS WHEN FOLLOWING THE SIGNIFIANCE TEST STEPS) about a proportion, look at the normal distribution \textit{assuming the null hypothesis is true.}
+
+From Section 7.2 (add ref later), $\mu_{\hat{p}} = p_0$ and $\sigma_{\hat{p}} = \sqrt{\frac{p_0(1-p_0)}{n}}$.
+
+Using this, we standardize the statistic with respect to the null value to get the \textbf{standardized test statistic}; how many stdev units away the sample statistic is from what we would expect, assuming the null hypothesis is true.
+\textbf{YOU HAVE TO PUT THE STANDARDIZED TEST STATISTIC ON THE TEST!}
+
+\[\textrm{standardized test statistic} = z_{sts} = \frac{\hat{p} - \mu_{\hat{p}}}{\sigma_{\hat{p}}}\]
+
+Using this, we can directly find the P-value using \verb|normalcdf| with the appropriate values:
+\begin{itemize}
+    \item $P(z > z_{sts})$ if $H_a : p > p_0$
+    \item $P(z < z_{sts})$ if $H_a : p < p_0$
+    \item $P(z > |z_{sts}|) + P(z < -|z_{sts}|)$ if $H_a : p \neq p_0$
+\end{itemize}
+
+Keep in mind that just because the P-value is low \textit{does not prove that $H_0$ is false}; sample proportions may be small due to sampling variability, or we have made a Type I error somehow. \textbf{AVOID JUMPING TO CONCLUSIONS}: just because a sample statistic looks unlikely, doesn't mean its P-value is!
+
+It should be noted there is a link between \textit{two-sided tests} and confidence intervals: a K\% confidence interval gives an approximate set of $p_0$'s that would not be rejected by a two-sided test at the $\alpha = \frac{K}{100}$ level, with all other values being rejected.
+
 \subsection{Tests About a Difference in Proportions}
+Tests about difference in proportions work very similarly to tests about single proportions. For null hypothesis $H_0 : p_1 - p_2 = 0$, large counts can't directly be applied; we need estimate the true difference in proportions p using a weighted average of the two proportions:
+
+\[\hat{p}_C = \frac{\textrm{number of successes in both samples combined}}{\textrm{number of individuals in both samples combined}} = \frac{n_1 \hat{p}_1 + n_2 \hat{p}_2}{n_1 + n_2}\]
+
+In this case, we use the combined proportion for large counts \textit{for both samples}: that is, $n_1 \hat{p}_C, n_1 (1 - \hat{p}_C), n_2 \hat{p}_C, n_2 (1 - \hat{p}_C)$ all need to be greater or equal than 10.
+Using the combined proportion works for a non-zero difference in the null hypothesis, although is not strictly neccessary (large counts for each individual distribution can be used).
+
+The standardized test statistic also uses the combined estimate (for both proportions are equal; otherwise, each individual statistic can be used):
+
+\[z = \frac{(\hat{p}_1 - \hat{p}_2) - 0}{\sqrt{\frac{\hat{p}_C (1 - \hat{p}_C)}{n_1} + \frac{\hat{p}_C (1 - \hat{p}_C)}{n_2}}}\]
+
 \newpage
 
 \section{Estimating Means}
@@ -281,5 +340,8 @@ Note $P(\textrm{Type I error}) = \alpha$. However, as the significance decreases
 \newpage
 
 \section{Inference for Slopes and Tables}
+
+\[\prod_{k=1}^{4}(x^2_k+1) = \prod_{k=1}^{4}(x_k-i)(x_k+i) = \prod_{k=1}^{4}(x_k + i) \times \prod_{k=1}^4(x_k - i)\]
+\[= P(i)P(-i) = (b - d + 1)^2 + (a - c)^2 = (5 - 1)^2 + 0 = \fbox{16}\]
 
 \end{document}
