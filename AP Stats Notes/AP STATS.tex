@@ -165,6 +165,72 @@ be careful with language- 'skews' is a shape, IQR and range are single numbers (
 \newpage
 
 \section{Modelling Distributions}
+\subsection{Describing Location in a Distribution}
+\begin{definition}[Percentile]
+    The pth percentile of a distribution is the value with p\% of observations less than (\textit{or equal, depending on who you ask}) than it. Note that this distinction of whether or not to include "or equal" only matters for discrete variables.
+\end{definition}
+
+For example, in a class of 25 students, if a student gets a score greater than or equal to 21 other students, then they would be at the 84th percentile in the class's test score distribution ($\frac{21}{25} \approx 84\%$).
+\textbf{An obervation is never "in" a percentile; an observation is AT a percentile} (percentile is just a number; like IQR and range). Also, definition, $Q_1 \approx 25$th percentile, $Q_2 \textrm{(median)} \approx 50$th percentile, and $Q_3 \approx 75$th percentile.
+Percentiles can be graphically shown in a \textbf{cumulative relative frequency graph}, where the y-coordinates of points are graphed based on their percentile.
+
+\begin{definition}[Standardized Score (z-score)]
+    How many standard deviations an individual value is from the mean. For a value p, mean $\mu$, and stdev $\sigma$:
+    \[z = \frac{p - \mu}{\sigma}\]
+\end{definition}
+
+z-scores provide a way to objectively compare measurements from two distributions while still considering means and variability.
+
+\subsubsection{Transforming Data}
+
+Effect of adding a constant a:
+\begin{itemize}
+    \item Adds a to measures of center and location (mean, median, quartiles, min, max)
+    \item Does not change measures of variability (range, IQR, stdev)
+    \item Does not change the shape of the distribution (percentile; translation along axis)
+\end{itemize}
+
+Effect of multiplying by constant b:
+\begin{itemize}
+    \item Multiplies measures of center and location by b (mean, median, quartiles, min, max)
+    \item Multiplies measures of variability by $|b|$ (range, IQR, stdev)
+    \item Does not change the \textit{overall} shape of the distribution (percentile; like squish or squash)
+\end{itemize}
+
+z-scores transform any distribution into one with mean 0 and stdev 1, but with the same original shape.
+
+\subsection{Density Curves}
+\begin{definition}[Density Curves]
+    A curve that models the distribution of a quantative variable with a curve that
+    \begin{itemize}
+        \item Is always on (or above) the horizontal axis
+        \item Has an area of exactly 1 underneath
+    \end{itemize}
+    The area under the curve within any interval of values estimates the proportion of all observations that fall into this interval.
+\end{definition}
+
+\textit{No set of quantative data is fully described by a density curve.} Density curves are approximations that are easy to use by smoothing out small irregularities in the data.
+Similarly to finite distributions, distributions will have shapes, often with skews and peaks. The mean of a density curve... exists (fix) and the median of the density curve splits the curve into two equal-area halves.
+While the mean-median location principles still apply, they aren't too useful as it's relatively hard to locate the mean of a curve by analyzing it.
+
+\subsubsection{Normal Distributions}
+As $\lim_{n\to\infty} n$, binomial distributions will approach a \textbf{Normal distribution} (see Chapter 6 or something), which are described using Normal curves.
+
+\begin{definition}[Normal Curve]
+    Any normal distribution is described by a symmetric, single-peaked, bell-shaped density curve. Its center is equal to the mean and the median, and the stdev represents the 'width' of the curve.
+    Any normal distribution is fully described by its mean and stdev. A normal curve's mean is its peak, while the stdev are its inflection points (symmetric around the mean).
+
+    Normal distributions with $\mu = 0$ and $\sigma = 1$ is known as a \textbf{standard Normal distribution} (which is the same as any other Normal distribution normalized into z-scores).
+    \textit{Remember that mean and stdev only fully describe Normal distributions!}
+\end{definition}
+
+All normal distributions follow the \textbf{empirical rule}: 68\%, 95\%, and 99.7\% of all observations will fall within 1, 2, and 3 stdev around the mean respectively.
+\verb|normalcdf(upper, lower, mean, stdev)| can be used to find the area under the normal curve (with a given mean and stdev) between upper and lower.
+Similarly, \verb|invNorm(area to the left, mean, stdev)| calculates the area's percentile value given the mean and stdev.
+\textbf{When using calculator functions like normalcdf, make sure to 1) label what the inputs mean and 2) answer the question asked AS A SENTENCE!}
+
+\subsubsection{Assessing Normality}
+uhh i'll do it later
 
 \newpage
 
