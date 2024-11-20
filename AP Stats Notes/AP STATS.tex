@@ -407,6 +407,67 @@ The standardized test statistic also uses the combined estimate (for both propor
 
 \section{Estimating Means}
 
+\subsection{One-Sample \textit{t} intervals}
+
+To create a confidence interval for a mean, we can use the same point estimate $\pm$ margin of error = (critical value)(SE of statistic) idea.
+However, this is slightly flipped, as (from Section 7) the stdev of a sample distribution relies on the stdev of the population itself.
+If we know the stdev of the population, we can the familiar \textit{one-sample z interval for a population interval}:
+
+\[\hat{\mu} = \bar{x} \pm z^{*}\frac{\sigma}{\sqrt{n}}\]
+
+\textit{Using the sample stdev alone is not a good enough approximation}.
+For an example, using the sample stdev to estimate a 99\% confidence interval would result in a $\approx 92.5\%$ confidence interval.
+This is because there is significant variation in the sample stdev itself.
+
+To account for this, we use the larger \textit{t-distribution} instead.
+The t-distribution is like the z-distribution (measures how many stdevs needed for desired confidence), but has higher area in the tails to compensate for the errors in the sample stdev.
+Notably, t-distributions vary depending on the sample size; that is, they have a specific \textit{degree of freedom df.}
+(Use \verb|invT| to calculate the specific $t^{*}$ value needed.)
+When using t-distributions, make sure to set $df = n - 1$. Thus, for the \textit{the one-sample t interval for a population mean,}
+
+\[\hat{\mu} = \bar{x} \pm t^{*}\frac{s_x}{\sqrt{n}}\]
+
+The random (and 10\%) clauses still apply, although the Large Counts condition is slightly modified due to the central limit theorem:
+\begin{itemize}
+    \item If the sample size is small ($n < 30$), then graph the sample data (dotplot is preferred, although boxplot works it's kinda funky) and consider whether the data plausibly comes from a normal population.
+    No strong outliers or skew indicates yes. \textit{You will have to show your graph when assesing the normality of the data.}
+    \item If the sample size is big ($n \geq 30$), then you can still use a one-sample t interval for a population mean (although the true confidence level will be lower than presented).
+\end{itemize}
+
+The \verb|TInterval| function on the calculator can be used to simulate a one-sample t interval for a population mean if the above are satisfied.
+
+\textit{As $df \rightarrow \infty$, the t-distribution approaches the normal distribution.}
+Intuitively, as sample size increases, the sample stdev will get closer to the population stdev.
+The quantity $\frac{s_x}{\sqrt{n}}$ is known as the \textit{standard error of the sample mean} ($s_{\bar{x}}$).
+
+\subsection{Two-Sample \textit{t} intvervals for a Difference between Two Means}
+
+Like two-sample z intervals, these require the one-sample requirements to be fufilled for the populations, and follow the same idea (sqrt the variance):
+
+\[\hat{\mu}_{x_1 - x_2} = (\bar{x_1} - \bar{x_2}) \pm t^{*}\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}\]
+
+However, the degrees of freedom are significantly more confusing to decide. There are two practical options to decide the df to use:
+\begin{itemize}
+    \item \textbf{Technology}: Use the formula below to calculate df. Note that in this case, df is usually not a whole number.
+    Results in confidence intervals that are approximately the stated confidence levels.
+    \[df = \frac{{(\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2})}^2}{\frac{1}{n_1 - 1} {(\frac{s_1^2}{n_1})}^2 + \frac{1}{n_2 - 1} {(\frac{s_2^2}{n_2})}^2}\] % touch this and die
+
+    \item \textbf{Conservative}: $df = \min{(n_1 - 1, n_2 - 1)}$.
+    Note this method causes a margin of error as large if not larger than is needed for the desired confidence level.
+\end{itemize}
+
+\subsection{Paired \textit{t} interval For a Mean Difference}
+(also known as a one-sample t inerval for a mean difference)
+
+For comparing data which interviews the "same" (or highly related) individuals (known as \textbf{paired data}), "combine" the data into one dataset by subtracting each individuals' values, and analyze that using the tactics from section 10.1.
+(n = the number of pairs)
+
+The requirements are the same as the 1-sample t interval, although the meaning of 10\% ($n_{diff} < 0.10N_{diff}$) is different: we suspect that the data is not independent, so 10\% guarantees that the differences are independent.
+
+
+
+
+
 \newpage
 
 \section{Confidence with Means}
