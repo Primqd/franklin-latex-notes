@@ -25,7 +25,7 @@
 \contentsline {subsubsection}{\numberline {9.1.4}Power}{20}{subsubsection.9.1.4}%
 \contentsline {subsubsection}{\numberline {9.1.5}Steps for Signifiance Tests}{20}{subsubsection.9.1.5}%
 \contentsline {subsection}{\numberline {9.2}Tests About a Population Proportion}{21}{subsection.9.2}%
-\contentsline {subsection}{\numberline {9.3}Tests About a Difference in Proportions}{21}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.3}Tests About a Difference in Proportions}{22}{subsection.9.3}%
 \contentsline {section}{\numberline {10}Estimating Means}{23}{section.10}%
 \contentsline {section}{\numberline {11}Confidence with Means}{24}{section.11}%
 \contentsline {section}{\numberline {12}Chi-Square Tests}{25}{section.12}%

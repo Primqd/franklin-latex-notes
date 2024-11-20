@@ -210,8 +210,14 @@ z-scores transform any distribution into one with mean 0 and stdev 1, but with t
 \end{definition}
 
 \textit{No set of quantative data is fully described by a density curve.} Density curves are approximations that are easy to use by smoothing out small irregularities in the data.
-Similarly to finite distributions, distributions will have shapes, often with skews and peaks. The mean of a density curve... exists (fix) and the median of the density curve splits the curve into two equal-area halves.
-While the mean-median location principles still apply, they aren't too useful as it's relatively hard to locate the mean of a curve by analyzing it.
+Similarly to finite distributions, distributions will have shapes, often with skews and peaks.
+
+The median of the density curve splits the curve into two equal-area halves of area = 0.5.
+The mean of the density curve is harder to define. For a density curve described by a function $p(x)$, the mean is given as the below.
+(Intuitively, this is the idea of a 'weighted average'; weight being its relative density- $p(x)$, in this case- being extended to a continous distribution.)
+
+\[\textrm{mean of $p(x)$} = \int_{-\infty}^{\infty}xp(x)dx\]
+While the mean-median location principles still apply, they aren't too useful as it's relatively hard to locate the mean of a curve by simply looking at it.
 
 \subsubsection{Normal Distributions}
 As $\lim_{n\to\infty} n$, binomial distributions will approach a \textbf{Normal distribution} (see Chapter 6 or something), which are described using Normal curves.
@@ -379,10 +385,16 @@ Keep in mind that just because the P-value is low \textit{does not prove that $H
 
 It should be noted there is a link between \textit{two-sided tests} and confidence intervals: a K\% confidence interval gives an approximate set of $p_0$'s that would not be rejected by a two-sided test at the $\alpha = \frac{K}{100}$ level, with all other values being rejected.
 
+Intuitively, if a confidence interval for p using \textit{the same} $\hat{p}$ does not include $p_0$, as the distribution (test) about $p_0$ has a similar stdev (due to the same $\alpha$) the distribution is unlikely to include the actual value of $p$.
+
 \subsection{Tests About a Difference in Proportions}
 Tests about difference in proportions work very similarly to tests about single proportions. For null hypothesis $H_0 : p_1 - p_2 = 0$, large counts can't directly be applied; we need estimate the true difference in proportions p using a weighted average of the two proportions:
 
 \[\hat{p}_C = \frac{\textrm{number of successes in both samples combined}}{\textrm{number of individuals in both samples combined}} = \frac{n_1 \hat{p}_1 + n_2 \hat{p}_2}{n_1 + n_2}\]
+
+We use this pooled proportion (\textit{even for non-zero differences}, although the given formulas have to be changed) because the combined proportion provides \textit{the best estimation of the true difference in proportions}.
+In the one-sample z test for a proportion, we used $p_0$ because we're looking at the distribution relative to it.
+For \textbf{two-sample z tests for the difference between two proportions}, we look at the distribution 'relative' to the true proportion; which our best guess is $\hat{p}_C$.
 
 In this case, we use the combined proportion for large counts \textit{for both samples}: that is, $n_1 \hat{p}_C, n_1 (1 - \hat{p}_C), n_2 \hat{p}_C, n_2 (1 - \hat{p}_C)$ all need to be greater or equal than 10.
 Using the combined proportion works for a non-zero difference in the null hypothesis, although is not strictly neccessary (large counts for each individual distribution can be used).
