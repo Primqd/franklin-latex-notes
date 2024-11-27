@@ -241,6 +241,132 @@ uhh i'll do it later
 \newpage
 
 \section{Two-Variable Data}
+\subsection{Scatterplots and Correlation}
+
+When analyzing two sets of data, we usually hope to establish a cause-effect relationship between the \textbf{independent / explanatory variable} and the \textbf{dependent / response variable}.
+We want to show that knowing the value of the independent value will help predict the dependent variable's value.
+\textbf{Just because knowing the independent value helps us predict the dependent value does not imply direct causation; there may be some other variable influencing both!}
+
+We can analyze two-variable using a scatterplot. To describe a scatterplot, consider the following:
+\begin{itemize}
+    \item \textbf{DIRECTION}: Does the dependent variable increase (\textit{positive assocation}) or decrease (\textit{negative association}) with the independent variable?
+    Or does it look like there's no relation between the two? (\textit{no assocation})
+    \item \textbf{FORM}: Is the data linear or nonlinear? Nonlinear data still shows a pattern, although it's harder to describe.
+    \item \textbf{STRENGTH}: How closely does data follow the predicted pattern? Not very much (\textit{strong association}) or a lot (\textit{weak assocation})? Or somewhere between? (\textit{moderate association})
+    \item \textbf{OUTLIERS}: Look at distinct departures from the described pattern and distinct clusters of points.
+\end{itemize}
+
+We can directly quantify correlation for linear relationships using the \textbf{(linear) correlation \textit{r}}.
+
+\begin{definition}[Correlation \textit{r}]
+    A measure of the direction and strength of a linear association.
+    Always between -1 and 1, with values closer to each extreme indicating stronger relationships ($r = \pm 1 \rightarrow$ perfectly linear relationship, $r = 0 \rightarrow$ no linear relationship).
+    Positive r suggests positive association, while negative r suggests negative association.
+
+    \[r = \frac{1}{n - 1} \sum (\frac{x_i - \bar{x}}{s_x})(\frac{y_i - \bar{y}}{s_y}) = \frac{1}{n-1} \sum z_x z_y\]
+\end{definition}
+
+On a surface level, the formula for r standardizes each variable to avoid the issue of different linear slopes.
+Other than that, don't ask why this formula works; it's wayyyy too much of a hassle to reasonably prove.
+
+Obviously, r only works if both variables are quantative; use the word \textit{association} if either variables are categorical.
+r doesn't differentiate between explanitory and response variables; r will be the same even if you swap the two sets.
+r also has no units; it's just a scalar.
+
+The linear correlation should only be used when talking about LINEAR relationships: a perfectly quadratic relationship will not give $r = 1$.
+Linear correlation does not care about form; even if something is curved, linear correlation only measures its 'closeness' to a linear line.
+\textbf{Linear correlation is not resistant; it is GREATLY influenced by extreme points.}
+
+\subsection{Least-Squares Regression}
+
+\begin{definition}[Regression Line]
+    A line of form $\hat{y} = a + bx$ which models how the dependent variable y changes as the independent x changes.
+    ($\hat{y}$ = predicted value of y for given x)
+    \textbf{Regression lines require that we consider the x as the independent variable.}
+\end{definition}
+
+Alternatively, we can think of $\hat{y}$ as the average price for a sample of individuals with the same x value (assuming that our pattern is true).
+Beware of \textbf{extrapolation}: using a regression line to predict outside of the interval of x-values used to obtain the line.
+The further the values are from the data used to generate the line, the less reliable the prediction is.
+\textit{Just because regression lines can predict extreme values doesn't mean those values will ever happen!}
+
+\subsubsection{Residuals}
+To determine if a regression line is a good prediction, plot the \textbf{residuals} ($y - \hat{y}$ for all data points in the set).
+No pattern suggests that the regresison model is accurate, while a leftover non-zero pattern suggests that this model isn't appropriate. (Close to the x-axis = strength)
+
+Intuitively, we look at the remaining pattern because \textbf{form of residual plot = form of association - form of model}.
+As ssuch, no residual plot form suggests that form of association = form of model (good), while a residual plot form suggests that form of assocation $\neq$ form of model (bad!!!).
+
+\subsubsection{Least-Square Regression Lines}
+
+A good regression line minimizes the \textbf{sum of the squared residuals.} (Why not the residuals themselves? The sum of all the residuals = 0, so we square it to avoid sign- similar to stdev.)
+The line that minimizes the squared residuals is known as the \textbf{least squares regression line}.
+
+The least-square regression line $\hat{y} = a + bx$ can be calculated as follows:
+
+\[b = r\frac{s_y}{s_x}\]
+\[a = \bar{y} - b \bar{x}\]
+
+The formula for the slope can be thought of as "normalizing" the correlation to fit with the specific scenario using the coefficent $\frac{s_y}{s_x}$.
+(as far as i can tell there's no super intuitive way to think about this. sorry)
+
+The formula for the y-intercept comes from the fact the least-squares regression line will always pass through $(\bar{x}, \bar{y})$. Using simple algebra we re-arrange for a.
+
+This is called \textit{regression to the mean} because something something predicted values "regress" to the mean somehow.
+
+\subsubsection{Problems with Least-Square Regression Lines}
+Similar to correlation, least-square regression lines are 1) only used to describe linear relationships, 2) not resistant, and 3) only describe patterns in the data, not direct causation.
+
+2 suggests that points with relatively high or low x-values have \textbf{high leverage} over the regression line versus other points in the data set.
+These \textbf{outliers} (original def + high residual) are \textbf{influential points}; if removed, they substantially change the regression line or measures of strength (see 3.2.4).
+
+
+\subsubsection{Strength of regression lines}
+
+To determine the strength of a regression line, we have two methods: the \textbf{standard deviation of the residuals} or the \textbf{coefficent of determination $r^2$}.
+
+The standard deviation of the residuals ($s$) is pretty obvious: calculate the stdev of the data relative to the prediction. (why n - 2? idk it looks rlly complicated)
+\[s = \sqrt{\frac{\sum (y_i - \hat{y}_i)}{n - 2}}\]
+
+On the other hand, the coefficent of determination measures the percent reduction in the sum of squared residuals when using the regression line vs. using $\hat{y} = \bar{y}$.
+In other words, it represents the percent of variability in the response variable that is accounted for by the least squares regression line.
+($1 - r^2$ can be thought of as the \% of variability that's caused by other factors than the independent variable.)
+(It's also equal to the square of the linear correlation, hence the symbol $r^2$. why? idk)
+
+\[r^2 = \frac{\sum (y_i - \bar{y})^2 - \sum (y_i - \hat{y})^2}{\sum (y_i - \bar{y})^2}\]
+
+\subsection{Transforming to Achieve Linearity}
+
+The techniques discussed in 3.1 and 3.2 (obviously) only apply to purely linear relationships.
+In some special cases, we may be able to \textbf{tranform the data} from a non-linear pattern into a linear pattern to apply our techniques.
+
+\subsubsection{Power Models}
+\begin{definition}[Power Model]
+    Any regression model that takes the form $\hat{y} = ax^p$.
+    Scenarios modeled by these regression models should be expected to do so by geometry (eg. area proportional to square, volume proportional to cube) or some other factor like physics.
+\end{definition}
+
+While power models (by definition) describe a non-linear relationship between x and y, there will always be a linear relationship between $x^p$ and y.
+As such, if we raise x to the pth power or take the pth root of y there should be a linear relationship between $x^p$ and y (or x and $\sqrt[p]{y}$).
+
+However, this all assumes p is known. If p isn't known, you could either guess and check (cringe) or use logarithms.
+
+\subsubsection{Transforming with Logarithms}
+
+If a scenario is modeled by $y = ax^p$, then $\ln(y) = \ln(ax^p) \rightarrow \ln(y) = \ln(a) + p\ln(x)$.
+Thus, there is a linear relationship between $\ln(x)$ and $\ln(y)$.
+(\textit{Note that the power p now becomes the slope of the line!})
+If the resulting graph turns out ot be linear, we can fit a linear regression line to the graph and then use the relation $\hat{y} = e^{a + b\ln(x)}$ to predict values.
+(This relationship is the same as the power model: $\hat{y} = e^a \times e^{b\ln(x)} = e^a x^b$; $e^a$ is a constant.)
+
+If a scenario is modeled by $y = ab^x$ (an \textbf{exponential model}), then $\ln(y) = \ln(ab^x) \rightarrow \ln(y) = \ln(a) + \ln(b)x$.
+Thus, there is a linear relationship between x and $\ln(y)$.
+IF the resulting graph turns out to be linear, we can fit a linear regression line to the graph and use the relation $\hat{y} = e^{a + bx}$.
+(This relationship is the same as the exponential model: $\hat{y} = e^a \times e^{bx} = e^a \times (e^b)^x$: $e^a$ and $e^b$ are constants.)
+
+If unsure if an exponential or power model is better, consider their residual plots.
+If both models have similarly random residual plots, choose the model with the largest $r^2$.
+
 
 \newpage
 
@@ -395,6 +521,7 @@ Tests about difference in proportions work very similarly to tests about single 
 We use this pooled proportion (\textit{even for non-zero differences}, although the given formulas have to be changed) because the combined proportion provides \textit{the best estimation of the true difference in proportions}.
 In the one-sample z test for a proportion, we used $p_0$ because we're looking at the distribution relative to it.
 For \textbf{two-sample z tests for the difference between two proportions}, we look at the distribution 'relative' to the true proportion; which our best guess is $\hat{p}_C$.
+(something something using each individual $\hat{p}_i$ causes too much error + causes some error in the underlying math when we're testing for 0 diff)
 
 In this case, we use the combined proportion for large counts \textit{for both samples}: that is, $n_1 \hat{p}_C, n_1 (1 - \hat{p}_C), n_2 \hat{p}_C, n_2 (1 - \hat{p}_C)$ all need to be greater or equal than 10.
 Using the combined proportion works for a non-zero difference in the null hypothesis, although is not strictly neccessary (large counts for each individual distribution can be used).

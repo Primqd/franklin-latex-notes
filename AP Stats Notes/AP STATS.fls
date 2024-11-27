@@ -179,6 +179,7 @@ INPUT d:/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm
 INPUT d:/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT d:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
 INPUT d:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
+INPUT d:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
 INPUT AP STATS.aux
 INPUT ./AP STATS.out
 INPUT ./AP STATS.out
