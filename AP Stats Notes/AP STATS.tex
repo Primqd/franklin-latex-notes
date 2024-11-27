@@ -414,6 +414,10 @@ For example, if a player claims they're a 80\% free throw player, the null hypot
 The alternative hypothesis is \textbf{one-sided} because we suspect that the player makes less than 80\% of his free throws. If we believe that it's equally plausible that they make more than 80\% of their free throws, then we would use a \textbf{two-sided hypothesis}- $H_a: p \neq 0.80$.
 
 \textbf{Hypotheses express our beliefs before looking at the data}. Molding a hypothesis around data shows nothing.
+(11.1) \textbf{Just because a test is statistically significant does NOT mean that it is PRACTICALLY significant.}
+Focus on the P-value and better yet, the data itself.
+Graph your data and see if differences or outliers are significant, or if there's another pattern emerging.
+Generally, for practical importance, it's much better to give a confidence interval versus a significance test.
 
 \subsubsection{P-values}
 \begin{definition}[P-value]
@@ -448,6 +452,10 @@ Alternatively, "the results were significant ($P = 0.03 < \alpha = 0.05$)."
 \textit{Keep in mind a P-value is more informative than a statement of significance!}
 
 \textbf{NEVER "accept $H_0$" or conclude that $H_0$ is true!} Always use 'reject' or 'fail to reject!'
+
+(11.1) \textbf{Beware of multiple analyses.} A signifiance test of $\alpha = 0.05$ is reasonable enough to prove something on its own.
+But if you take 20 tests of $\alpha = 0.05$ and record if any of them show your conclusion- well, that doesn't really show anything! "Searching for patterns is fine. But performing every conceivable significance test on a data set until you obtain a statistically significant result is not."
+(This is known as \textit{P-hacking or data dredging.})
 
 \subsubsection{Type I and Type II Errors}
 When drawing a conclusion from a significance test, our conflusion may be wrong.
@@ -598,7 +606,34 @@ The requirements are the same as the 1-sample t interval, although the meaning o
 \newpage
 
 \section{Confidence with Means}
+tl;dr the same thing as Section 9 but with means this time (it works how you think it does)
+\subsection{Tests about a Population Mean}
+Null hypotheses, alternative hypotheses, and significance levels exist and mean the same thing as they did in Section 9. Yipee!
 
+While the random and 10\% conditions still apply, the large counts condition is modified to account for the Central Limit Theorem, like described in Section 10.1.
+To reiterate; if the $n < 30$, check whether the data is approximately Normal (no major skew or outliers) before performing tests; otherwise, everything proceeds as normal (haha).
+Dotplots are reccomended to check for Normality due to ease, but other graphs work too.
+
+As before, we need to calculate a standardized test statistic and a P-value.
+
+\[\textrm{standardized test statistic} = z = \frac{\bar{x} - \mu_0}{\sigma_{\bar{x}}} = \frac{\bar{x} - \mu_0}{\frac{\sigma}{\sqrt{n}}}\]
+
+Obviously, $\sigma$ for the population is rarely known. So we use the \textit{standard error of $\bar{x}$} once again:
+
+\[t = \frac{\bar{x} - \mu_0}{\frac{s_x}{\sqrt{n}}}\]
+
+Instead of using the Normal distribution (like you would when $\sigma$ is known), you will need to use a \textit{t-distribution}, like Section 10 describes.
+Same \verb|tcdf|, $df = n - 1$, etc.
+Remember, if you're lazy: $P(t \geq k) = P(t \leq -k)$ for both Normal and t distributions. No calculator for t-distribution? Use the tables, but be wary to give a range between the floor and ceil of the df.
+
+The same link between two-sided confidence intervals and confidence intervals exist.
+Interestingly, there's also a relation between one-sided tests and confidence intervals for a population mean.- a one sided test is the same as a confidence interval with $C = 1 - 2\alpha$.
+
+Difference in means and paired means work exactly like you think they do.
+Remember to use $\bar{x}_{diff}$ and $s_{diff}$ for paired data.
+Remember to use $df = min(n_1 - 1, n_2 - 1)$ or technology; don't use the sum.
+
+(idk put this somewhere else) \textbf{Use one-sample t procedures when testing data collected in pairs. Use two-sample difference t procedures when testing data collected from two populations independently.}
 \newpage
 
 \section{Chi-Square Tests}
