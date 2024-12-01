@@ -636,13 +636,111 @@ Remember to use $df = min(n_1 - 1, n_2 - 1)$ or technology; don't use the sum.
 (idk put this somewhere else) \textbf{Use one-sample t procedures when testing data collected in pairs. Use two-sample difference t procedures when testing data collected from two populations independently.}
 \newpage
 
-\section{Chi-Square Tests}
+\section{Inference for Distributions and Relationships}
 
-\newpage
+\subsection{Chi-Square Tests for Goodness of Fit}
+Obviously, the significance tests and confidence intervals discussed in sections 7 - 11 only apply to single continous variables.
+This obviously raises the question: \textit{what if you want to consider multiple variables at once?}
 
-\section{Inference for Slopes and Tables}
+Say, for example, several mutually exclusive proportions, like dice rolls.
+Of course, you could run a single-variable test on every single sample proportion to see if it matches up with what you expect.
 
-\[\prod_{k=1}^{4}(x^2_k+1) = \prod_{k=1}^{4}(x_k-i)(x_k+i) = \prod_{k=1}^{4}(x_k + i) \times \prod_{k=1}^4(x_k - i)\]
-\[= P(i)P(-i) = (b - d + 1)^2 + (a - c)^2 = (5 - 1)^2 + 0 = \fbox{16}\]
+Besides the obvious problem of being fairly inefficent, this also raises the problem of multiple tests indirectly leading to \textbf{P-hacking} (running several tests until you get a statistically significant result).
+Additionally, it doesn't tell you how likely it is to get a random sample with the given sample distribution assuming the claimed proportions are true.
+Instead, we need to consider all proportions at once, using a \textit{chi-square test for goodness of fit.}
 
+For our null hypothesis, we assume that the claimed distribution is true.
+This leads to the obvious alternate hypothesis: the true distribution is not the same the claimed distribution.
+For example, dice rolls:
+\begin{itemize}
+    \item $H_0$: The distribution of dice rolls is the same as the claimed distribution.
+    In other words: $p_i = \frac{1}{6}$ where $p_i$ represents the proportion of dice rolls that land ith side up.
+    \item $H_a$: The distribution of dice rolls is not the same as the claimed distribution.
+    At least two of these proportions differ than the values stated in the null hypothesis (2 cause $\sum p_i = 1$) 
+\end{itemize}
+
+Like other significance tests, we compare our \textit{expected values} (assuming the null hypothesis is true) to our experimental data.
+Say we roll a dice 60 times. Then, our expected count for categorical variable i in the distribution is $np_i = (60)(\frac{1}{6}) = 10$ rolls to come up for each side of the die.
+($np_i$ \textit{may not be an integer, and shouldn't be rounded to one.})
+
+To quantify how far our experimental data is compared to our expected data, we calculate the \textit{chi-square test statistic}.
+
+\begin{definition}[Chi-square test statistic, $\chi^2$]
+    A measure of how far each experimental count differs from the expected count for each categorical variable. (Summed over all possible values for the categorical variable, \textit{k}.)
+    \[\chi^2 = \sum \frac{(\textrm{Observed Count} - \textrm{Expected Count})^2}{\textrm{Expected Count}} 
+                = \sum_{i=0}^{k} \frac{(n\hat{p_i} - np_i)^2}{np_i}\]
+\end{definition}
+
+Make sure to use the COUNTS, and not the PROPORTIONS when calculating $\chi^2$.
+We square the difference for similar reasons to $\sigma$: to get rid of sign (i think).
+We divide by the expected count to encode its relative significance, instead of prioritizing extremely high differences.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.75\textwidth]{chi-square-distribution.png}
+    \caption{A probability density plot showing chi-square distributions with $df = 1, 2, 3, 4, 5$.}
+    \label{fig:chi-square-dist}
+\end{figure}
+
+Similar to previous significance tests, we look at the \textit{chi-square distribution} to generate a P-value.
+Chi-square distributions are right-skewed non-negative distributions (due to the square) that also take in degrees of freedom (df) = number of categorical variables - 1.
+The mean of a chi-squared distribution is equal to df and has a singular peak at df - 2 (df $>$ 2).
+
+Similar to previous significance tests, the random and 10\% conditions still apply.
+Large counts is slightly modified; all \textit{expected} counts should at least be 5.
+
+Use the chi-squared cdf function on your calculator to generate a P-value.
+(\textit{Remember, your P-value is the area to the RIGHT of your $\chi^2$ value; your lower value should be your test statistic, not the upper!})
+From there, use the stated significance level to either reject or fail to reject the null hypothesis.
+\textit{Remember that just because we fail to reject the null hypothesis does NOT mean that it is true.}
+We simply don't have data to reject the null hypothesis.
+
+If you are asked how the distribution is different than the predicted distribution, note which categories that contribute the most to $\chi^2$.
+Then, describe how the observed and predicted counts for these categories differ, with reference to direction. (less or more?)
+
+\subsection{Inference for Two-Way Tables}
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.75\textwidth]{chi-square-homogenity.png}
+    \caption{A two-way table comparing gender and union participation.}
+    \label{fig:chi-square-homo}
+\end{figure}
+
+Two-sample z tests (discussed in section 9.3) allow us to compare proportions in two populations or two treatments.
+\textit{Chi-square tests for homogenity} allow us to compare distributions of a single categorical variable across several populations or treatments.
+\textit{Chi-square tests for independence} allow us to analyze whether there's evidence of an association between two variables.
+
+\subsubsection{Chi-square tests for homogenity}
+To begin, create a two-way table like shown in Figure \ref{fig:chi-square-homo}.
+Generally, our null hypothesis says that there is \textit{no difference} in the true distribution of a categorical variable in the populations of interest (or treatments in an experiment).
+In this case, our null hypothesis would be $H_0$: There is no difference in the true distributions of union participation if the worker is male or female.
+Similarly, the alternate hypothesis says that \textit{there is a difference, but does not specify what that difference is.} ($H_a$ works for ANY difference in distribution.)
+In this case, $H_a$: There is a difference in the true distributions of union participation if the worker is male or female.
+
+(doesn't really belong here) \textbf{Performing multiple tests on the same data increases the probability of making a Type I error in at least one test. This is P-hacking.}
+
+This test has similar requirements to that of chi-squares for goodness of fit: random, 10\%, and large counts- all expected values are greater than five.
+How expected values are calculated is slightly different, as we need to account for different sample sizes.
+For example, from the table, 687 out of 1322 workers are male.
+If gender has no impact on union participation, then the proportion of each category of union participation should be the same $\frac{687}{1322} \approx 0.520$.
+Because 143 workers are union members, we would expect $143 \times \frac{687}{1322} \approx 74.31$ union members to be male, on average.
+Generally, the expected value for any given cell is equal to $\frac{\textrm{row total} \times \textrm{col total}}{\textrm{table total}}$.\\
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.75\textwidth]{chi-square-homogenity-ev.png}
+    \caption{The compliment to Figure \ref{fig:chi-square-homo}, showing the expected value for each cell. why doesn't matplotlib allow me to export a higher quality image istfg}
+    \label{fig:chi-square-homo-ev}
+\end{figure}
+
+\textbf{Note that in the expected value table, the row and column sums are still the same, by design.}
+From here, you can calculate the test statistic $\chi ^ 2$ and P-value (using df = (number of rows - 1) * (number of cols - 1)) as discussed in section 12.1.
+\textbf{Remmber to cite the name of the test ($\chi^2$ test for homogenity),the test statistic, df, and P-value when conducting the test!}
+
+\subsubsection{Chi-square tests for independence}
+While chi-square tests for homogenity test \textit{if the distributions of two different populations are the same}, chi-square tests for independence test \textit{if knowing one variable helps predict the value of the other}.
+
+
+
+\subsection{Inference for Slope}
 \end{document}

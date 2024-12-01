@@ -41,5 +41,9 @@
 \contentsline {subsection}{\numberline {10.3}Paired \textit {t} interval For a Mean Difference}{27}{subsection.10.3}%
 \contentsline {section}{\numberline {11}Confidence with Means}{28}{section.11}%
 \contentsline {subsection}{\numberline {11.1}Tests about a Population Mean}{28}{subsection.11.1}%
-\contentsline {section}{\numberline {12}Chi-Square Tests}{29}{section.12}%
-\contentsline {section}{\numberline {13}Inference for Slopes and Tables}{30}{section.13}%
+\contentsline {section}{\numberline {12}Inference for Distributions and Relationships}{29}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Chi-Square Tests for Goodness of Fit}{29}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Inference for Two-Way Tables}{31}{subsection.12.2}%
+\contentsline {subsubsection}{\numberline {12.2.1}Chi-square tests for homogenity}{31}{subsubsection.12.2.1}%
+\contentsline {subsubsection}{\numberline {12.2.2}Chi-square tests for independence}{32}{subsubsection.12.2.2}%
+\contentsline {subsection}{\numberline {12.3}Inference for Slope}{32}{subsection.12.3}%

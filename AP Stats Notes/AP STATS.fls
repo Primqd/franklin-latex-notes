@@ -180,6 +180,18 @@ INPUT d:/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT d:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
 INPUT d:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
 INPUT d:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
+INPUT ./images/chi-square-distribution.png
+INPUT ./images/chi-square-distribution.png
+INPUT ./images/chi-square-distribution.png
+INPUT ./images/chi-square-distribution.png
+INPUT ./images/chi-square-homogenity.png
+INPUT ./images/chi-square-homogenity.png
+INPUT ./images/chi-square-homogenity.png
+INPUT ./images/chi-square-homogenity.png
+INPUT ./images/chi-square-homogenity-ev.png
+INPUT ./images/chi-square-homogenity-ev.png
+INPUT ./images/chi-square-homogenity-ev.png
+INPUT ./images/chi-square-homogenity-ev.png
 INPUT AP STATS.aux
 INPUT ./AP STATS.out
 INPUT ./AP STATS.out
