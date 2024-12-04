@@ -371,6 +371,152 @@ If both models have similarly random residual plots, choose the model with the l
 \newpage
 
 \section{Collecting Data}
+most yap based chapter. almost no math :/
+
+\subsection{Sampling and Surveys}
+
+In statistics, we often want to discover things about a large group of people (the \textbf{population}).
+While we could survey \textit{everybody} in a \textbf{census}, this is often incredibly impractical for obvious reasons.
+Instead, we often consider only a small \textbf{sample} (subset) of people to represent the population, in a \textbf{sample survey} (a study of a sample to predict things about the population).
+From the data we observe in the sample, we can make predictions about the population as a whole.
+\textit{Surveys include but aren't restricted to just questions.} They can include asking people to do something, and observing how they go around doing it.
+
+\subsubsection{What is Bias?}
+\begin{definition}[Bias]
+    The design shows bias if it is very likely to underestimate or overestimate the value you're trying to predict.
+    (Remember, the statistical analyses discussed in Chapters 8-12 don't consider bias!)
+\end{definition}
+
+\textbf{Bias is not bad luck in one sample}- Bias will consistently miss the truth in the same way.
+When asked to describe how a statistical study shows bias:
+\begin{itemize}
+    \item Describe how members of the sample might respond differently vs. the population
+    \item Explain how this difference might lead to an overestimate or underestimate
+    \item \textbf{Don't overthink it}- it should be a "common sense" explanation.
+\end{itemize}
+
+\subsubsection{Sources of Bias}
+
+\begin{definition}[Convenience Sampling]
+    Selecting individuals from a population that are easy to reach.
+    May cause bias due to nearby individuals sharing some characteristics (like a club or class)
+    Eg. asking about sports in a library.
+\end{definition}
+
+\begin{definition}[Voluntary Response Sampling]
+    Allowing people to \textit{choose} whether or not they are part of a sample.
+    Often causes bias due to attracting people who feel strongly about an issue, share some common opinion, or who are more confident.
+\end{definition}
+
+\begin{definition}[Undercoverage]
+    When some members of a population are less likely or unable to be chosen in a sample.
+    Eg. selecting a sample from a list of houses ignores dormitory students, homeless people, and prisoners.
+\end{definition}
+
+\begin{definition}[Nonresponse]
+    When an individual chosen for the sample can't participate (voluntary or involuntary).
+    May lead to bias as those who don't respond may respond differently vs. those who do participate.
+    Eg. landline calling people to ask if they go on runs- people unable to pick up may be on a run and thus run more.
+\end{definition}
+
+\begin{definition}[Response Bias]
+    A systematic pattern of inaccurate answers to a survey question.
+    Often due to \textbf{question wording bias}: the wording of the question causes some confusion or leads individual to one specific conclusion.
+\end{definition}
+
+\textbf{Voluntary response does not explain why certain people don't respond in an individual survey.}
+Nonresponse can only happen after a sample has been selected.
+In a voluntary response sample, every individual has \textit{opted} to take part, so there won't be any nonresponse.
+
+\subsubsection{How to Avoid Bias}
+\begin{definition}[Random Sampling]
+    Using some sort of chance process to determine which members of a population are included in a sample.
+    \textbf{Chance process specifically- not just "arbitrary!"}
+\end{definition}
+
+\begin{definition}[Simple Random Sample (SRS)]
+    A sample size n selected by random sampling such that every group of n individuals in a population has a equal chance of being selected as part of the sample.
+    Should be done using \textbf{sampling without replacement.}
+
+    When using technology: label all people in the population 1... N, use a rng to generate n \textit{different} integers 1-N, then use the people corresponding to the rng.
+    When using a table, \textbf{make sure to choose a system s.t. every number has an equal chance of occuring!}
+\end{definition}
+
+\begin{definition}[Sampling with(out) replacement]
+    An individual from a population may only be selected once (without replacement) or multiple times (with replacement).
+\end{definition}
+
+\begin{definition}[Stratified Random Sampling]
+    Dividing a populations into groups that share certain characteristics (\textbf{strata}), selecting SRSes from the strata, then combining them into one random sample.
+    Yield more accurate results \textbf{IF} individuals within each strata are \textbf{homogenous} (similar).
+\end{definition}
+
+\begin{definition}[Cluster Sampling]
+    Dividing a population into groups in the population into non-overlapping groups (\textbf{clusters}) that \textit{don't} share common characteristics, picking some clusters, and then combining them into one random sample.
+    Less accurate than stratification, but obviously more practical- much easier to access clusters vs. strata.
+    Yields more accurate results \textbf{IF} individuals within each strata are \textbf{heterogenous} (different).
+\end{definition}
+
+\begin{definition}[Systematic Random Sampling]
+    Selecting a sample from an ordered arrangement of the population by randomly selecting one of the first k individuals, then picking every kth individual after for a sample.
+    Very useful for continous streams of people, where the number of people isn't known before hand; eg. voting booths.
+    \textbf{If there are patterns in the way the population is ordered that coincide with the pattern being chosen, then the sample likely isn't representative of the population.}
+    (Eg. some people are late, take up more of the sample)
+\end{definition}
+
+\subsection{Experiments}
+Surveys are one kind of \textbf{observational studies}: studies that observe individuals and measures variables of interest, but does not attempt to influence the responses.
+Split into \textit{retrospective} (look at the past) and \textit{prospective} (look into the future).
+Prospective studies are more useful than retrospective studies, as other influences on certain variables are much easier to track.
+
+\begin{definition}[Experiment]
+    Deliberately imposes conditions (\textbf{treatments}) on \textbf{experimental units} (the object the treatment is being applied to: if human, use \textbf{subjects}) to measure their responses.
+    Treatments are sometimes known as \textbf{factors}; \textbf{explanatory variables} whose different \textbf{levels} may cause different changes in the \textbf{response variable}.
+    Surveys show correlation between two variables exist, expeirments show cause and effect between two variables.
+\end{definition}
+
+Experiments should be designed to avoid \textbf{confounding}: two or more variables can be shown to possibly be an independent variable without direct conformation (better definition?).
+One notable type of confounding to consider is the \textbf{placebo effect}: some subjects will genuinely improve because they think they will, not due to the treatment.
+To counteract this, one treatment should typically be a \textbf{control group}; a group not given treatment (whether completely no treatment or fake treatment) in order to compare whether the treatment causes some change.
+
+\textit{The placebo effect also applies to the experiment designers, too!}
+Experiments should ideally be \textbf{double blind} (neither the subject nor the interviewer knows what treatment the patient is recieving).
+Obviously, this might not be possible for some experiments.
+For this case, experiments should still attempt to be \textbf{single blind} (either the subjects or the intervewers don't know which treatment a patient is recieving).
+
+There are two discussed types of experiment designs: \textbf{Completely Randomized Design}, where experimental units are assigned to treatments completely at random, and \textbf{Randomized Block Design}, where experimental units are divided into similar groups (\textbf{blocks}; like strata) and then tested using completely randomized testing individually.
+\textbf{Matched Pair design} is one specific type of experimental design for comparing treatments of block size 2.
+Typically, two very similar experimental units (some type of pair) are made into a block and are given the treatment randomly.
+
+\subsubsection{Principles of Experimental Design}
+\begin{itemize}
+    \item \textbf{Comparison}: use a design that compares two or more treatments (at least a Control Group)
+    \item \textbf{Random Assignment}: use a chance process to assign experimental units avoids confounding
+    \item \textbf{Control}: keep other variables same for all groups, especially other counfounders
+    \item \textbf{Replication}: more sample size = less likely varation in the effects is due to random chance
+\end{itemize}
+
+\subsection{Using Studies Wisely}
+
+Obviously, a sample isn't a population, so there's going to be some varation in the data you observe in the sample versus the population.
+This is knwon as \textbf{sampling variability}.
+Bigger sample size = less variability. Duh.
+
+When the observed results of a study are too unusual to be explained by chance alone, the results are \textbf{statistically significant.}
+\textit{Statistical significance does not account for bias!}
+
+When inferring from data, keep in mind \textbf{what population individuals come from}, and \textbf{random assignment to groups allows inference on cause and effect}.
+Observational studies should \textbf{almost} never be used to demonstrate cause and effect. Unless:
+\begin{itemize}
+    \item Association ($R^2$?) is very strong
+    \item Association is consistent (does not vary between different populations)
+    \item Larger values of explanitory = stronger response (stopping = lese response)
+    \item Cause always preceeds effect in time (not something else)
+    \item Alleged cause makes intuitive sense (or has some other history that makes it plausible)
+\end{itemize}
+
+\subsubsection{Data Ethics*}
+i'm not doin allat
 
 \newpage
 
@@ -739,8 +885,6 @@ From here, you can calculate the test statistic $\chi ^ 2$ and P-value (using df
 
 \subsubsection{Chi-square tests for independence}
 While chi-square tests for homogenity test \textit{if the distributions of two different populations are the same}, chi-square tests for independence test \textit{if knowing one variable helps predict the value of the other}.
-
-
 
 \subsection{Inference for Slope}
 \end{document}

@@ -22,28 +22,36 @@
 \contentsline {subsubsection}{\numberline {3.3.1}Power Models}{15}{subsubsection.3.3.1}%
 \contentsline {subsubsection}{\numberline {3.3.2}Transforming with Logarithms}{15}{subsubsection.3.3.2}%
 \contentsline {section}{\numberline {4}Collecting Data}{16}{section.4}%
-\contentsline {section}{\numberline {5}Probability}{17}{section.5}%
-\contentsline {section}{\numberline {6}Random Variables and Distributions}{18}{section.6}%
-\contentsline {section}{\numberline {7}Sampling Distributions}{19}{section.7}%
-\contentsline {section}{\numberline {8}Confidence Intervals}{20}{section.8}%
-\contentsline {section}{\numberline {9}Significance Tests}{21}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Basics of Significance Tests}{21}{subsection.9.1}%
-\contentsline {subsubsection}{\numberline {9.1.1}Hypotheses}{21}{subsubsection.9.1.1}%
-\contentsline {subsubsection}{\numberline {9.1.2}P-values}{21}{subsubsection.9.1.2}%
-\contentsline {subsubsection}{\numberline {9.1.3}Type I and Type II Errors}{23}{subsubsection.9.1.3}%
-\contentsline {subsubsection}{\numberline {9.1.4}Power}{23}{subsubsection.9.1.4}%
-\contentsline {subsubsection}{\numberline {9.1.5}Steps for Signifiance Tests}{23}{subsubsection.9.1.5}%
-\contentsline {subsection}{\numberline {9.2}Tests About a Population Proportion}{24}{subsection.9.2}%
-\contentsline {subsection}{\numberline {9.3}Tests About a Difference in Proportions}{25}{subsection.9.3}%
-\contentsline {section}{\numberline {10}Estimating Means}{26}{section.10}%
-\contentsline {subsection}{\numberline {10.1}One-Sample \textit {t} intervals}{26}{subsection.10.1}%
-\contentsline {subsection}{\numberline {10.2}Two-Sample \textit {t} intvervals for a Difference between Two Means}{27}{subsection.10.2}%
-\contentsline {subsection}{\numberline {10.3}Paired \textit {t} interval For a Mean Difference}{27}{subsection.10.3}%
-\contentsline {section}{\numberline {11}Confidence with Means}{28}{section.11}%
-\contentsline {subsection}{\numberline {11.1}Tests about a Population Mean}{28}{subsection.11.1}%
-\contentsline {section}{\numberline {12}Inference for Distributions and Relationships}{29}{section.12}%
-\contentsline {subsection}{\numberline {12.1}Chi-Square Tests for Goodness of Fit}{29}{subsection.12.1}%
-\contentsline {subsection}{\numberline {12.2}Inference for Two-Way Tables}{31}{subsection.12.2}%
-\contentsline {subsubsection}{\numberline {12.2.1}Chi-square tests for homogenity}{31}{subsubsection.12.2.1}%
-\contentsline {subsubsection}{\numberline {12.2.2}Chi-square tests for independence}{32}{subsubsection.12.2.2}%
-\contentsline {subsection}{\numberline {12.3}Inference for Slope}{32}{subsection.12.3}%
+\contentsline {subsection}{\numberline {4.1}Sampling and Surveys}{16}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}What is Bias?}{16}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Sources of Bias}{16}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}How to Avoid Bias}{17}{subsubsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.2}Experiments}{18}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Principles of Experimental Design}{19}{subsubsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.3}Using Studies Wisely}{19}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Data Ethics*}{20}{subsubsection.4.3.1}%
+\contentsline {section}{\numberline {5}Probability}{21}{section.5}%
+\contentsline {section}{\numberline {6}Random Variables and Distributions}{22}{section.6}%
+\contentsline {section}{\numberline {7}Sampling Distributions}{23}{section.7}%
+\contentsline {section}{\numberline {8}Confidence Intervals}{24}{section.8}%
+\contentsline {section}{\numberline {9}Significance Tests}{25}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Basics of Significance Tests}{25}{subsection.9.1}%
+\contentsline {subsubsection}{\numberline {9.1.1}Hypotheses}{25}{subsubsection.9.1.1}%
+\contentsline {subsubsection}{\numberline {9.1.2}P-values}{25}{subsubsection.9.1.2}%
+\contentsline {subsubsection}{\numberline {9.1.3}Type I and Type II Errors}{27}{subsubsection.9.1.3}%
+\contentsline {subsubsection}{\numberline {9.1.4}Power}{27}{subsubsection.9.1.4}%
+\contentsline {subsubsection}{\numberline {9.1.5}Steps for Signifiance Tests}{27}{subsubsection.9.1.5}%
+\contentsline {subsection}{\numberline {9.2}Tests About a Population Proportion}{28}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Tests About a Difference in Proportions}{29}{subsection.9.3}%
+\contentsline {section}{\numberline {10}Estimating Means}{30}{section.10}%
+\contentsline {subsection}{\numberline {10.1}One-Sample \textit {t} intervals}{30}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Two-Sample \textit {t} intvervals for a Difference between Two Means}{31}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Paired \textit {t} interval For a Mean Difference}{31}{subsection.10.3}%
+\contentsline {section}{\numberline {11}Confidence with Means}{32}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Tests about a Population Mean}{32}{subsection.11.1}%
+\contentsline {section}{\numberline {12}Inference for Distributions and Relationships}{33}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Chi-Square Tests for Goodness of Fit}{33}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Inference for Two-Way Tables}{35}{subsection.12.2}%
+\contentsline {subsubsection}{\numberline {12.2.1}Chi-square tests for homogenity}{35}{subsubsection.12.2.1}%
+\contentsline {subsubsection}{\numberline {12.2.2}Chi-square tests for independence}{36}{subsubsection.12.2.2}%
+\contentsline {subsection}{\numberline {12.3}Inference for Slope}{36}{subsection.12.3}%
