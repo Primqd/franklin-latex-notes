@@ -54,4 +54,5 @@
 \contentsline {subsection}{\numberline {12.2}Inference for Two-Way Tables}{35}{subsection.12.2}%
 \contentsline {subsubsection}{\numberline {12.2.1}Chi-square tests for homogenity}{35}{subsubsection.12.2.1}%
 \contentsline {subsubsection}{\numberline {12.2.2}Chi-square tests for independence}{36}{subsubsection.12.2.2}%
-\contentsline {subsection}{\numberline {12.3}Inference for Slope}{36}{subsection.12.3}%
+\contentsline {subsubsection}{\numberline {12.2.3}Differences between Homogenity and Independence}{36}{subsubsection.12.2.3}%
+\contentsline {subsection}{\numberline {12.3}Inference for Slope}{37}{subsection.12.3}%

@@ -885,6 +885,23 @@ From here, you can calculate the test statistic $\chi ^ 2$ and P-value (using df
 
 \subsubsection{Chi-square tests for independence}
 While chi-square tests for homogenity test \textit{if the distributions of two different populations are the same}, chi-square tests for independence test \textit{if knowing one variable helps predict the value of the other}.
+The only functional difference between tests for independence versus homogenity is the hypotheses.
+Instead of testing for difference between \textit{two seperate distributions}, tests for independence test for difference between \textit{two seperate variables in the same population}.
+That is:
+\begin{itemize}
+    \item $H_0$: There is no association between x and y in the population.
+    \item $H_a$: There is an association between x and y in the population.
+\end{itemize}
+
+Other than this, \textit{chi-square tests for independence are calculated exactly the same way as chi-square tests for homogenity}.
+There are some differences in the interpertation of each step, but the general process is exactly the same.
+
+\subsubsection{Differences between Homogenity and Independence}
+\begin{itemize}
+    \item Homogenity tests for if the distribution of \textit{one} categorical variable is the same for \textit{multiple distributions}. Independce tests whether \textit{two} categorical variables are associated in a \textit{single} distribution.
+    \item Homogenity tests use data for which \textit{the total sample size for each population is known before the data is collected}. Independence tests use data for which \textit{only the total sample size is known- the size of each population is not known before the data is collected.}
+\end{itemize}
 
 \subsection{Inference for Slope}
+
 \end{document}

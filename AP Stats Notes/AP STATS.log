@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.6)  3 DEC 2024 22:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.6)  5 DEC 2024 21:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -248,7 +248,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 [3]
-<images/two way table.png, id=308, 576.1525pt x 243.91125pt>
+<images/two way table.png, id=313, 576.1525pt x 243.91125pt>
 File: images/two way table.png Graphic file (type png)
 <use images/two way table.png>
 Package pdftex.def Info: images/two way table.png  used on input line 72.
@@ -258,7 +258,7 @@ Package pdftex.def Info: images/two way table.png  used on input line 72.
 [4]
 
 [5 <./images/two way table.png (PNG copy)>]
-<images/dotplot.png, id=325, 451.6875pt x 325.215pt>
+<images/dotplot.png, id=331, 451.6875pt x 325.215pt>
 File: images/dotplot.png Graphic file (type png)
 <use images/dotplot.png>
 Package pdftex.def Info: images/dotplot.png  used on input line 92.
@@ -268,7 +268,7 @@ Overfull \hbox (3.90842pt too wide) in paragraph at lines 112--113
 []\OT1/cmr/m/n/12 When de-scrib-ing a dis-tri-bu-tion of quan-ta-tive data, use the acronym ROCS:
  []
 
-<images/histogram.png, id=326, 554.07pt x 436.63126pt>
+<images/histogram.png, id=332, 554.07pt x 436.63126pt>
 File: images/histogram.png Graphic file (type png)
 <use images/histogram.png>
 Package pdftex.def Info: images/histogram.png  used on input line 118.
@@ -345,12 +345,12 @@ Overfull \hbox (1.19109pt too wide) in paragraph at lines 771--774
 [32]
 
 [33]
-<images/chi-square-distribution.png, id=492, 501.875pt x 349.305pt>
+<images/chi-square-distribution.png, id=497, 501.875pt x 349.305pt>
 File: images/chi-square-distribution.png Graphic file (type png)
 <use images/chi-square-distribution.png>
 Package pdftex.def Info: images/chi-square-distribution.png  used on input line 826.
 (pdftex.def)             Requested size: 292.5pt x 203.58841pt.
-<images/chi-square-homogenity.png, id=493, 732.48656pt x 200.24812pt>
+<images/chi-square-homogenity.png, id=498, 732.48656pt x 200.24812pt>
 File: images/chi-square-homogenity.png Graphic file (type png)
 <use images/chi-square-homogenity.png>
 Package pdftex.def Info: images/chi-square-homogenity.png  used on input line 850.
@@ -362,7 +362,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 868--874
 
  []
 
-<images/chi-square-homogenity-ev.png, id=502, 572.3784pt x 123.5817pt>
+<images/chi-square-homogenity-ev.png, id=507, 572.3784pt x 123.5817pt>
 File: images/chi-square-homogenity-ev.png Graphic file (type png)
 <use images/chi-square-homogenity-ev.png>
 Package pdftex.def Info: images/chi-square-homogenity-ev.png  used on input line 877.
@@ -371,27 +371,29 @@ Package pdftex.def Info: images/chi-square-homogenity-ev.png  used on input line
 
 [35 <./images/chi-square-homogenity.png>]
 
-[36 <./images/chi-square-homogenity-ev.png>] (./AP STATS.aux)
+[36 <./images/chi-square-homogenity-ev.png>]
+
+[37] (./AP STATS.aux)
  ***********
 LaTeX2e <2024-11-01>
 L3 programming layer <2024-11-02>
  ***********
 Package rerunfilecheck Info: File `"AP STATS".out' has not changed.
-(rerunfilecheck)             Checksum: 685199F59ABDB3674080F576BA6A733B;10710.
+(rerunfilecheck)             Checksum: 67DB59CFBDA856F3BD9C8063F19904E8;11027.
  ) 
 Here is how much of TeX's memory you used:
- 9457 strings out of 473362
- 145428 string characters out of 5725051
+ 9460 strings out of 473362
+ 145477 string characters out of 5725051
  540576 words of memory out of 5000000
- 32320 multiletter control sequences out of 15000+600000
+ 32321 multiletter control sequences out of 15000+600000
  568403 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,7n,79p,654b,585s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on "AP STATS.pdf" (36 pages, 430370 bytes).
+Output written on "AP STATS.pdf" (37 pages, 431864 bytes).
 PDF statistics:
- 614 PDF objects out of 1000 (max. 8388607)
- 530 compressed objects within 6 object streams
- 141 named destinations out of 1000 (max. 500000)
- 487 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 626 PDF objects out of 1000 (max. 8388607)
+ 541 compressed objects within 6 object streams
+ 143 named destinations out of 1000 (max. 500000)
+ 495 words of extra memory for PDF output out of 10000 (max. 10000000)
 
