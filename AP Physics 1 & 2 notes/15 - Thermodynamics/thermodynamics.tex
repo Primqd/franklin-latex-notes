@@ -96,7 +96,6 @@ $Q = 500\textrm{J}$ will change the internal energy of a system just as much as 
     \label{fig:isobaric}
 \end{figure}
 
-
 \subsection{Thermal Processes}
 Systems will interact with their environment in several ways.
 The \textit{thermal processes} described in this section are assumed to be \textbf{quasi-static}: changes occur slowly enough such that uniform pressure and temperature exist throughout all regions of the system at all times.
@@ -214,12 +213,79 @@ Because this is true for all such processes, then we get the original relation:
 \[P_i V_i^\gamma = P_f V_f^\gamma\]
 
 \section{The Second Law of Thermodynamics}
+\begin{definition}[The Second Law of Thermodynamics: Heat Flow]
+    Heat flows spontaneously from a substance at higher temperature to a substance at lower temperature.
+    Heat never flows spontaneously from a substance at lower temperature to a substance at a higher temperature.
+\end{definition}
 
-\subsection{Carnot Engines}
+While the first law discusses the nature of heat and work relating to energy conservation, the second law is a statement about the natural tendency of hot to go to cold.
+
+\subsection{Heat Engines}
+
+One notable application of the second law are \textbf{heat engines.}
+\begin{definition}[Heat Engines]
+    A device that uses heat to perform work.
+    Heat engines have three essential features:
+    \begin{enumerate}
+        \item \textit{Hot Reservoir}: a substance at a relatively high input temperature that supplies heat to the \textit{engine}.
+        \item \textit{Engine}: an object that uses part of the input heat (through the \textit{working substance}) to perform work. (eg. the gasoline-air mixture in an automobile engine)
+        \item \textit{Cold Reservoir}: where the remainder heat (not used by the engine) is rejected. Needs to have a lower temperature than the hot reservoir due to the second law.
+    \end{enumerate}
+\end{definition}
+
+Efficent engines will produce a large amount of work from a small amount of input heat.
+For 100\% efficent engines, all input heat will be converted to work.
+That is, for input heat $|Q_h|$ and work $|W|$, \textbf{efficency} $e$ can be defined as the following:
+
+\[e = \frac{|W|}{|Q_h|}\]
+
+Like any other device, an engine still needs to follow the conservation of energy.
+That is, for rejected heat $|Q_c|$:
+
+\[|Q_h| = |W| + |Q_c|\]
+
+Thus, efficency can also be written as
+
+\[e = 1 - \frac{|Q_c|}{|Q_h|}\]
+
+\subsubsection{Carnot's Principle}
+\begin{definition}[Carnot's Principle, altnerate form of the Second Law of Thermodynamics]
+    No irreversible engine operating between two reservoirs at constant temperatures can have greater efficiency than a \textbf{reversible engine} operating with the same temperatures.
+    All reversible engines operating between the same two temperatures have the same efficiency.
+\end{definition}
+
+
+Reversible engines are engines whose processes are \textbf{reversible}: both the system and its environment can be returned to its original state.
+In practice, no engines will function at this maximum efficency due to irreversible processes such as friction or heat transfer.
+(Think about the second law; heat will go from hot to cold without any input, but will not go from cold to hot without input.)
+
+Carnot's principle implies that the maximum efficency of a system is a function \textit{purely of the input and output temperatures}.
+(Carnot's principle specifies \textit{two reservoirs at constant temperatures}.)
+That is, the maximum efficency of an engine is: (It can be shown that $T_h$ and $T_c$ MUST be expressed in Kelvin.)
+
+\[e_{max} = 1 - \frac{|Q_c|}{|Q_h|} = 1 - \frac{T_c}{T_h}\]
+
+\textbf{Carnot's Principle does NOT state that reversible engines have 100\% efficency}.
+If a process is reversible, then it will operate at the maximum efficency no matter what; even if that efficency is not 100\%.
+(As no substance can reach a temperature of absolute zero, $\frac{T_c}{T_h}$ will always be greater than zero, and as such a perfectly 100\% engine cannot exist.)
+
+\subsubsection{Refridgeration Processes}
+By the second law, heat will always naturally flow from hot to cold.
+Heat engines use this process to do work.
+However, \textit{inverse heat engines work as well}: by providing work, heat can be made to flow from a cold reservoir to a hot reservoir.
+Energy is still conserved throughout this process: $|Q_h| = |W| + |Q_c|$.
+For ideal inverse heat engines (\textit{Carnot refridgerators}), the relation of max efficency still applies, in the same way.
+
+Refrdigerators may be ranked how well they remove heat: that is, the coefficent of performance for refridgerators $= \frac{|Q_c|}{|W|}$.
+Similarly, \textit{heat pumps} (devices that uses work to make heat out of cold outside air) may be ranked on how well they generate heat: the coefficent of performance for heat pumps $= \frac{|Q_h|}{|W|}$.
 
 \subsection{Entropy}
+fuck it
 
 \section{The Third Law of Thermodynamics}
+\begin{definition}[The Third Law of Thermodynamics]
+    It is not possible to lower the temperature of any system to absolute zero ($T = 0\textrm{K}$) or below in a finite number of steps.
+\end{definition}
 
 
 
