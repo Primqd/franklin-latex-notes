@@ -903,5 +903,60 @@ There are some differences in the interpertation of each step, but the general p
 \end{itemize}
 
 \subsection{Inference for Slope}
+When a scatterplot shows a linear relationship between two quantative variables x and y, we can use least-squares as discussed in Section 3.
+However, if the data comes from a larger population, we cannot immediately say that there is a linear relationship between the two.
+For this, we can use statistical inference to (statistically) find \textbf{if there is a linear relationship between x and y} and \textbf{a confidence interval for the slope.}
+
+\begin{definition}[Population and Sample Regression]
+
+    The population (or true) regression line calculated using \textit{all} values in the population.
+    Written $\mu_y = \alpha + \beta x$, where $\mu_y$ is the mean y-value for the given x.
+
+    Similarly, the sample (or estimated) regression line is calculated using a sample of the population.
+    Written $\hat{y} = a + bx$, where $\hat{y}$ is the estimated mean y-value for a given val of x.
+\end{definition}
+
+It can be shown the sampling distribution of the sample slope b has the following properties:
+\begin{enumerate}
+    \item approximately Normal
+    \item $\mu_b = \beta$ ($b$ is an unbiased estimator of $\beta$)
+    \item $\sigma_b = \frac{\sigma}{\sigma_x \sqrt{n}}$ ($\sigma$ = the stdev of the residuals for the population regression line)
+        \subitem When $\sigma$ is larger, we should expect more variability in $\sigma_b$.
+        \subitem More variability in the explanitory variable (larger $\sigma_x$, more values to draw from)
+        \subitem $\sqrt{n}$ from more sample size = more accurate predict.
+\end{enumerate}
+
+The conditions for regression inference (LINER) are as follows:
+\begin{enumerate}
+    \item \textbf{Linear}: the true relationship between x and y is linear (the data should look \textit{roughly} linear)
+    \item \textbf{Independent}: observations independent of one another, sampling without replacement needs 10\%
+    \item \textbf{Normal}: $\forall x$ the response y varies according to a normal distribution (make graph of residuals and check for skew or outliers)
+    \item \textbf{Equal SD}: $\forall x$ the stdev of y $\sigma$ is the same (make plot of residual plot, check for no patterns)
+    \item \textbf{Random}: data comes from a random sample or randomized experiment
+\end{enumerate}
+
+Once LINER is met, we can calculate the sample regression line via the methods discussed in Section 3.
+Because the sample regression line estimates the population regression line, it makes sense that the stdev of the residuals (s) is estimated by the stdev of the sample residuals.
+(Because s is estimated from the data itself, sometimes it's called the \textit{regression standard error} or \textit{root mean squared (RMS) error}.)
+
+\[s = \sqrt{\frac{(y_i - \hat{y_i})^2}{n - 2}}\]
+
+With this, we can estimate the variability of the sampling distribution of b with the \textit{standard error of the slope} $SE_b$.
+(For reasons I don't fully understand, we replace the denominator with $n - 1$.)
+
+\[SE_b = \frac{s}{s_x \sqrt{n - 1}}\]
+
+$SE_b$ behaves like other standard errors.
+Using it, you can generate a \textbf{t-interval for the slope} (df = n - 2):
+\[\beta \in (b \pm t^{*}SE_b)\]
+Using the interval, estimates for larger changes in x can be obtained by multiplying the critical values by the larger change.
+For example, if you wanted to calculate the interval for x increasing in steps of 1000, you would multiply the critical values by 1000.
+
+Similarly, the standardized test statistic can be calculated for the \textbf{t test for slope} (df = n - 2):
+
+\[t = \frac{b - \beta_0}{SE_b}\]
+
+(nice lil trick) Testing for no association ($r = 0$) is the same as testing for 0 slope ($H_0: \beta_0 = 0$). 
+
 
 \end{document}
