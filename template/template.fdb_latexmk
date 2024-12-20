@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1733631292.48257 "c:/Users/frank/OneDrive - Lake Washington School District/School Files/franklin-latex-notes/template/template.tex" "template.pdf" "template" 1733631293.14456 0
+["pdflatex"] 1734071377.38928 "c:/Users/frank/OneDrive - Lake Washington School District/School Files/franklin-latex-notes/template/template.tex" "template.pdf" "template" 1734071378.06791 0
   "C:/Users/frank/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1728959026 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/frank/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1728957855 11938424 51c8e75b0edb0a77e8ae5d6aa8228c6e ""
   "D:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -29,6 +29,7 @@
   "D:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1247596666 32362 bc3f3eec7ab7d65fe700963d4017d32c ""
   "D:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1247596667 32726 39f0f9e62e84beb801509898a605dbd5 ""
   "D:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "D:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1247596667 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
   "D:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb" 1247596667 36118 fad905eba93cff5bce1e185fe980a177 ""
   "D:/Program Files/MiKTeX/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "D:/Program Files/MiKTeX/tex/generic/atbegshi/atbegshi.sty" 1575571100 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
@@ -78,11 +79,11 @@
   "D:/Program Files/MiKTeX/tex/latex/refcount/refcount.sty" 1576433952 9878 9e94e8fa600d95f9c7731bb21dfb67a4 ""
   "D:/Program Files/MiKTeX/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1657800696 9714 ba3194bd52c8499b3f1e3eb91d409670 ""
   "D:/Program Files/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "c:/Users/frank/OneDrive - Lake Washington School District/School Files/franklin-latex-notes/template/template.tex" 1733631289 5050 9a8617e0c28d25e927a16160467bd718 ""
-  "template.aux" 1733631293 774 a3614cecf634224d82d422770d0b3a2d "pdflatex"
-  "template.out" 1733631293 808 30a25c1778fa054410c5c6adacef63b6 "pdflatex"
-  "template.tex" 1733631289 5050 9a8617e0c28d25e927a16160467bd718 ""
-  "template.toc" 1733631293 407 8cb88e6bc35c1b0b4a597cfeba2b99b8 "pdflatex"
+  "c:/Users/frank/OneDrive - Lake Washington School District/School Files/franklin-latex-notes/template/template.tex" 1734071376 5726 4773128d804705e161d77ad2ded9a7d7 ""
+  "template.aux" 1734071377 875 e081e3070a48cc86d050a01c866ba813 "pdflatex"
+  "template.out" 1734071377 871 9e1981497f6358e36f449d1a672e53a8 "pdflatex"
+  "template.tex" 1734071376 5726 4773128d804705e161d77ad2ded9a7d7 ""
+  "template.toc" 1734071377 467 9db1df0dc0a888894a4c82326a66b0f7 "pdflatex"
   (generated)
   "template.aux"
   "template.log"

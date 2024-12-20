@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.14)  7 DEC 2024 20:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.14)  12 DEC 2024 22:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -259,26 +259,28 @@ Overfull \hbox (48.4983pt too wide) in paragraph at lines 64--64
 
 [3]
 
-[4] (template.aux)
+[4]
+
+[5] (template.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-30>
  ***********
 Package rerunfilecheck Info: File `template.out' has not changed.
-(rerunfilecheck)             Checksum: 30A25C1778FA054410C5C6ADACEF63B6;808.
+(rerunfilecheck)             Checksum: 9E1981497F6358E36F449D1A672E53A8;871.
  ) 
 Here is how much of TeX's memory you used:
- 9202 strings out of 473898
- 140992 string characters out of 5736293
- 531327 words of memory out of 5000000
- 31960 multiletter control sequences out of 15000+600000
+ 9205 strings out of 473898
+ 141018 string characters out of 5736293
+ 531322 words of memory out of 5000000
+ 31961 multiletter control sequences out of 15000+600000
  567179 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,6n,79p,648b,435s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<D:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><D:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on template.pdf (4 pages, 121705 bytes).
+<D:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><D:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on template.pdf (5 pages, 134947 bytes).
 PDF statistics:
- 102 PDF objects out of 1000 (max. 8388607)
- 15 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 116 PDF objects out of 1000 (max. 8388607)
+ 17 named destinations out of 1000 (max. 500000)
+ 49 words of extra memory for PDF output out of 10000 (max. 10000000)
 
