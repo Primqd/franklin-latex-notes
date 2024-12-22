@@ -26,7 +26,7 @@
 
 \tableofcontents
 
-\section{Definition}
+\section{Definitions}
 \begin{definition}[Thermodynamics]
     The branch of physics that analyzes the relation between heat and work. Often, both occur together.
 \end{definition}
@@ -60,7 +60,6 @@
 The third system is often a thermometer; if two objects have the same temperature, then there are in thermal equilibrium.
 In effect, the zeroeth law establishes temperature as the indicator of thermal equilibrium (same temperature = thermal equilibrium)
 \textit{and implies that all parts of a system must be in thermal equilibrium if the system is to have one definable temperature.}
-
 
 \section{The First Law of Thermodynamics}
 
@@ -118,7 +117,7 @@ From the first law of thermodynamics, $\Delta U = Q$ for all isochoric processes
 For ideal gases, assuming constant number of moles, $P = \frac{nRT}{V}$.
 Because pressure is now a function of volume, work can be solved for using the general form of work discussed below:
 
-\[W = \int_{V_i}^{V_f} \frac{nRT}{V} = nRT (\frac{1}{V}\Big|_{V_i}^{V_f}) = nRT\ln(\frac{V_f}{V_i})\]
+\[W = \int_{V_i}^{V_f} \frac{nRT}{V} = nRT (\ln{V}\Big|_{V_i}^{V_f}) = nRT\ln(\frac{V_f}{V_i})\]
 
 Where does the energy for this work originate?
 Since the internal energy of any ideal gas is proportional to its temperature ($U = \frac{3}{2}nRT$ for monatomic ideal gases), internal energy remains constant throughout the process.
@@ -183,7 +182,7 @@ From this, $\Delta W = P\Delta V$, and by the process being adiabatic, $\Delta Q
 
 From the first law:
 
-\[\Delta U = C_v n \Delta T = \Delta Q - \Delta W = 0 - P\Delta V \rightarrow \Delta T = -\frac{P \Delta V}{C_v n}\]
+\[\Delta U = C_v n \Delta T = Q - W = 0 - P\Delta V \rightarrow \Delta T = -\frac{P \Delta V}{C_v n}\]
 
 From the ideal gas law (differiential)
 
@@ -280,7 +279,22 @@ Refrdigerators may be ranked how well they remove heat: that is, the coefficent 
 Similarly, \textit{heat pumps} (devices that uses work to make heat out of cold outside air) may be ranked on how well they generate heat: the coefficent of performance for heat pumps $= \frac{|Q_h|}{|W|}$.
 
 \subsection{Entropy}
-fuck it
+When placing a hot object next to a cold object, heat is transfered to the cold object until both objects are in thermal equilibrium.
+Compare this to using the hot and cold objects to run a heat engine, where work is also done.
+As no work can be done using reservoirs in thermal equilibrium ($e = 1 - \frac{T_C}{T_H} = 0$), this flow of heat causes some \textit{permanent loss of ability to do work}.
+Generally, all irreversible processes cause at least some permanent loss.
+
+More formally, consider the "equation of max efficency", $\frac{Q_C}{Q_H} = \frac{T_C}{T_H}$.
+This can be rearranged to form $\frac{Q_C}{T_C} = \frac{Q_H}{T_H}$.
+The quantity $\frac{Q}{T}$ is \textbf{the change in entropy} $\Delta S$ (SI unit $\frac{J}{K}$, kelvin SPECIFICALLY) for any reversible process at a constant temperature.
+Like internal energy, entropy is a function of state.
+Entropy is negative when heat leaves the object, and positive when heat enters the object.
+The difference between the loss and gain of entropy is the permanent loss of ability to do work.
+\textit{Reversible processes do not cause any entropy loss:} $\Delta S_{universe} = 0$.
+
+\[\Delta S_C + \Delta S_H = +\frac{Q_C}{T_C} - \frac{Q_H}{T_H} = 0\]
+
+
 
 \section{The Third Law of Thermodynamics}
 \begin{definition}[The Third Law of Thermodynamics]
