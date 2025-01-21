@@ -1,0 +1,88 @@
+\documentclass[12pt, a4paper]{article}
+% \usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{hyperref}
+\usepackage{amssymb}
+% \graphicspath{{images/}}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=cyan
+}
+
+\title{Electric Potential Energy and Electric Potential}
+\author{Franklin Chen}
+\date{14 October 2024}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\begin{document}
+\maketitle
+\newpage
+% comment
+
+\tableofcontents
+
+\section{Electric Potential Energy}
+Similar to gravity, the electrostatic force ($F = k|q_1 q_2|/r^2$) is conservative, and thus has a corresponding potential energy.
+Recall that the work done by the gravitational force when a ball falls from a height of $h_I$ to a height of $h_F$ is the difference between the two gravitational potential energies:
+
+\[W_{I \to F} = {\textrm{GPE}}_I - {\textrm{GPE}}_F\]
+
+Analgously, consider a charged particle (charge = $+q_0$) at some point I between two positively and negatively charged points.
+Because of the plate charges, the electric field $\vec{E}$ exerts an electrostatic force $\vec{F} = q_0\vec{E}$ directed towards the negative plate.
+The work done by the electric force moving the charged particle from point I to point F ($W_{I \to F}$) is equal to the difference in electric potential energies at the two points:
+
+\[W_{I \to F} = {\textrm{EPE}}_I - {\textrm{EPE}}_F\]
+
+Because the electrostatic force is conservative, the work $W_{I \to F}$ is a function purely of the initial and final states, regardless of the path taken.
+
+\section{Electric Potential}
+Because the force (and thus the work) exerted on a charged particle is dependent on the magnitude of the charge, it is useful to express the work on a \textbf{per-unit-charge basis}:
+
+\[\frac{W_{I \to F}}{q_0} = \frac{{\textrm{EPE}}_I}{q_0} - \frac{{\textrm{EPE}}_F}{q_0}\]
+
+The quantity $\frac{\textrm{EPE}}{q_0}$ is known as the \textbf{electric potential}:
+
+\begin{definition}[Electric Potential, Potential]
+    The electric potential V at a given point is the EPE of a small test charge $q_0$ at that point divided by the charge itself:
+    (SI units joule/coloumb = volts (V))
+    \[V = \frac{\textrm{EPE}}{q_0}\]
+\end{definition}
+
+Electric potential is often written as the final minus the initial, leading to the following convention:
+
+\[\Delta V = \frac{\Delta \textrm{EPE}}{q_0} = \frac{-W_{I \to F}}{q_0}\]
+
+The potential difference between two points is measured in volts, and is often referred to as \textit{voltage}.
+This is the case for batteries, where the voltage between the positive and negative terminals (indirectly) indicate the rate at which electrons travel from the negative terminal to the positive one.
+
+One \textbf{electron volts} (eV) is the magnitude of the amount by which the potential energy of an electron changes when it moves through a potential difference of one volt.
+Specifically, $1 \textrm{eV} = |q_0 \Delta V| = |(-1.60 \times 10^{-19} \textrm{C}) \times (1.00 \textrm{V})| = 1.60 \times 10^{-19} \textrm{J}$.
+
+Remember that EPE is an energy as well, and also follow the Law of Conservation of Energy.
+
+It should be fairly obvious that positive charges will accelerate from regions of high electric potential (near the positive plate) to regions of lower electric potential (near the negative plate), and vice versa.
+
+\section{Electric Potential created by Point Charges}
+A point charge $+q$ creates an electric potential in the same way as a plate does.
+Consider a test charge $+q_0$ some distance $r_I$ away from the point charge.
+From Coloumb's law, the magnitude of force acting on the test charge is $F = kqq_0/r^2$, where we assume that $q_0$ and $q$ are positive.
+The work done by the electric force as the test charge moves to some further distance $r_F$ can be calculated as follows:
+
+\[W_{I \to F} = \int_{r_I}^{r_F} F(r)dr = \int_{r_I}^{r_F} \frac{kqq_0}{r^2}dr = kqq_0 (-\frac{1}{r} \Big|_{r_I}^{r_F}) = \frac{kqq_0}{r_I} - \frac{kqq_0}{r_F}\]
+
+Thus, the voltage between I and F can be found:
+
+\[\Delta V = \frac{-W_{I \to F}}{q_0} = \frac{kq}{r_F} - \frac{kq}{r_I}\]
+
+As $\lim_{r_F \to \infty}$, we can see $V_I = kq/r_I$. This is the \textbf{potential of a point charge}, often written $V = kq/r$.
+
+The V in this equation does not directly refer to the potential, but rather \textit{the amount by which the potential at a distance r from a point charge differs vs. if the charge wasn't there (at infinity).}
+Note that this equation also includes the sign of the charge; negative potentials indicate that the potential is decreased below the "zero reference value."
+
+Given many point charges, the electric potential at any point is the sum of the potentials of each point charge.
+\end{document}
