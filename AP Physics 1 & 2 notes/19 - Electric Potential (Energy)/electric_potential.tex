@@ -89,10 +89,59 @@ Given many point charges, the electric potential at any point is the sum of the 
 \newpage
 
 \section{Equipotential Surfaces}
-\begin{figure}[t]
+\begin{figure}
     \centering
-    \includegraphics[width=0.75\textwidth]{shitpost.png}
-    \caption{what did you think}
-    \label{fig:trollface}
+    \includegraphics[width=1\textwidth]{equiv.jpg}
+    \caption{Visualizations of the equipotential and electric field lines on a parallel plate capacitor, a single point charge, and an electric dipole.}
+    \label{fig:equiv}
 \end{figure}
+
+\begin{definition}[Equipotential Surface]
+    An imaginary surface on which the electric potential is the same everywhere.
+    There are an infinite number of such surfaces.
+\end{definition}
+
+The relation $V_B - V_A = -W_{A \rightarrow B}/q_0$ suggests that if $V_A = V_B$, as on a equipotential surface, no work is done by the electric force.
+Work is only done when a charge moves between equipotential surfaces.
+
+For single point charges, the equation $V=kq/r$ suggests that the equipotential surfaces for a single point charges are spheres centered at the charge (constant r).
+
+\textit{Electric field lines are everywhere perpendicular to all equipotential surfaces.}
+Electric field lines give the direction of the electric field, outward for a positive test charge.
+If electric field lines weren't perpendicular, then it would be able to project a parallel component of the electric field onto the equipotential field.
+This suggests that a particle moving along that projected field would experience work (due to the electric field) and thus change potential, violating our assumption of a equipotential surface. 
+\textit{This is true for all such equipotential surfaces; even those with multiple charges!}
+
+In Figure \ref{fig:equiv}, the equipotential surfaces are shown in dashed red, while the electric field lines are shown as solid black.
+It can be observed that at all intersection points between the two are always perpendicular.
+
+There is a quantative way to relate the electric field and the equipotential surfaces.
+Consider the parallel plate capacitor in Figure \ref{fig:equiv}.
+It has been shown previously that the electric field between the plates is perpendicular to the plates and is constant everywhere.
+Similarly, it can be shown that the equipotential surfaces must be planes parallel to the capacitor plates (to be perpendicular to the electric field lines).\\
+
+Denote a point on the positive plate p and another point on the negative plate n.
+As shown previously, the potential difference between the plates is equal to
+
+\[V_p - V_n = \frac{W_{p \rightarrow n}}{q_0}\]
+
+Consider a test charge $+q_0$ moving from some point p to point n.
+From the definition of work:
+
+\[W_{p \rightarrow n} = F\Delta s = q_0E\Delta s\]
+
+Substituting this into the equation for the potential difference:
+
+\[V_p - V_n = \frac{q_0E\Delta s}{q_0} = E\Delta s \Rightarrow E = \frac{V_p - V_n}{\Delta s}\]
+
+The quantity $\Delta V / \Delta s$ is known as the \textbf{potential gradient} (units volts/meter).
+The idea of the potential gradient can be applied to any scenario.
+
+When applying the idea to parallel plate capacitors specifically, this is idea is often written as $E=V/d$, where $V = \max(V_p, V_n) - \min(V_p, V_n)$, and $d = s_p - s_n$.
+
+
+
+
+
+
 \end{document}
