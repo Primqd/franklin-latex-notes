@@ -522,6 +522,95 @@ i'm not doin allat
 
 \section{Probability}
 
+Two-way tables and tree diagrams exist, but won't be covered here (cause I'm lazy).
+Also, they should be pretty intuitive anyways.
+
+\subsection{Randomness}
+
+\begin{definition}[Random Process, Probability, Events]
+    A process that generates outcomes purely determined by chance.
+    The proportion of times a given outcome would occur out of an infinitely long series of trials is the probability of that outcome.
+    By definition as a ratio, probabilities range between 0 and 1, with 0 and 1 representing the outcome never and always happening respectively.
+    The probability of a specfic set of outcomes (an event) $A$ is denoted $P(A)$.
+\end{definition}
+
+By definition, as the number of observed trials of a random outcome approaches infinity, the more the ratio of its occurence vs. total trials appraoches the outcome's probability.
+\textbf{This only applies as the number of observed trials approach infinity}.
+This does NOT apply to short term situations; randomness is practically never predictiable in the short-term.
+
+\subsubsection{Simulation}
+
+\begin{definition}[Simulation]
+    An imitation of a random process in a way that reflects a real-life process.
+\end{definition}
+
+To use a simulation:
+\begin{enumerate}
+    \item Describe how to use an artifical random process (eg. rolling dice, using a random number generator) to perform one trial of the simulation, including what to record at the end of each trial.
+    \item Using the description, perform many trials of the simulation.
+    \item Use the results of your simulation to answer the question of interest.
+\end{enumerate}
+
+\subsubsection{Probability Models}
+
+\begin{definition}[Probability Model, Sample Space]
+    A probability model is a description of a random process, consisting of the set of the possible outcomes- the sample space- and their respective probabilities.
+\end{definition}
+
+\begin{definition}[Event]
+    A specific set of outcomes from some random process.
+\end{definition}
+
+\subsection{Rules of Probability}
+Assuming uniform probability, the probability of some event $A$ is
+
+\[P(A) = \frac{\textrm{number of outcomes in event A}}{\textrm{total number of possible outcomes}}\]
+
+As discussed in Section 5.1, the probability of any specific is between 0 and 1.
+For a random process, the probabilities of each event should add up to 1.
+This implies that \textit{the probability that an event does not occur is 1 - the probability that the event does occur}.
+The probability that an event does not occur is known as the \textbf{compliment} of that event, denoted $P(A^C)$ for some event $A$.
+
+The symbols $\cup$ and $\cap$ are the \textbf{union} and \textbf{intersection} between two events.
+$\cup$ and $\cap$ are logically equivelent to OR and AND respectively.
+
+\begin{definition}[Mutually Exclusive (Disjoint) Events]
+    Two events $A$ and $B$ are mutually exclusive or disjoint if they share no outcomes in common: $P(A \cap B) = 0$.
+\end{definition}
+
+\begin{definition}[General Addition Rule]
+    For all events A and B,
+    \[P(A \cup B) = P(A) + P(B) - P(A \cap B)\]
+\end{definition}
+
+\subsection{Conditional Probability}
+
+\begin{definition}[Conditional Probability]
+    The probability that one event occurs given that another event has occured.
+    The conditional probability that event A occurs given that event B has occured is denoted $P(A | B)$.
+\end{definition}
+
+Conditional probability can be calculated as follows:
+
+\[P(A | B) = \frac{\textrm{number of outcomes where A and B occur}}{\textrm{number of outcomes where B occurs}} = \frac{P(A \cap B)}{P(B)}\]
+
+\begin{definition}[General Multiplication Rule]
+    \[P(A \cap B) = P(B) \times P(A | B) = P(A) \times P(B | A) = P(A) + P(B) - P(A \cup B)\]
+\end{definition}
+
+The general multiplication rule can be obtained by multiplying the formula for $P(A | B)$ by $P(B)$ on both sides.
+Intuitively, the probability of both A and B occuring is equal to the probability that B occurs times the probability that A occurs, given that B occurs, and vice versa.
+
+\subsection{Independence}
+
+\begin{definition}[Independence]
+    Two events $A$ and $B$ are independent if knowing one does not help predict the other.
+    Mathematically:
+    \[P(B | A) = P(B | A^C) = P(B), P(A | B) = P(A | B^C) = P(A)\]
+\end{definition}
+
+It can be observed that for independent events, $P(A \cap B) = P(A) \times P(B | A) = P(A) \times P(B)$.
+
 \newpage
 
 \section{Random Variables and Distributions}
