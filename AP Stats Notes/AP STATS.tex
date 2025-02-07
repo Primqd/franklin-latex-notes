@@ -615,6 +615,55 @@ It can be observed that for independent events, $P(A \cap B) = P(A) \times P(B |
 
 \section{Random Variables and Distributions}
 
+\subsection{Random Variables}
+
+\begin{definition}[Random Variable]
+    A "variable" that takes on numerical values based on a random process.
+    Typically notated with capital letters, with specific values notated with lowercase letters.
+\end{definition}
+
+\begin{definition}[Probability Distribution]
+    A description of a random variable's possible values and corresponding probabilities.
+    For discrete random variables, often takes the form of a table.
+\end{definition}
+
+\subsubsection{Discrete Random Variables}
+
+\begin{definition}[Discrete Random Variable]
+    A random variable which has a finite set of distinct possible values.
+    For example, the random variable $X$ = the number of heads when flipping a coin 3 times is discrete.
+\end{definition}
+
+The probability that a random variable $X$ takes on the value $x$ is notated $P(X = x)$.
+Using the above definition of $X$, $P(X = 2) = 3/8$.
+Similarly, we can notate the probability that a random variable takes on a value greater than or less than a certain value: $P(X > x)$ or $P(X \leq x)$.
+
+Using the same techniques as discussed in Section 1, we can analyze the shapes and features of distributions of random variables.
+Typically, graphing the random variable's values with respect to the probabilities should indicate most of its features.
+
+To analyze a random variable's center and variability, we use a weighted mean and standard deviation.
+
+\begin{definition}[Mean and Expected Value of a Discrete Random Variable]
+    The mean or expected value of a discrete random variable $X$ is its average value over many trials of the same process.
+    \[\mu_X = E(X) = \sum x_i p_i\]
+\end{definition}
+
+\begin{definition}[Standard Deviation of a Discrete Random Variable]
+    How much the values of a random variable typically vary from the mean over many trials.
+    The standard deviation of DRV $X$ is the square root of the variance of X:
+
+    \[\sigma_X = \sqrt{\sigma_x^2} = \sqrt{\sum (x_i - \mu_X)^2 p_i}\]
+\end{definition}
+
+The \textit{median} of a DRV is the 50th percentile of its distribution.
+
+
+\subsubsection{Continous Random Variables}
+
+\subsection{Transforming and Combining Random Variables}
+
+\subsection{Binomial and Geometric Random Variables}
+
 \newpage
 
 \section{Sampling Distributions}
