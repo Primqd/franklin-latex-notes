@@ -183,14 +183,14 @@ z-scores provide a way to objectively compare measurements from two distribution
 
 \subsubsection{Transforming Data}
 
-Effect of adding a constant a:
+Effect of adding a constant $a$:
 \begin{itemize}
     \item Adds a to measures of center and location (mean, median, quartiles, min, max)
     \item Does not change measures of variability (range, IQR, stdev)
     \item Does not change the shape of the distribution (percentile; translation along axis)
 \end{itemize}
 
-Effect of multiplying by constant b:
+Effect of multiplying by constant $b > 0$:
 \begin{itemize}
     \item Multiplies measures of center and location by b (mean, median, quartiles, min, max)
     \item Multiplies measures of variability by $|b|$ (range, IQR, stdev)
@@ -627,9 +627,11 @@ It can be observed that for independent events, $P(A \cap B) = P(A) \times P(B |
     For discrete random variables, often takes the form of a table.
 \end{definition}
 
+The \textit{median} of a random variable is the 50th percentile of its distribution.
+
 \subsubsection{Discrete Random Variables}
 
-\begin{definition}[Discrete Random Variable]
+\begin{definition}[Discrete Random Variable DRV]
     A random variable which has a finite set of distinct possible values.
     For example, the random variable $X$ = the number of heads when flipping a coin 3 times is discrete.
 \end{definition}
@@ -643,26 +645,120 @@ Typically, graphing the random variable's values with respect to the probabiliti
 
 To analyze a random variable's center and variability, we use a weighted mean and standard deviation.
 
-\begin{definition}[Mean and Expected Value of a Discrete Random Variable]
+\begin{definition}[Mean and Expected Value of a DRV]
     The mean or expected value of a discrete random variable $X$ is its average value over many trials of the same process.
     \[\mu_X = E(X) = \sum x_i p_i\]
 \end{definition}
 
-\begin{definition}[Standard Deviation of a Discrete Random Variable]
+\begin{definition}[Standard Deviation of a DRV]
     How much the values of a random variable typically vary from the mean over many trials.
     The standard deviation of DRV $X$ is the square root of the variance of X:
 
     \[\sigma_X = \sqrt{\sigma_x^2} = \sqrt{\sum (x_i - \mu_X)^2 p_i}\]
 \end{definition}
 
-The \textit{median} of a DRV is the 50th percentile of its distribution.
-
-
 \subsubsection{Continous Random Variables}
+
+\begin{definition}[Continous Random Variable CRV]
+    A random variable which has an unbounded set of possible values.
+    For example, $X$ = the height of a randomly selected student in centimeters.
+\end{definition}
+
+The probability distribution of a CRV is described using a density curve.
+The probability of a CRV equalling a specific value is zero: its distribution can only be described in intervals (as the area underneath the probability density curve).
+
+\[P(a \leq X \leq b) = P(a < X < b) = \int_{a}^{b} P_{X}(x)dx\]
+
+The mean and standard deviation can be found by considering the distribution itself, as in Chapters 1 and 2.
 
 \subsection{Transforming and Combining Random Variables}
 
+Adding and multiplying constants to random variables has literally the same effects as described in Section 2.1.1. To the word.
+
+For any two random variables $X$ and $Y$:
+
+\[\mu_{X + Y} = \mu_X + \mu_Y\]
+\[\mu_{X - Y} = \mu_X - \mu_Y\]
+
+The standard deviation of a sum or difference can only be calculated if the variables are \textbf{independent}: knowing one value does not help predict the other.
+This allows us to apply the probability multiplication of independent events, which can be used to prove (provided here without futher proof):
+
+\[\sigma_{X + Y} = \sigma_{X - Y} = \sqrt{\sigma_X^2 + \sigma_Y ^2}\]
+
+In words, the variance of $X + Y$ and $X - Y$ are the sum of $X$ and $Y$'s variances individually, given that they are independent.
+This logic extends to any number of random variables.
+
+Note that if variables are Normally distributed, then any sum or difference of them will also be Normally distributed.
+The equations for the mean and stdev discussed here still apply.
+Use \verb|normalcdf| to find the probability of an event between two bounds.
+
 \subsection{Binomial and Geometric Random Variables}
+
+\subsubsection{Binomial Variables}
+
+\begin{definition}[Binomial Variable and Distribution]
+    A random variable that describes the number of one particular outcome out of $n$ independent trials of the same random binary process.
+    Binary variables have 4 conditions, \textbf{BINS}:
+    \begin{itemize}
+        \item \textbf{Binary}: the possible outcomes can be classified as either "success" or "failure."
+        \item \textbf{Independent}: trials are independent- one trial doesn't depend on any of the others.
+        \item \textbf{Number}: $n$ is fixed in advance.
+        \item \textbf{Same probability}: each trial has the same success rate $p$.
+    \end{itemize}
+    The probability distribution of a binary variable is known as a \textbf{binomial distribution}, and is completely described by $n$ and $p$.
+\end{definition}
+
+For a binomial variable B:
+
+\[P(B = x) = {n \choose x}p^x(1-p)^{n - x}\]
+
+${n \choose x}$ is the \textit{binomial coefficent}, and describes the number of ways to arrange $x$ successes among $n$ trials.
+
+\[{n \choose x} = \frac{n!}{x!(n - x)!}\]
+
+\verb|binompdf(n, p, x)| and \verb|binomcdf(n, p, x)| can be used to calculate $P(B = x)$ and $P(B \leq x)$ respectively.
+\textit{Make sure to clearly check whether BINS is satistifed before using binomcdf and binompdf!}
+
+The skew of a binomial distribution is determined by $p$: $p > 0.5$ results in a left-skewed distribution, $p < 0.5$ results in a right-skewed distribution, with $p \approx 0.5$ resulting in a rougly symmetric distribution.
+
+The peak of the distribution occurs at the mean of the distribution, $\mu_B = E(B) = np$.
+Intuitively, over many trials, each individual trial will result in a success with a $p$ proportion.
+
+The stdev of a binomial random variable is harder to prove, but can be shown as $\sigma_B = \sqrt{np(1-p)}$.
+(Intuitively, consider the binomial variable with 1 trial, prob $p$, success = 1 and failure = 0.
+The general binomial distribution can be described as the sum of $n$ of these binomial varibales).
+
+For the purposes of AP Statistics, when taking a random sample of size $n$ from a population size $N$, we treat individual observations as "independent" as long as $n < 0.10N$.
+Beyond 10\%, we can no longer treat individual observations as independent.
+
+As stated in Section 2.2, as $\textrm{lim } n \rightarrow \infty$, approaches the normal distribution with the same mean and stdev.
+For the purposes of AP Statistics, when the expected number of successes and failures are at least 10 ($np \geq 10$ and $n(1-p) \geq 10$), approximations of the biomial distribution as Normal are allowed.
+Intuitively, this ensures that the tails of the distribution are roughly large enough to make up for the missing area in the normal Normal distribution.
+
+\subsubsection{Geometric Variables}
+\begin{definition}[Geometric Random Variables and the Geometric Distribution]
+    A random variable that describes the number of trials needed for a constant-probability independent random process to produce at least one "success."
+    The distribution of a geometric random variable is the geometric distribution, which is fully described by the probability $p$.
+    The possible values for a geometric random variable is $\mathbb{N}$.
+\end{definition}
+
+Let G represent a random geometric variable for the rest of this section.
+It should be fairly obvious that $P(G = x) = (1-p)^{x-1}p$. (you get failures for 1, 2, ... n - 1, then succeed on n).
+
+Similar to \verb|binompdf| and \verb|binomcdf|, \verb|geometpdf| and \verb|geometcdf| (arguements $x$ and $p$) can be used to calculate $P(G = x)$ and $P(G \leq x)$ respectively.
+
+$\mu_G = \frac{1}{p}$. Intuitively, it takes rougly $\frac{1}{p}$ to roll $p$ at least once, per the definition of probability.
+The formula for the stdev of a geometric distribution is significantly more annoying to think about, and is provided here without proof:
+\[\sigma_G = \frac{\sqrt{1 - p}}{p}\]
+
+The distribution of a geometric random variable is always skewed to the right, as the probability of each successive value decreases by $(1 - p)$.
+The distribution itself roughly looks like $y \sim \frac{1}{x}$.
+
+
+
+
+
+
 
 \newpage
 
