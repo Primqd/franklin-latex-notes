@@ -29,21 +29,34 @@
 
 \newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
 
-\declaretheoremstyle[name=Theorem,]{thmsty}
+\declaretheoremstyle[
+    name=Theorem,
+    headpunct=\newline % Forces a newline after theorem title
+]{thmsty}
 \declaretheorem[style=thmsty,numberwithin=section]{theorem}
 \tcolorboxenvironment{theorem}{colback=LightGray}
 
-\declaretheoremstyle[name=Proposition,]{prosty}
+\declaretheoremstyle[
+    name=Proposition,
+    headpunct=\newline
+]{prosty}
 \declaretheorem[style=prosty,numberlike=theorem]{proposition}
 \tcolorboxenvironment{proposition}{colback=LightOrange}
 
-\declaretheoremstyle[name=Principle,]{prcpsty}
+\declaretheoremstyle[
+    name=Principle,
+    headpunct=\newline
+]{prcpsty}
 \declaretheorem[style=prcpsty,numberlike=theorem]{principle}
 \tcolorboxenvironment{principle}{colback=LightGreen}
 
-\declaretheoremstyle[name=Example,]{exsty}
+\declaretheoremstyle[
+    name=Example,
+    headpunct=\newline
+]{exsty}
 \declaretheorem[style=exsty,numberlike=theorem]{example}
 \tcolorboxenvironment{example}{colback=LightBlue}
+
 
 \setstretch{1.2}
 \geometry{
