@@ -25,6 +25,7 @@
 \colorlet{LightGray}{White!90!Periwinkle}
 \colorlet{LightOrange}{Orange!15}
 \colorlet{LightGreen}{Green!15}
+\colorlet{LightBlue}{Cyan!30}
 
 \newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
 
@@ -39,6 +40,10 @@
 \declaretheoremstyle[name=Principle,]{prcpsty}
 \declaretheorem[style=prcpsty,numberlike=theorem]{principle}
 \tcolorboxenvironment{principle}{colback=LightGreen}
+
+\declaretheoremstyle[name=Example,]{exsty}
+\declaretheorem[style=exsty,numberlike=theorem]{example}
+\tcolorboxenvironment{example}{colback=LightBlue}
 
 \setstretch{1.2}
 \geometry{
@@ -91,6 +96,10 @@
 \begin{principle}
     This is a principle.
 \end{principle}
+
+\begin{example}[test] % new line
+    this is an example
+\end{example}
 
 % Maybe I need to add one more part: Examples.
 % Set style and colour later.
