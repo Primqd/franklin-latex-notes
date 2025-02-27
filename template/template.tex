@@ -1,137 +1,121 @@
-\documentclass[12pt, a4paper]{article}
-% \usepackage{mathtools}
+\documentclass{article}
+
+\usepackage{amsmath, amsthm, amssymb, amsfonts}
+\usepackage{thmtools}
 \usepackage{graphicx}
-\usepackage{amsthm}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{float}
 \usepackage{hyperref}
-\usepackage{amssymb}
-\graphicspath{{images/}}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{framed}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tcolorbox}
 
 \hypersetup{
     colorlinks=true,
-    linkcolor=blue,
+    linkcolor=black,
+    citecolor=blue,
     urlcolor=cyan
 }
 
-\title{Work and Energy Notes}
-\author{Franklin Chen}
-\date{14 October 2024}
+\graphicspath{{images/}}
 
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}
+\colorlet{LightGray}{White!90!Periwinkle}
+\colorlet{LightOrange}{Orange!15}
+\colorlet{LightGreen}{Green!15}
+
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+
+\declaretheoremstyle[name=Theorem,]{thmsty}
+\declaretheorem[style=thmsty,numberwithin=section]{theorem}
+\tcolorboxenvironment{theorem}{colback=LightGray}
+
+\declaretheoremstyle[name=Proposition,]{prosty}
+\declaretheorem[style=prosty,numberlike=theorem]{proposition}
+\tcolorboxenvironment{proposition}{colback=LightOrange}
+
+\declaretheoremstyle[name=Principle,]{prcpsty}
+\declaretheorem[style=prcpsty,numberlike=theorem]{principle}
+\tcolorboxenvironment{principle}{colback=LightGreen}
+
+\setstretch{1.2}
+\geometry{
+    textheight=9in,
+    textwidth=5.5in,
+    top=1in,
+    headheight=12pt,
+    headsep=25pt,
+    footskip=30pt
+}
+
+% ------------------------------------------------------------------------------
 
 \begin{document}
+
+% ------------------------------------------------------------------------------
+% Cover Page and ToC
+% ------------------------------------------------------------------------------
+
+\title{ \normalsize \textsc{}
+		\\ [2.0cm]
+		\HRule{1.5pt} \\
+		\LARGE \textbf{\uppercase{Template Title}
+		\HRule{2.0pt} \\ [0.6cm] \LARGE{Subtitle} \vspace*{10\baselineskip}}
+		}
+\date{}
+\author{\textbf{Author} \\ 
+		Who? \\
+		Where? \\
+		When?}
+
 \maketitle
 \newpage
-% comment
 
 \tableofcontents
-
-\section{What is Work?}
-
-\begin{definition}[Work]
-Energy transferred to or from an object via the application of force along displacement. Work is equal to the dot product of force and displacement:
-\[W = \vec{F} \cdot{} \vec{s} = ||F|| * ||s|| * \cos(\theta)\]
-
-The SI unit for work is $\mathrm{Newtons \cdot{} Meters = Joules}$ (J).
-\end{definition}
-The second definition $W = ||F|| * ||s|| * \cos(\theta)$ can be obtained by the definition of the dot product, where $\theta$ represents the angle between the force and displacement vectors.
-
-Geometrically, the defintion of work can be thought of as the component of the force vector that has the same direction as the displacement vector multiplied by the displacement vector.
-
-\emph{No work does not imply no force or no displacement.} The definition of work suggests that if the entire force is perpendicular to the displacement, \emph{no work is done} (by the perpendicular component of the force)
-
-Work can also be negative, depending on whether the component of the force points in the same or opposite direction as the displacement. For example, a weight lifter lowering a barbell at a constant velocity supplies force upward (to counteract the force of gravity), yet the net displacement is downward, causing negative work.
-
-Note this definition of work only works for \emph{constant forces}. We can use intergration to find the net work for variable forces:
-
-\[W_{ab} = \int_{a}^{b} \mathrm{\vec{F} \, \vec{ds}} = \int_{a}^{b} \mathrm{F\cos{\theta}\, ds}\]
 \newpage
 
-\section{Kinetic Energy}
-In physics, whenever a net force performs work on an object, there is always a result from the effort; a change in the \emph{kinetic energy} of the object. The relationship that relates work to kinetic energy is known as the \emph{work-energy theorem.}\newline
+% ------------------------------------------------------------------------------
 
-Multiplying Newton's Second Law $\sum F = ma$ by displacement \emph{s} yields
+\section{Examples}
 
-\[(\sum F)s = mas\]
+\begin{theorem}
+    This is a theorem.
+\end{theorem}
 
-\emph{as} can be related to $v_i$ and $v_f$ via the equation $v_f^2 = v_i^2 + 2as$:
+\begin{proposition}
+    This is a proposition.
+\end{proposition}
 
-\[as = \frac{1}{2}(v_f^2 - v_i^2)\]
+\begin{principle}
+    This is a principle.
+\end{principle}
 
-This definition of \emph{as} can be substituted into the first equation to yield the \emph{work-energy theorem}:
+% Maybe I need to add one more part: Examples.
+% Set style and colour later.
 
-\begin{definition}[Work-Energy Theorem]
-\[W = \frac{1}{2}mv_f^2 - \frac{1}{2}mv_i^2\]
-When a net external force does work \emph{W} on an object, the work is equal to the difference between the final and initial kinetic energy. 
-\end{definition}
+\subsection{Pictures}
 
-As implied by the work-energy theorem, the quantity $\frac{1}{2}\mathrm{(mass)(velocity)^2}$ is known as \emph{kinetic energy}:
-
-\begin{definition}[Kinetic Energy]
-The kinetic energy \textbf{KE} of an object with mass $m$ and $v$ is given by
-\[\mathrm{KE} = \frac{1}{2}mv^2\]
-The SI unit for kinetic energy is the Joule.
-\end{definition}
-
-Note the work-energy theorem applies to \textbf{any} scenario where an object changes its velocity (and as such, its kinetic energy), as work \emph{must} be done to accelerate (or deccelerate) the object from initial speed $v_i$ to a final speed $v_f$. 
-
-\newpage
-
-\section{Gravitational Potential Energy}
-\subsection{Work done by Gravity}
-Using the equation $W = ||F|| * ||s|| * \cos(\theta)$, for an object dropping down due to gravity, as the only force acting on it is its weight $w = mg$ (assuming the objects are relatively close to earth),
-its displacement is equal to $h_0 - h_f$, and both weight and displacement are in the same direction, its work is equal to
-
-\[W_{grav} = mg(h_0 - h_f)\]
-
-Note this equation is valid for \emph{any path} between the initial and final heights, \emph{regardless of any curvature in the path} (i.e. throwing the ball up).
-
-\subsection{Gravitational Potential Energy}
-An object may posess energy by virtue of its position relative to the earth: it may be able to change its potential energy into kinetic energy by dropping.
-This "potential" energy is known as \emph{gravitational potential energy}.
-
-\begin{definition}[Gravitational Potential Energy (PE)]
-    The energy that an object of mass $m$ has by virtue of its position relative to the surface of the earth. That position is measured by the height $h$ of the object relative to an
-    abritary zero value:
-
-    \[\mathrm{PE} = mgh\]
-
-    The SI unity for PE is the Joule.
-\end{definition}
-
-PE is derived from the difference between two potential energies: that is, $W_{grav} = mgh_0 - mgh_f$.
-Note that the arbitary zero value can be defined anywhere, as long as both the initial and final heights are measured relative to that zero.
-
-\section{piss}
-
-($\sigma_x$ = standard deviation of data set x)
-
-\[\sum (y - 3)^2 = 2775, \sum y = 105, \sigma_y = 13\]
-
-\[\sum y = \sum(y - a) + na \rightarrow \sum (y - 3) = \sum y - 3n\]
-
-\[\sigma_y = \sigma_{y - 3}\]
-
-\[(\sigma_y)^2 = (\sigma_{y - 3})^2\]
-
-\[\frac{\sum (y - 3)^2}{n} - (\frac{\sum{(y - 3)}}{n})^2 = \sigma_y^2\]
-
-\[\frac{\sum (y - 3)^2}{n} - (\frac{\sum y - 3n}{n})^2 = \sigma_y^2\]
-
-\[\frac{\sum (y - 3)^2}{n} - \frac{(\sum y - 3n)^2}{n^2} = \sigma_y^2\]
-
-\[n\sum (y - 3)^2 - (\sum y - 3n)^2 = \sigma_y^2n^2\]
-
-Expand $(\sum y - 3n)^2$. Substitute values for sums and stdev squared. Rearange to form quadratic in terms of n and solve.
-
-test
-
-\section{lorem ipsum or some bullshit}
-\begin{figure}[t]
-    \centering
-    \includegraphics[width=0.75\textwidth]{shitpost.png}
-    \caption{what did you think}
-    \label{fig:trollface}
+\begin{figure}[htbp]
+    \center
+    \includegraphics[scale=0.06]{shitpost.png}
+    \caption{Sydney, NSW}
 \end{figure}
+
+\subsection{Citation}
+
+This is a citation\cite{ctan}.
+
+\newpage
+
+% ------------------------------------------------------------------------------
+% Reference and Cited Works
+% ------------------------------------------------------------------------------
+
+\bibliographystyle{IEEEtran}
+\bibliography{references.bib}
+
+% ------------------------------------------------------------------------------
 
 \end{document}

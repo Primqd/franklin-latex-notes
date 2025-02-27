@@ -5,6 +5,8 @@
 **/*.synctex.gz
 **/*.toc
 **/*.log
+**/*.bbl
+**/*.blg
 
 # for my homework lol
 **/*.csv
