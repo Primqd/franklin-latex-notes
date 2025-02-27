@@ -26,6 +26,7 @@
 \colorlet{LightOrange}{Orange!15}
 \colorlet{LightGreen}{Green!15}
 \colorlet{LightBlue}{Cyan!30}
+\colorlet{LightRed}{Red!30}
 
 \newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
 
@@ -56,6 +57,13 @@
 ]{exsty}
 \declaretheorem[style=exsty,numberlike=theorem]{example}
 \tcolorboxenvironment{example}{colback=LightBlue}
+
+\declaretheoremstyle[
+    name=Definition,
+    headpunct=\newline
+]{defsty}
+\declaretheorem[style=defsty,numberlike=theorem]{definition}
+\tcolorboxenvironment{definition}{colback=LightRed}
 
 
 \setstretch{1.2}
@@ -113,6 +121,10 @@
 \begin{example}[test] % new line
     this is an example
 \end{example}
+
+\begin{definition}[defintion]
+    this defines something
+\end{definition}
 
 % Maybe I need to add one more part: Examples.
 % Set style and colour later.
