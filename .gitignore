@@ -7,6 +7,6 @@
 **/*.log
 **/*.bbl
 **/*.blg
-
+**/*.thm
 # for my homework lol
 **/*.csv
