@@ -20,6 +20,8 @@
     urlcolor=cyan
 }
 
+\DeclareMathOperator{\spn}{span}
+
 \graphicspath{{images/}}
 
 \colorlet{LightGray}{White!90!Periwinkle}
@@ -261,7 +263,126 @@ The following is quite useful, and is provided without proof:
     Any $n$ vectors that span $\mathbb{R}^n$ must be linearly independent.
 \end{theorem}
 
+\newpage
+
 \section{Projections}
+\begin{definition}[Projection]
+    The \textbf{projection} of some vector $\vec{b}$ onto a subspace $A$ is the vector $\vec{p}$ such that $\vec{p} \in \spn(A)$ and $|\vec{p} - \vec{b}|$ is minimized.
+\end{definition}
+
+\begin{example}[Projections as Components]
+    Suppose $\vec{b} = (2,3,4)$.
+    The projection of $\vec{b}$ onto the z-axis is the "shadow of $\vec{b}$ on the z-axis": $\vec{b}_z = (0,0,4)$.
+    Similarly, the projection of $\vec{b}$ onto the xy-plane is the "shadow of $\vec{b}$ on the xy-plane": $\vec{b}_{xy} = (2, 3, 0)$.
+
+    Such projections have matrices associated with them.
+    Generally, the projections of a vector onto a line will have a rank one matrix associated, and a projection onto a plane a rank two matrix associated.
+    Projection matricies should generally satisfy $\vec{p} = P \vec{b}$. For this example:
+
+    \[P_{z} = \begin{bmatrix}
+        0& 0& 0\\
+        0& 0& 0\\
+        0& 0& 1
+    \end{bmatrix}\]
+
+    \[P_{xy} = \begin{bmatrix}
+        1& 0& 0\\
+        0& 1& 0\\
+        0& 0& 0
+    \end{bmatrix}\]
+
+    Generally, \textbf{we will be projecting vectors onto the column space of some arbitrary matrix $A$}.
+    In this case, these matrices are nice because we're projecting onto the core axes and planes.
+    Keep in mind, often, this projection will be much nastier.
+
+    \[A_{z} =\begin{bmatrix}
+        0\\
+        0\\
+        1
+    \end{bmatrix}\]
+
+    \[A_{xy} = \begin{bmatrix}
+        1& 0\\
+        0& 1\\
+        0& 0\\
+    \end{bmatrix}\]
+
+\end{example}
+
+\newpage
+
+\subsection{Projection onto a Line}
+\begin{figure}[htbp]
+    \center
+    \includegraphics[scale=0.2]{projection.png}
+    \caption{The projection of $\vec{y}$ onto $\vec{x}$, denoted $\bar{y}$. Ideally, we want to minimize $\epsilon = \bar{y} - \vec{y}$.}
+\end{figure}
+
+Suppose we are given two vectors $\vec{x}$ and $\vec{y}$ in $\mathbb{R}^m$, and we want to find the projection $\bar{y}$ on the line $\vec{x}$ such that $\vec{y}$ and its projection are as close as possible.
+\textbf{The key is orthogonality}: the line connecting $\vec{y}$ and $\bar{y}$ ($\epsilon$) is \textit{perpendicular} to $\vec{x}$.
+
+The projection is some multiple of $\vec{x}$: $\bar{y} = a \vec{x}$.
+$\epsilon = \bar{y} - \vec{y} = a \vec{x} - \vec{y}$ is perpendicular to $\vec{x}$, so:
+
+\[\vec{x} \cdot (a \vec{x} - \vec{y}) = 0\]
+
+\[= a \vec{x} \cdot \vec{x} - \vec{y} \cdot \vec{x}\]
+
+\[\implies a = \frac{\vec{x} \cdot \vec{y}}{\vec{x} \cdot \vec{x}} = \frac{(\vec{x})^T \vec{y}}{(\vec{x})^T \vec{x}}\]
+
+\[\implies \bar{y} = a \vec{x} = \frac{(\vec{x})^T \vec{y}}{(\vec{x})^T \vec{x}} \vec{x}\]
+
+This provides an explicit formula for the projection $\bar{y}$, without dealing with any nasty trig functions.
+It is provided without proof that this equation for projection lines up with the traditional trigonometric way of finding projections.
+
+The general \textbf{projection matrix} is also visible in this equation.
+If $\bar{y} = a \vec{x} = P \vec{y}$, then, by rearranging the fraction (bring up $\vec{x}$ and put down $\vec{y}$):
+
+\[P = \frac{\vec{x} (\vec{x})^T}{(\vec{x})^T \vec{x}}\]
+
+$P$ is a column times row, so it is a $m \times m$ matrix \textit{of rank one} (as we are projecting onto a one-dimensional subspace: the line through $\vec{x}$).
+
+Various remarks about $P$:
+\begin{itemize}
+    \item Because $P$ is defined using the \textit{line} through $\vec{x}$, only the \textbf{direction} of $\vec{x}$ matters: changing the magnitude of $\vec{x}$ changes nothing.
+    \item $P^n = P$: projecting multiple times onto the same line does nothing.
+    \item (?) The sum of the diagonal of $P$ equals 1.
+    \item $I - P$ is a projection onto the line through $\epsilon$: the perpendicular subspace.
+\end{itemize}
+
+\subsection{Projection onto a Subspace}
+Now, instead of projecting a vector $\vec{y}$ onto another vector $\vec{x}$, we want to project onto a \textbf{subspace}.
+We want to find the "closest" vector to a target vector $\vec{b}$ within the subspace.
+In other words: \textbf{find the combination of basis vectors $\bar{x}_1 \vec{a}_1 + \cdots + \bar{x}_n \vec{a}_n$ that is closest to the target vector}.
+
+When $n = 1$, this is projection onto a line.
+However, in general, we are projecting onto an linearly independent matrix $A$: we are looking for the particular $\vec{p} = A \bar{x}$, such that $\vec{p}$ is closest to $\vec{b}$.
+We solve this problem in three steps: finding $\bar{x}$, finding the projection $\vec{p} = A \bar{x}$, and finding the matrix $P$.
+
+Similar to the $n = 1$ case, \textbf{the key is in orthogonality}: the error vector $\vec{b} - A \bar{x}$ is \textit{perpendicular} to the column space of $A$. ($\vec{b} - A \bar{x}$ is in the left nullspace of $A$).
+Mathematically:
+
+\[\begin{matrix}
+    (\vec{a}_1)^T (\vec{b} - A \bar{x}) = 0 \\
+    \vdots \\
+    (\vec{a}_n)^T (\vec{b} - A \bar{x} = 0)
+\end{matrix}\]
+
+The coefficents $(\vec{a}_n)^T$ can be extracted out as $A^T$.
+Thus, the $n$ equations are exactly $A^T (\vec{b} - A \bar{x}) = \vec{0}$.
+Or, in another form, $A^T A \bar{x} = A ^ T \vec{b}$.
+(???) $A^T A$ is $n \times n$ and invertible.
+
+This equation allows us to derive $\bar{x}$ as $\bar{x} = (A^T A) ^ {-1} A^T \vec{b}$.
+From this, the projection of $\vec{b}$ onto the subspace is $\vec{p} = A \bar{x} = A (A^T A) ^ {-1} A^T \vec{b}$.
+It can be observed that $P = A (A^T A) ^ {-1} A^T$.
+It is provied without proof that this alligns with the formula derived for $n = 1$.
+
+\subsection{random other things}
+The matrix $A$ is rectangular: $A^-1$ doesn't exist.
+Don't try to rearrange the projection matrix.
+
+$A^T A$ is invertible, square, symmetric iif the columns of $A$ are linearly independent. there's a prooof but i'm too lazy to put it
 
 \section{Least Squares Approximations}
 
