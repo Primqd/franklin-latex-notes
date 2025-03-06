@@ -371,12 +371,43 @@ Mathematically:
 The coefficents $(\vec{a}_n)^T$ can be extracted out as $A^T$.
 Thus, the $n$ equations are exactly $A^T (\vec{b} - A \bar{x}) = \vec{0}$.
 Or, in another form, $A^T A \bar{x} = A ^ T \vec{b}$.
-(???) $A^T A$ is $n \times n$ and invertible.
 
 This equation allows us to derive $\bar{x}$ as $\bar{x} = (A^T A) ^ {-1} A^T \vec{b}$.
 From this, the projection of $\vec{b}$ onto the subspace is $\vec{p} = A \bar{x} = A (A^T A) ^ {-1} A^T \vec{b}$.
 It can be observed that $P = A (A^T A) ^ {-1} A^T$.
 It is provied without proof that this alligns with the formula derived for $n = 1$.
+
+\subsubsection{Alternate Calculation for a projection}
+From above, $A^T (\vec{b} - A \bar{x}) = \vec{0}$.
+This implies that $\vec{b} - A \bar{x}$ is in the left nullspace.
+Denoting the left nullspace matrix $A_{\perp}$, $\vec{b} - A \bar{x} = A_{\perp} \bar{y} \rightarrow \vec{b} = A \bar{x} + A_{\perp} \bar{y}$.
+We can combine this into a segemented dot product:
+
+\[
+\begin{bmatrix} % matrix matrix
+    A& A_{\perp}
+\end{bmatrix}
+\begin{bmatrix} % bar matrix
+    \bar{x} \\
+    \bar{y}
+\end{bmatrix}
+=
+\vec{b}
+\]
+
+We can then use RREF to find $\bar{x}$, and calculate the projection as $A \bar{x}$.
+This method also provides $\bar{y}$, which captures the part of $\vec{b}$ not captured by the projection: $A_{\perp} \bar{y}$.
+(this can also be observed in the formula for $\vec{b}$ as the orthogonal component!)
+
+So, to find the projection $\vec{p}$ from a vector $\vec{p}$ on a subspace $A$:
+\begin{enumerate}
+    \item Use RREF to find the basis of the nullspace of $A^T$. Use these as the columns for $A_{\perp}$.
+    \item Use RREF to solve the segemented matrix equation for $\bar{x}$ and $\bar{y}$.
+    \item Calculate $\vec{p} = A \bar{x}$. If needed, calculate the error as $A_{\perp} \bar{y}$.
+\end{enumerate}
+
+
+
 
 \subsection{random other things}
 The matrix $A$ is rectangular: $A^-1$ doesn't exist.
@@ -385,6 +416,7 @@ Don't try to rearrange the projection matrix.
 $A^T A$ is invertible, square, symmetric iif the columns of $A$ are linearly independent. there's a prooof but i'm too lazy to put it
 
 \section{Least Squares Approximations}
+
 
 \section{Orthogonal Bases and Gram-Schmidt}
 \cite{ctan}
