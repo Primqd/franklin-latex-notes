@@ -823,10 +823,52 @@ Because $\hat{p} = X/n = (1/n)X$, the mean and the stdev of the sampling distrib
 \[\mu_{\hat{p}} = \frac{np}{p} = p\]
 \[\sigma_{\hat{p}} = \frac{1}{n}\sqrt{np(1-p)} = \sqrt{\frac{np(1-p)}{n^2}} = \sqrt{\frac{p(1-p)}{n}}\]
 
-Keep in mind the 10\% condition (for roughly consistent stdev) and large counts condition for Normality when using these formulas.
+Keep in mind the 10\% condition (for roughly consistent stdev) when using these formulas.
+Note that for distributions like this, if $np \geq 10$ and $n(1-p) \geq 10$ (\textit{large counts condition}), then the sample distribution is approximately Normal.
 
+Similar to other distributions, they can be combined with one another.
+Assuming independent samples (to combine variances) and observations (to ensure stdev), for the sampling distribution of $\hat{p}_1 \pm \hat{p}_2$:
+\begin{itemize}
+    \item $\hat{p}_1 \pm \hat{p}_2$ is approximately Normal if both $\hat{p_1}$ and $\hat{p_2}$ are also approximately Normal: when large counts conditions is satisfied for both distributions independently.
+    \item $\mu_{\hat{p}_1 \pm \hat{p}_2} = p_1 \pm p_2$
+    \item Variances sum, so $\sigma_{\hat{p}_1 \pm \hat{p}_2} = \sqrt{\sigma^2_{\hat{p}_1} + \sigma^2_{\hat{p}_2}} = \sqrt{\frac{p_1 (1 - p_1)}{n_1} + \frac{p_2 (1 - p_2)}{n_2}}$
+\end{itemize}
 
 \subsection{Sample Mean Distributions}
+The sampling distribution of the mean $\bar{x}$ is quite similar to that of the proportion distribution.
+
+Suppose B = independent random binomial variable. Then:
+
+\[\bar{x} = \frac{1}{n} (\sum B_i) = \frac{1}{n} (T)\]
+
+\[\mu_T = \sum \mu_{B_i} = \sum {\mu} = n \mu\]
+
+\[\sigma^2_T = \sum \sigma^2_{B_i} = n\sigma^2 \rightarrow \sigma_T = \sigma \sqrt{n}\]
+
+\[\mu_{\bar{x}} = \frac{1}{n} \mu_T = \mu\]
+
+\[\sigma_{\bar{x}} = \frac{1}{n} \sigma_T = \frac{\sigma}{\sqrt{n}}\]
+
+The formula for the stdev is precisely true if sampling with replacement.
+If sampling without replacement, the formula is practically correct so long as the 10\% condition is followed.
+\textit{Unlike other distributions, this is true no matter the shape of the original population distribution.}
+
+When sampling from a Normal population, then the distribution of $\bar{x}$ will also be Normal.
+Interestingly, \textit{no matter the shape of the original distribution}, as sample size increases, the distribution of sample means approaches the Normal distribution.
+This is the \textbf{central limit theorem}: when the sample size is sufficently large, the sample distribution of the sample mean will always be approximately Normal.
+While $n \geq 30$ is suggested for most cases, this number varies on the true distribution: if the distribution is abnormal enough, then a higher sample size may be needed to safely consider it as Normal.
+If not normal, then the sampling distribution will contain some characteristics of the population distribution, notably skew.
+
+\textbf{DO NOT BLINDLY ASSUME THE QUESTIONS WILL BE NICE}: often, they will have samples with $n < 30$, which you need to graph manuallly to check for Normality.
+
+Assuming independent samples and observations, for the sampling distribution of $\bar{x}_1 \pm \bar{x}_2$:
+\begin{itemize}
+    \item The sampling distribution of $\bar{x}_1 \pm \bar{x}_2$ is approximately Normal if both the constituent distributions are approximately Normal.
+    \item $\mu_{\bar{x}_1 \pm \bar{x}_2} = \mu_1 - \mu_2$
+    \item Assuming 10\%: $\sigma_{\bar{x}_1 \pm \bar{x}_2} = \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}$
+\end{itemize}
+
+:thumbsup:
 
 \newpage
 
