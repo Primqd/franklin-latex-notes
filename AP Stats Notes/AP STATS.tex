@@ -873,11 +873,73 @@ Assuming independent samples and observations, for the sampling distribution of 
 \newpage
 
 \section{Confidence Intervals}
+Here, we apply the concepts from the previous sections but in reverse: using statistics to find a parameter.
+
+\subsection{Basics of Confidence Intervals}
+\begin{definition}[Point Estimator]
+    A statistic that provides an estimate for a population parameter.
+    The value of the statistic is known as the \textbf{point estimate.}
+\end{definition}
+
+Ideal point estimators, like the mean and proportion, will have little bias and variability.
+If you only had one sample out of a population, your best guess for the population mean or proportion would be the sample mean and proportion.
+
+\textbf{Confidence Intervals} use this statistic and account for sampling variability, generating a range of plausible (not suprising) values for the parameter.
+Confidence intervals are determined by a \textbf{confidence level}.
+To interpet a C\% confidence interval for an unknown parameter: "We are C\% confident that the interval from $x$ to $y$ captures (parameter in context)."
+Informally, over many such samples, the confidence interval will contain the true parameter C\% of the time.
+\textbf{The confidence level does NOT tell us the probability that a particular confidence interval captures the popularion parameter.}
+
+Confidence intervals generally take on the form (point estimate - margin of error, point estimate + margin of error), where the \textbf{margin of error} represents how far, at most, we expect the point estimate to vary from the population parameter.
+More specifically, the margin of error = (critical value) $\cdot$ (stdev of statistic).
+The critical value is a multiplier that makes the interval wide enough for the stated capture rate.
+Generally, the margin of error decreases with a \textbf{lower confidence level} or a greater sample size.
+
+Once again: if the data is biased, so will the results!
+
+If asked to calculate a sample interval:
+\begin{itemize}
+    \item \textbf{STATE}: state the parameter you are estimating and the confidence level (typicall 95\%)
+    \item \textbf{PLAN}: identify the appropriate inference method and check conditions.
+    \item \textbf{CALCULATE}: if conditions are met, perform calculations.
+    \item \textbf{CONCLUDE}: interpet your interval in the context of the problem. 
+\end{itemize}
+
+\subsection{Population Proportion Confidence Intervals}
+
+Using the general form of a confidence interval discussed above, we find the formula for a \textbf{one-sample z interval for a population proportion}:
+
+\[\hat{p} \pm z^{*} \sqrt{\frac{\hat{p} (1 - \hat{p})}{n}}\]
+
+The quantity $\sqrt{\frac{\hat{p} (1 - \hat{p})}{n}}$ is known as the \textbf{standard error (SE)}.
+The standard error is our best approximate for the standard deviation of the population- note that the SE is the same as the population stdev formula but with $\hat{p}$ instead.
+
+To calculate the critical value $z^{*}$, we want to find the value such that C\% of the area under the statistic's standard distribution curve lays between ($-z^{*}, z^{*}$).
+Because we know the population statistic distribution is Normal, we use the standard Normal curve to find the critical value.
+For example, if we wanted to generate a 95\% confidence interval for a proportion: we want the area in the tails = 0.05, and via symmetry the area in one of the tails = 0.025, so we should use the critical value $z^{*} = |\textrm{normalcdf}(area = 0.025, \mu = 0, \sigma = 1)| \approx 1.960$.
+
+If asked to calculate the sample size for a desired margin of error for a proportion, pretend you know the sample proportion ($\hat{p} = 0.5$ or set value based on precedent) set up the following equation and solve for $n$.
+\[z^{*} \sqrt{\frac{\hat{p} (1 - \hat{p})}{n}} \leq ME\]
+
+Similar to other proportion tests, the one-sample z interval for a population proportion requires random sampling (and 10\% if sampling without replacement) and large counts ($n\hat{p} \geq 10, n(1- \hat{p}) \geq 10$) before accuracy is decently ensured.
+
+\subsection{Differences in Population Proportion Confidence Intervals}
+If two samples each individually satisfy the requirements for a one-sample z interval for a population proportion, then the \textbf{two-sample z interval for a difference between two proportions} is as follows:
+
+\[(\hat{p}_1 - \hat{p}_2) \pm z^{*} \sqrt{
+    \frac{\hat{p}_1 (1 - \hat{p}_1)}{n_1} +
+    \frac{\hat{p}_2 (1 - \hat{p}_2)}{n_2}
+}\]
+
+A common you might see with this is determining whether two things are correlated in an experiment.
+\textit{If the confidence interval contains 0, then you do not have convincing evidence of a correlation.}
+
+
 
 \newpage
 
 \section{Significance Tests}
-\textbf{Significance Tests} are like the opposite of confidence intervals. Instead of using a statistic to find a parameter, significance tests use statistics to test claims about a parameter.
+\textbf{Significance Tests} are similar to confidence intervals. Instead of using a statistic to find a parameter, significance tests use statistics to test claims about a parameter.
 
 \begin{definition}[Significance Test]
     A formal procedure for using observed statistics in order to decide between to competing claims (\textit{hypotheses}) about parameters.
