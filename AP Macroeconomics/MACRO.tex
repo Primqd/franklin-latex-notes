@@ -28,6 +28,8 @@
 
 \newpage
 
+pro tip: any economic term with "real" = adjusted for inflation.
+
 \section{Intro to Economics}
 Corresponds to Chapter 2: "The Discipline of Economics."
 
@@ -410,8 +412,113 @@ Therefore, some values will be indeterminate- see the table below.
 
 \newpage
 
-\section{National Economic Accounts}
+\section{Gross Domestic Product}
 Corresponds to Chapter 12: "The National Economic Accounts."
+
+\subsection{What is GDP?}
+\begin{definition}[Gross Domestic Product (GDP)]
+    A measure of the dollar value of production within a nation's borders.
+    Generally speaking, bigger GDP = healther economy.
+    For 2021, USA's GDP was estimated around \$23.0 trillion.
+\end{definition}
+
+Broadly speaking, GDP can be calculated as follows:
+\begin{enumerate}
+    \item A representative surveys the major suppliers and retailers of a product.
+    \item Through this survey, an estimate for the total number of products produced and their average value is obtained.
+    \item Number of products produced $\times$ average product price $\approx$ GDP for that specific product.
+    \item Total GDP = $\sum$ GDP for all products
+\end{enumerate}
+
+In step (3), only considering the total number of products \textit{sold} yields the \textit{final sales} metric.
+This is \textbf{NOT} the GDP.
+
+\subsection{Estimation Techniques}
+In practice, there are many complications with the process discussed above.
+Different estimation techniques account for these complications, but often introduce their own flaws.
+In theory, all estimates should have the same value, but this is often not the case.
+
+\subsubsection{Expenditures}
+Rather than considering individual products, the \textbf{expenditure} approach breaks down GDP into several expenditure categories, which are calculated individually and summed together.
+
+\begin{itemize}
+    \item \textbf{Consumption Expenditures} refer to all the goods and services produced and sold to households.
+    \item \textbf{Government Expenditures} refer to all goods and services produced and sold to local, state, and federal governments. Governments often buy products that households will not (eg. fighter jets) or products in quantites that differ from households (eg. high-end computers)
+    \item \textbf{Investment Expenditures} (sometimes just "investment") refer to all capital goods and services, including plants, equipments, residential construction, and final sales (see section 4.1). This category mainly consists of independent companies/firms.
+    \item \textbf{Exports and Imports}: many goods may be produced here and sold abroad, or goods may be purchased from abroad. As imports are produced outside a country's borders (not part of GDP), imports are subtracted from exports to get \textit{net exports}.
+\end{itemize}
+
+The expenditure approach to GDP is summarized with the following formula:
+
+\[\textrm{GDP} = C + I + G + X\]
+
+where C = consumption expenditures (by households), I = investment expenditures (by firms), G = government expenditures, and X = "net exports" = exports - imports.
+Often, a majority of GDP comes from consumption expenditures (70\% in 2021).
+
+While this formula appears simple, note that calculating even one of these variables requires significant effort and time.
+
+\subsubsection{Income}
+
+The revenue gained by producing a product is distributed between the different producers of that product: often including labor, materials, overhead (utility companies), and the producer company.
+Obviously, the revenue gained by all parties would be just enough to buy that product back.
+Therefore, in theory, GDP can be calculated by considering \textbf{the total income of the economy} instead- the \textbf{income approach}.
+
+Wages and salaries are the predominant type of income.
+Other types of income include:
+\begin{itemize}
+    \item Proprietors' income: income earned by self-employment or unincorporated buisnesses (???)
+    \item Rental income: income from the use of occupation or porperty (renting stuff)
+    \item Interest income: income from bank interest lmao
+    \item Corporate profits: income gained by companies that are distributed to its shareholders
+\end{itemize}
+
+Some adjustments need to be made once the total is summed- notably, indirect buisness taxes (ex. buisness licenses), depreciation, and other miscallenous items must be accounted for.
+
+\subsubsection{Value-Added}
+
+The \textbf{value-added approach} considers what producers and industries add "value" to the final retail price.
+
+Consider a producer gathering raw uranium, enriching it, and selling it to a nuclear reactor for (hypothetical) \$10.
+The nuclear reactor uses this refined uranium to generate power, which is sold to customers for (hypothetical) \$15, adding \$5 of value in the process.
+The GDP in this scenario is calculated by adding the value of the uranium at each stage of the process: \$0 (raw uranium) + \$10 (refined uranium) + \$5 (power).
+
+While the U.S. does not use the value-added approach in the BEA (see National Accounts), other countries often use this approach to estimate GDP and set taxes at each stage of production.
+
+\subsubsection{Real GDP}
+
+GDP itself \textbf{DOES NOT} account for price changes.
+Simply because this year's GDP was greater than last year's GDP does NOT imply that we produced more this year: prices could have simply risen higher than last year.
+
+To account for this, \textbf{real GDP} (or "constant-dollar") is calculated using the prices from a \textbf{base year}.
+It doesn't matter which year is chosen as the base; it ensures that all prices are held constant, such that any changes are due to a change in production alone.
+(To differentiate, regular GDP may be referred to as "nominal" or "current-dollar" GDP.)
+
+\subsection{Other GDP Factors}
+
+\subsubsection{The Underground Economy}
+\textit{The underground economy} refers to goods and services not counted in GDP- anything that does not pass through a market.
+This obviously includes illegal activity (drugs, bribes, etc...), but also undocumented activites, notably any activies that households do for themselves.
+
+This accounts for a significant amount of GDP, and some sources say that it can account for more than 50\% of GDP.
+
+\subsubsection{Per Capita GDP}
+While Japan and Montana are the same size, they have vastly different GDP's.
+This is mainly due to population- the population of Japan is about 128 times that of Montana.
+
+To compare which has a "higher standard of material well-being," divide the GDP by the population to get the \textbf{Per Capita GDP.}
+
+\subsubsection{Limitations of GDP}
+GDP is used as the primary measure of a country's quality of life.
+However, it's not perfect: GDP does not account for social factors (war, class inequality, traffic, etc...) or where products go (possibly to a few select families).
+
+\subsection{National Economic Accounts}
+The \textbf{National Economic Accounts (NEA)} make up a comprehensive group of statistics that measure various aspects of the economy's performance.
+Notably, the NEA tracks many measures of income and production, including GDP.
+The NEA provides estimates for the USA's GDP using all the estimation techniques discussed above, providing relevant substatistics.
+Updates are published under a periodical titled "Survey of Current Buisness," and are available online at the home page of the \textit{Bureau of Economic Analysis} (BEA), an agency within the Department of Commerce.
+
+The BEA provides "flash" updates for GDP each quarter, about 30 days after the quarter ends.
+Annual estimates of GDP are much more reliable, but they too are subject to revision.
 
 \newpage
 
