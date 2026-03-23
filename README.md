@@ -1,5 +1,5 @@
 # Franklin's LaTeX Notes
-My $\LaTeX$ notes on several subjects. Originally for notes on the AP Tests I self studied, but this has changed to accomodate for more general notes.
+My $\LaTeX$ notes on several subjects. Includes notes on AP tests and other misc. subjects.
 
 Current notes include:
 
@@ -7,3 +7,4 @@ Current notes include:
 2. AP Stats, in the form of comprehensive notes on all of  [*The Practice of Statistics for the AP Exam, 6th Edition* by Daren Starnes and Josh Tabor](https://www.bfwpub.com/high-school/us/product/The-Practice-of-Statistics/p/1319113338)
 3. AP Macroeconomics, in the form of notes on the relevant chapters of [*AP Microeconomics/Macroeconomics Premium, 2024* by Frank Musgrave, Elia Kacapyr, and James Redelsheimer](https://www.amazon.com/Microeconomics-Macroeconomics-Premium-2024-Comprehensive/dp/1506287891)
 4. Linear Algebra, in the form of notes on select chapters of [*Introduction to Linear Algebra, 2nd Edition* by Gilbert Strang (link to 6th version)](https://math.mit.edu/~gs/linearalgebra/ila6/indexila6.html)
+5. AP Physics C from various sources, mainly volumes 1 and 2 of [*Essential Calculus-based Physics Study Guide Workbook* by Chris McMullen (link to 1st vol)](https://www.amazon.com/Essential-Calculus-based-Physics-Study-Workbook/dp/1941691153)
