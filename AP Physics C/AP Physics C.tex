@@ -244,12 +244,85 @@ Like charges repel. Charges on system influence each other.
 
 \subsection{Electric Fields}
 
+Electric fields exist. $\vec{E} = \frac{\vec{F_e}}{q_e} = k \frac{q}{r^2}\hat{r}$
+
+Note while in electrostatic equilibrium (no net movement of charges), the excess charge of a conductor is distributed on the surface of said conductor, and the electric field within said conductor is 0.
+Note that this is \textbf{not} true for insulators: charge is distributed through the surface AND interior, and the electric field within may be non-zero.
+
 \subsection{Electric Fields of Charge Distributions}
+For continious charge distributions, you can consider tiny point charges $\odif{q}$ and apply Coulomb's Law to each of them, then add their effects together.
+The fact that you can add them together is known as \textbf{the principle of superposition.} Mathematically:
+
+\[\vec{E} = k \int \frac{\odif{q}}{r^2} \hat{r}\]
+
+You can typically directly solve for Q or express the integral in terms of $\odif{r}$ using \textbf{linear charge density} $\lambda = \odv{Q}{L} \approx \frac{Q}{L}$, \textbf{surface charge density} $\sigma = \frac{Q}{A}$, or \textbf{volumetric charge density} $\rho = \frac{Q}{V}$
+
+\begin{example}
+    Determine the electric field at point P.
+    \begin{center}
+        \includegraphics[scale=0.5]{ex_lin_e.png}
+    \end{center}
+\end{example}
+\begin{answer}
+    \[\lambda \odif{r} = \odif{Q}\]
+    \begin{align*}
+        \vec{E} &= k \int \frac{\odif{Q}}{r^2} \hat{r} \\
+        &= k \hat{r} \int_{a}^{a+L} \frac{\lambda \odif{r}}{r^2} \\
+        &= \lambda k \hat{r} (\frac{-1}{a+L} + \frac{1}{a}) \\
+        &= \lambda k (\hat{\imath}) (\frac{L}{a(a+L)})\\
+        &= \boxed{\frac{Qk\hat{\imath}}{a(a+L)}}
+    \end{align*}
+    Note when $a >> L$, it degenerates the the below, which suggests that it acts as a point charge at sufficently large distances.
+    \[\vec{E} \approx \frac{Qk\hat{\imath}}{a(a^2)}\]
+\end{answer}
+
+\begin{example}
+    Determine the electric field at P.
+    \begin{center}
+        \includegraphics[scale=0.5]{ex_ring_e.jpg}
+    \end{center}
+\end{example}
+\begin{answer}
+    Note that "horizontal" $\odif{\vec{E}} \sin{\theta}$ components cancel via symmetry. Thus, you only need to consider components proportional to $\cos{\theta}$.
+    \begin{align*}
+        \vec{E} &= k \int \frac{\odif{Q}}{a^2 + x^2} \hat{\imath} \cos{\theta} \\
+        &= k \hat{\imath} \int \frac{\odif{Q}}{a^2 + x^2} \times \frac{x}{\sqrt{a^2 + x^2}} \\
+        &= \boxed{\frac{k \hat{\imath} Qx}{(a^2 + x^2) ^ {1.5}}}
+    \end{align*}
+\end{answer}
 
 \subsection{Electric Flux}
+Flux describes the amount of a given quantity that passes through a given area.
+\textbf{Electric flux} $\Phi_E$ describes the amount of electric field that passes through a defined area. Note the area vector is defined to be outward from a closed surface.
+
+\[\Phi_E = \vec{E} \cdot \vec{A} \]
+
+For an arbitrary surface:
+
+\[\Phi_E = \int \vec{E} \cdot \odif{\vec{A}}\]
 
 \subsection{Gauss's Law}
+\begin{definition}[Gauss's Law]
+    For an arbitrary \textbf{Gaussian Surface} (3d closed surface):
+    \[\Phi_E = \oint \vec{E} \cdot \odif{\vec{A}} = \frac{q_{enc}}{\epsilon_0}\]
+    Usually you can rig the surface such that the electric field is perpendicular or parallel to all components of the area, with a sphere or a cylinder.
+\end{definition}
+\begin{example}
+    Determine the electric field surrounding an infinitely large, thin plane of positive changes with uniform surface charge density.
+    \begin{center}
+        \includegraphics[scale=0.5]{ex_gauss.png}
+    \end{center}
+\end{example}
+\begin{answer}
+    Set up the Gaussian surface as shown.
+    The area vector is perpendicular to the electric field along the "wrapping" of the cylinder.
+    The area vector is parallel to the electric field in the same direction for the two "caps" of the cylinder.
+    Thus,
+    \[2EA = \frac{q_{enc}}{\epsilon_0} = \frac{\sigma A}{\epsilon_0} \implies E = \boxed{\frac{\sigma}{2 \epsilon_0}}\]
 
+    Note for the case of a two "infinite" plane capacitor, we assume the field outside the capacitor cancels. Thus,
+    \[E_{capacitor} = \frac{\sigma}{\epsilon_0}\]
+\end{answer}
 \newpage
 
 \section{Unit 9: Electric Potential}
