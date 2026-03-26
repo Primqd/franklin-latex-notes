@@ -118,7 +118,7 @@ I steal the images from google. If this violates copyright somehow, please email
 
 \newpage
 
-\section{Unit 1: Kinematics}
+\section{ Kinematics}
 \subsection{Scalars and Vectors}
 Scalars are numbers. Vectors are vectors. Represent as $\vec{a} = \hat{\imath} + \hat{\jmath} + \hat{k}$.
 
@@ -201,31 +201,31 @@ everything that we've talked about already considers three dimensions :3
 
 \newpage
 
-\section{Unit 2: Force and Translational Dynamics}
+\section{ Force and Translational Dynamics}
 
 \newpage
 
-\section{Unit 3: Work and Power}
+\section{ Work and Power}
 
 \newpage
 
-\section{Unit 4: Linear Momentum}
+\section{ Linear Momentum}
 
 \newpage
 
-\section{Unit 5: Torque and Rotational Dyanmics}
+\section{ Torque and Rotational Dyanmics}
 
 \newpage
 
-\section{Unit 6: Energy and Momentum of Rotating Systems}
+\section{ Energy and Momentum of Rotating Systems}
 
 \newpage
 
-\section{Unit 7: Oscillations}
+\section{ Oscillations}
 
 \newpage
 
-\section{Unit 8: Electric Charges, Fields, and Gauss's Law}
+\section{ Electric Charges, Fields, and Gauss's Law}
 \subsection{Electric Charge and the Electric Force}
 Charge... exists. It's scalar and measured in SI units \textbf{Coulombs}.
 
@@ -273,7 +273,7 @@ You can typically directly solve for Q or express the integral in terms of $\odi
         &= \boxed{\frac{Qk\hat{\imath}}{a(a+L)}}
     \end{align*}
     Note when $a >> L$, it degenerates the the below, which suggests that it acts as a point charge at sufficently large distances.
-    \[\vec{E} \approx \frac{Qk\hat{\imath}}{a(a^2)}\]
+    \[\vec{E} \approx \frac{Qk\hat{\imath}}{a^2}\]
 \end{answer}
 
 \begin{example}
@@ -325,7 +325,43 @@ For an arbitrary surface:
 \end{answer}
 \newpage
 
-\section{Unit 9: Electric Potential}
+\section{ Electric Potential}
+
+\subsection{Electric Potential Energy}
+EPE of a system = amount of work required by external force to bring point charges to current positions from infinitely far away.
+Total EPE = sum of EPE between each pair of charged particles.
+\[U_E = k \frac{q_1q_2}{r}\]
+
+\begin{proof}[Proof of EPE formula]
+    Bringing $q_1$ to $q_2$ from infinity is equivalent to bringing $q_2$ to $q_1$ from infinity.
+    EPE gained by work done to bring one charge to the given distance away.
+    \begin{align*}
+        \textrm{EPE} = W &= -\int \vec{F} \cdot \odif{\vec{r}} \\
+        &= -\int_{-\infty}^{r} k \frac{q_1 q_2}{x^2} \odif{x} \\
+        &= -k q_1q_2 (- \frac{1}{r} - \frac{1}{\infty}) \\
+        &= \boxed{k\frac{q_1 q_2}{r}} 
+    \end{align*}
+\end{proof}
+\subsection{Electric Potential}
+Electric potential describes the \textit{potential energy} per unit charge at a point in space. Note it is a scalar.
+The electric force is \textbf{conservative}: change in EPE due to position change does not depend on the path.
+Electric potentials caused by different charges add.
+
+\[V = k \frac{q}{r} \Leftrightarrow V = k \int \frac{\odif{q}}{r} \]
+
+The electric potential difference between two points is the change in EPE between the two points:
+\[\Delta V = \frac{\Delta U_e}{q} = -\int \vec{E} \cdot \odif{\vec{r}} = -Ed\]
+
+for perpendicular distance d. The integral form comes from the work form of EPE divided by q.
+
+Note the integral form suggests the following:
+
+\[\vec{E}_x = -\odv{V}{x}\]
+
+
+\subsection{Conservation of Electric Energy}
+
+EPE is a type of energy, so it is conserved by the law of energy conservation.
 
 \newpage
 
