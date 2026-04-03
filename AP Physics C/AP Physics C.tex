@@ -203,6 +203,133 @@ everything that we've talked about already considers three dimensions :3
 
 \section{ Force and Translational Dynamics}
 
+\subsection{Systems and Center of Mass}
+Recall that the location of a system's center of mass along a given axis can be calculated as follows:
+\[\vec{x}_{cm} = \frac{\sum m_i \vec{x_i}}{\sum m_i}\]
+
+This equation can be extended for non-uniform solids by considering differential masses $\odif{m}$:
+\[\vec{r}_{cm} = \frac{\int \vec{r} \odif{m}}{\int \odif{m}}\]
+
+One way to calculate $\odif{m}$ is through \textbf{linear mass density}:
+\[\lambda = \odv{m}{l}\]
+
+Area and volume mass density exists as well, represented by $\sigma$ and $\rho$ respectively.
+
+\begin{example}
+    Suppose you have a bar of length $L$ which has mass density function $m(r) = cr^2$.
+    Find the center of mass in terms of $L$, $c$, and fundamental constants.
+\end{example}
+\begin{answer}
+    \[\odv{m}{r} = 2cr \implies \odif{m} = 2cr\odif{r}\]
+    \begin{align*}
+        r_{cm} &= \frac{\int r \odif{m}}{\int \odif{m}} \\
+        &= \frac{\int_{0}^{L} 2cr^2 \odif{r}}{\int_{0}^{L} 2cr \odif{r}} \\
+        &= \frac{\frac{r^3}{3} \big|_{0}^{L}}{\frac{r^2}{2} \big|_{0}^{L}} \\
+        &= \frac{2}{3} \frac{L^3}{L^2} \\
+        &= \boxed{\frac{2}{3} L}
+    \end{align*}
+\end{answer}
+
+Also recall that for force diagrams, systems can be modeled as a single point located at the system's center of mass.
+
+\subsection{Forces and Free-Body Diagrams}
+they exist
+
+\subsection{Newton's Third Law}
+\[\vec{F}_{\textrm{A on B}} = -\vec{F}_{\textrm{B on A}}\]
+
+Recall that tension is the macroscopic net of forces segments of a string, cable, chain or a similar system exertes on each other.
+The tension has negligible mass, does not stretch, and has equal tension across all points in the string.
+
+\subsection{Newton's First Law}
+
+It's called \textbf{translational equilibrium} if the net force on the system is zero.
+
+\subsection{Newton's Second Law}
+
+\[\vec{F}_{net} = m_{sys} \vec{a}_{sys}\]
+
+\subsection{Gravitational Force}
+
+\begin{definition}[Newton's law of universal gravitation]
+    \[|\vec{F}_g| = G \frac{m_1m_2}{r^2}\]
+    The gravitational force is always exerted along the line connecting the center of masses of two systems.
+\end{definition}
+
+This force suggests that a mass sets up a \textbf{gravitational field} around itself: $|\vec{g}| = G\frac{M}{r^2}$.
+The word \textbf{weight} is only used when one of the objects is much more massive than the other (usually the Earth).
+\textbf{Apparent weight} is the normal force acting on an object, and is what is measured by a scale in an elevator.
+Near the surface of the earth, $g \approx 10 \unit{\newton \per \kilogram}$.
+
+\textbf{Newton's Shell Theorem} states \textit{the net gravitational force exerted on an object inside a thin spherical hell is zero} AND \textit{the net gravitational force exerted on an object by a spherical shell is equiavlent to treating the shell as a point mass.}
+
+In practice, the first half of Newton's Shell Theorem suggests that \textbf{within a uniform sphere, only the mass of a sphere within a radius equal to the object's distance from the center} affects it.
+All outer layers can be considered as differential spherical shells, and by Newton's Shell Theorem exert no gravitational force.
+Thus,
+\[m_{partial} = \rho \frac{4}{3} \pi (r_{partial})^3 \textrm{ (this equation is NOT on the sheet)}\]
+
+Using the second half of Newton's Shell theorem and the law of gravitation:
+\begin{align*}
+    F_g &= \frac{Gm}{r_{partial}^2} * \rho \frac{4}{3} \pi (r_{partial})^3 \\
+    &= \frac{4}{3} Gm \rho \pi r_{partial} \\
+    &\implies F_g \propto r_{partial} \textrm{ (linear proportionality within the sphere!)}
+\end{align*}
+
+\begin{example}
+    Find the weight of a 1.0 kg mass located half way to Earth's center. Ignore density variation.
+\end{example}
+\begin{answer}
+    \[F_g \propto r_{partial} \implies F_g = \frac{mg}{2} = \frac{1.0 * 10}{2} = \boxed{5 \unit{\newton}}\]
+\end{answer}
+
+\subsection{Kinetic and Static Friction}
+
+Frictional force is exerted to oppose a change in motion on a rough surface, and is proportional to the magnitude of the normal force.
+The proportionality constant depends on whether it is moving (\textbf{kinetic}) or stationary (\textbf{static}).
+Kinetic friction is usually less than static friction.
+
+\subsection{Spring Forces}
+
+\[\vec{F}_{spr} = -k\Delta x\]
+
+\[k_{\textrm{eq,parallel}} = \sum k_i\]
+
+\[\frac{1}{k_{\textrm{eq,series}}} = \sum \frac{1}{k_i}\]
+
+\subsection{Resistive Forces}
+
+A resitive force is defined as a \textbf{velocity-dependent} force that opposes an object's velocity.
+\[\vec{F}_{res}  = -k\vec{v}\]
+
+Setting up a second law equation with a resistive force will lead to a differential equation for velocity (recall $a = \odv{v}{t}$), which can be solved to lead to an exponential equation for velocity.
+Terminal velocity is defined as the maximum velocity reached under a resistive force.
+
+\begin{example}
+    A skydiver of mass $m$ drops from rest, and experiences air resistance $F_{air} = -bv$
+    Assuming they do not hit the ground, find an equation for their velocity as a function of time.
+    State what this suggests about their terminal velocity.
+\end{example}
+\begin{answer}
+    \begin{align*}
+        F_{net} &= mg - F_{air} \\
+        m \odv{v}{t} &= mg - bv \\
+        \frac{m}{mg - bv} \odif{v} &= 1 \odif{t} \\
+        \int \frac{m}{mg - bv} \odif{v} &= \int \odif{t} \\
+        -m \ln{mg - bv} &= t \\
+        mg - bv &= e^{-\frac{t}{m}} \\
+        &\implies \boxed{v = \frac{mg}{b} (1 - e^{-\frac{t}{m}})} \\
+    \end{align*}
+    As $t \rightarrow \infty$, $\boxed{v \rightarrow \frac{mg}{b}}$
+\end{answer}
+
+\subsection{Circular Motion}
+In order to maintain a cirular path of radius $r$, a particle needs to experience $a_c = \frac{v^2}{r}$ directed towards the center of the motion.
+This is known as \textbf{centripetal acceleration}.
+The acceleration along the path of travel is known as \textbf{tangential acceleration}.
+Any acceleration vector can be split into centripetal and tangential components.
+
+Note that for a vertical, circular loop, an object requires a minimum speed to maintain circular motion as the gravitational force is the only force that causes centripetal acceleration.
+\[v = \sqrt{gr}\]
 \newpage
 
 \section{ Work and Power}
