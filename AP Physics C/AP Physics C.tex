@@ -400,6 +400,40 @@ This usually applies to the force that a car exterts to drive at a given velocit
 
 \section{Linear Momentum}
 
+\subsection{Linear Momentum}
+\[\vec{p} = m \vec{v}\]
+\subsection{Change in Momentum and Impulse}
+\[\vec{F}_{net} = m\vec{a} = m \odv{\vec{v}}{t} = \odv{\vec{p}}{t} \]
+Impulse is defined as follows:
+\[\vec{J} = \int_{t_i}^{t_f} \vec{F}_{net}(t) \odif{t}\]
+
+\begin{definition}[Impulse-Momentum Theorem]
+    The impulse exerted on an object is equal to the object's change in momentum.
+    \[\vec{J} = \Delta \vec{p}\]
+    \begin{proof}
+        This is a direct result from Newton's Second Law:
+        \[\int_{t_i}^{t_f} \vec{F}_{net} \odif{t} = \int_{t_i}^{t_f} m \odv{\vec{v}}{t} \odif{t} = \int_{t_i}^{t_f} m \odif{\vec{v}} = m\vec{v_f} - m\vec{v_i} = \Delta \vec{p}\]
+    \end{proof}
+\end{definition}
+\subsection{Conservation of Linear Momentum}
+\[\vec{v}_{cm} = \frac{\sum \vec{p}_i}{\sum m_i}\]
+\[\vec{p}_{sys} = \sum \vec{p}_i\]
+
+From the impulse-momentum theorem, in the absence of external forces (and thus impulse) the momentum of a system does not change.
+
+From Newton's Third Law, the impulse exerted by one object on a second object is equal and opposite to the impulse exerted by the second object on the first.
+
+\subsection{Elastic and Inelastic Collisions}
+
+\begin{definition}[Elastic Collision]
+    collision in which initial KE = final KE.
+\end{definition}
+\begin{definition}[Inelastic Collision]
+    Collision in which initial KE is not equal to final KE (lost to $W_{nc}$).
+    \textbf{Perfectly inelastic} when objects stick together and move with same velocity after collision.
+    This results in the maximal loss of energy. 
+\end{definition}
+
 \newpage
 
 \section{Torque and Rotational Dyanmics}
