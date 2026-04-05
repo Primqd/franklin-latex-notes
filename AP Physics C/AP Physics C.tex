@@ -362,6 +362,29 @@ The relationship between conervative forces exerted on a system and the system's
 
 \[\Delta U = -W_{cf} \textrm{ (potential energy is converted into work)}\]
 
+This definition can be used to prove the potential energy equations for springs and universal gravitation:
+
+\begin{proof}[Proof of spring energy]
+    \begin{align*}
+        \Delta U_{spr} &= -\int \vec{F}_{spr} \cdot \odif{\vec{r}} \\
+        &= - \int -kx \odif{x} \\
+        &\implies \boxed{\Delta U_{spr} = \frac{1}{2} kx^2}
+    \end{align*}
+\end{proof}
+\begin{proof}[Proof of universital gravitational energy]
+    \begin{align*}
+        \Delta U_{g} &= -\int \vec{F}_g \cdot \odif{\vec{r}} \\
+        &= - \int G \frac{m_1 m_2}{r^2} \odif{r} \\
+        &\implies \boxed{\Delta U_g = G\frac{m_1 m_2}{r}}
+    \end{align*}
+\end{proof}
+
+The intergral definition of potential energy suggests that
+
+\[F_{cf} = -\odv{U}{x}\]
+
+This further suggests \textbf{stable equlibria} occur at local minima of the potential energy function ($F_{cf}$ opposes change) while \textbf{unstable equilibria} occur at the maxima of the potential energy function ($F_{cf}$ supports change)
+
 \subsection{Conservation of Energy}
 
 \subsection{Power}
