@@ -217,17 +217,17 @@ One way to calculate $\odif{m}$ is through \textbf{linear mass density}:
 Area and volume mass density exists as well, represented by $\sigma$ and $\rho$ respectively.
 
 \begin{example}
-    Suppose you have a bar of length $L$ which has mass density function $m(r) = cr^2$.
+    Suppose you have a bar of length $L$ which has mass density function $\lambda(r) = cr^2$.
     Find the center of mass in terms of $L$, $c$, and fundamental constants.
 \end{example}
 \begin{answer}
-    \[\odv{m}{r} = 2cr \implies \odif{m} = 2cr\odif{r}\]
+    \[\odv{m}{r} = cr^2 \implies \odif{m} = cr^2\odif{r}\]
     \begin{align*}
         r_{cm} &= \frac{\int r \odif{m}}{\int \odif{m}} \\
-        &= \frac{\int_{0}^{L} 2cr^2 \odif{r}}{\int_{0}^{L} 2cr \odif{r}} \\
-        &= \frac{\frac{r^3}{3} \big|_{0}^{L}}{\frac{r^2}{2} \big|_{0}^{L}} \\
-        &= \frac{2}{3} \frac{L^3}{L^2} \\
-        &= \boxed{\frac{2}{3} L}
+        &= \frac{\int_{0}^{L} cr^3 \odif{r}}{\int_{0}^{L} cr^2 \odif{r}} \\
+        &= \frac{\frac{r^4}{4} \big|_{0}^{L}}{\frac{r^3}{3} \big|_{0}^{L}} \\
+        &= \frac{3}{4} \frac{L^4}{L^3} \\
+        &= \boxed{\frac{3}{4} L}
     \end{align*}
 \end{answer}
 
@@ -437,6 +437,60 @@ From Newton's Third Law, the impulse exerted by one object on a second object is
 \newpage
 
 \section{Torque and Rotational Dyanmics}
+
+\subsection{Rotational Kinematics}
+\textbf{Counterclockwise motion} is considered a \textbf{positive} change in angle.
+
+Like linear motion, there exists \textbf{angular velocity} $\omega = \odv{\theta}{t}$ and \textbf{angular acceleration} $\alpha = \odv{\omega}{t} = \odv[2]{\theta}{t}$.
+These definition lead to analgous \textbf{rotational kinematic equations} for constant rotational acceleration:
+\[\omega_f = \omega_i + \alpha t\]
+\[\Delta \theta = \omega_i t + \frac{1}{2} \alpha t^2\]
+\[\omega_f^2 = \omega_i^2 + 2 \alpha \Delta \theta\]
+
+Note that angular velocity and acceleration are "pseudovectors" that point in the direction of the axis of rotation.
+\textit{The right-hand grip rule can be used to determine the direction of these pseudovectors, but this is not needed for the exam.}
+
+\subsection{Connecting Linear and Rotational Motion}
+Recall the definition of arc length:
+\[\Delta s = r \Delta \theta\]
+
+This definition of arc length can be used to show the following:
+\[v_T = r \omega\]
+\[a_T = r \alpha\]
+Note for both of these equations, they result in the \textbf{tangential component} of velocity and acceleration respectively.
+
+\subsection{Torque}
+Recall torque results from the perpendicular component of force relative to the position vector from the axis of rotation to the point of the force.
+This is mathematically represented as a cross product:
+\[\vec{\tau} = \vec{r} \times \vec{F}\]
+Like angular velocity and acceleration, the direction of the torque is a pseudovector, the sign indicating whether it rotates counterclockwise (positive) or clockwise (negative).
+Recall that torque is the rotational analog to forces.
+
+\begin{example}
+    Suppose you have a bar of length $L$ which has mass density function $m(r) = cr^2$.
+    If the bar is fixed at $r = 0$, find an equation for the magnitude of the torque on the bar when the bar is $\theta$ below the horizontal.
+\end{example}
+\begin{answer}
+    Recall from Example 2.1 that $r_{cm} = \frac{3}{4} L$.
+    We can consider the gravitational force as acting on the center of mass.
+    \[m = \int_{0}^{L} cr^2 \odif{r} = \frac{cL^3}{3}\]
+    \begin{align*}
+        |\vec{\tau}| &= |\vec{r}||\vec{F}_g|\sin(90 - \theta) \\
+        &= \frac{3}{4} L * \frac{cL^3}{3} * g \cos{\theta} \\
+        &= \boxed{\frac{cgL^4}{4} \cos{\theta}}
+    \end{align*}
+\end{answer}
+
+\subsection{Rotational Inertia}
+The \textbf{rotational inertia} of an object represents its resistance to changes in rotation, and is analgous to mass in linear motion.
+The rotational inertia of an object of mass $m$ rotating at a distance $r$ away from the axis of rotation is as follows:
+\[I = mr^2\]
+Because the rotational inertia of multiple objects sum, we can express it as an intergral:
+\[I = \int r^2 \odif{m}\]
+
+\subsection{Rotational Equilibrium and Newton's First Law in Rotational Form}
+
+\subsection{Newton's Second Law in Rotational Form}
 
 \newpage
 
