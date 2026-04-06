@@ -488,9 +488,53 @@ The rotational inertia of an object of mass $m$ rotating at a distance $r$ away 
 Because the rotational inertia of multiple objects sum, we can express it as an intergral:
 \[I = \int r^2 \odif{m}\]
 
+\begin{example}
+    Suppose you have a rod parallel to the x axis that originates from $x = 0$ and extends to $x = L$.
+    The rod has linear mass density $\lambda (x) = bx$ for positive constant $b$.
+    Derive an equation for the moment of inertia about the line $x = \frac{L}{3}$ in terms of the total mass of the rod and the length of the rod. 
+\end{example}
+
+\begin{answer}
+    \[\odv{m}{x} = bx \implies \odif{m} = bx\odif{x}\]
+    \begin{align*}
+        I &= \int r^2 \odif{m} \\
+        &= \int_{0}^{L} (x - \frac{L}{3})^2 \odif{m} \\
+        &= \int_{0}^{L} (x - \frac{L}{3})^2 (bx) \odif{x} \\
+        &= b \int_{0}^{L} x^3 - \frac{2L}{3}x^2 + \frac{L^2}{9}x \odif{x} \\
+        &= b \bigg[\frac{1}{4}x^4 - \frac{2L}{9}x^3 + \frac{L^2}{18}x^2\bigg]_{0}^{L} \\
+        &= b (\frac{L^4}{4} - \frac{2L^4}{9} + \frac{L^4}{18}) \\
+        &= \frac{bL^4}{12} \\
+        &= \boxed{\frac{mL^2}{6}}
+    \end{align*}
+    Note that $(x - \frac{L}{3})$ is used as $r$ represents the distance from each $\odif{m}$ to the parallel axis (in this case, $x = \frac{L}{3}$).
+
+    To solve for $b$:
+    \begin{align*}
+        m &= \int \odif{m} \\
+        &= \int_{0}^{L} bx\odif{x} \\
+        &= \bigg[\frac{bx^2}{2}\bigg]_{0}^{L} \\
+        &= \frac{bL^2}{2} \\
+        \implies b &= \frac{2m}{L^2} 
+    \end{align*}
+\end{answer}
+
+If you know an object's moment of inertia about an axis that passes through it's center of mass ($I_{cm}$),
+then you can solve for the moment of inertia about any axis $I'$ parallel to the center of mass axis with the \textbf{parallel axis theorem}:
+\[I' = I_{cm} + Md^2\]
+
+$M$ represents the mass of the object, while $d$ represents the distance between the two parallel axes.
+
 \subsection{Rotational Equilibrium and Newton's First Law in Rotational Form}
 
+An object is in \textbf{rotational equilibrium} if it does not have a net torque applied to it.
+If is in rotational equillbrium, then it maintains its current angular velocity.
+This is analgous to Newton's First Law in translational motion.
+
+Note that if an object is rotationally equilibriant, this does not imply that it is translationally equilibriant, and vice versa.
+
 \subsection{Newton's Second Law in Rotational Form}
+
+\[\tau_{net} = I_{sys} \alpha_{sys}\]
 
 \newpage
 
