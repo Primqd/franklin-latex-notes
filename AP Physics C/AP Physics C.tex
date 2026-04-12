@@ -540,6 +540,92 @@ Note that if an object is rotationally equilibriant, this does not imply that it
 
 \section{Energy and Momentum of Rotating Systems}
 
+\subsection{Rotational Kinetic Energy}
+\[\textrm{KE}_{\textrm{rot}} = \frac{1}{2} I\omega^2\]
+\[\textrm{KE}_{\textrm{total}} = \textrm{KE}_{\textrm{rot}} + \textrm{KE}_{\textrm{translational}} = \frac{1}{2} I_{cm} \omega^2 + \frac{1}{2} mv_{cm}^2\]
+
+\subsection{Torque and Work}
+Torque can transfer energy in or out of a system if exerted over an angular displacement like regular work:
+\[W = \int_{\theta_i}^{\theta_f} \tau \odif{\theta}\]
+
+\subsection{Angular Momentum and Angular Impulse}
+Angular momentum is represented with the symbol $L$. God knows why.
+
+\[L = I \omega\]
+
+Angular momentum for a \textbf{point} around a given axis:
+\[\vec{L} = \vec{r} \times \vec{p} = \vec{r} \times (m \vec{v})\]
+
+Angular impulse does not have a symbol. For this section, we will be calling it $J_{ang}$
+
+\[J_{ang} = \int \tau \odif{t}\]
+
+The \textbf{rotational form of the impulse-momentum theorem suggests}
+
+\[J_{ang} = \Delta L\]
+
+\subsection{Conservation of Angular Momentum}
+The \textbf{total angular momentum of a system} is defined relative to \textbf{one axis}.
+Newton's third law suggests the angular impulse a system exerts on another system has an equal and opposite exertion on the first system.
+
+Like the conservation of linear momentum, \textit{angular momentum is conserved in all interactions.}
+If there is no net torque exerted on the system, the total angular momentum of the system will remain constant.
+
+\subsection{Rolling}
+Recall $\textrm{KE}_{\textrm{total}} = \textrm{KE}_{\textrm{rot}} + \textrm{KE}_{\textrm{translational}}$.
+
+Suppose you have a rotating wheel with angular velocity $\vec{\omega}$ about an axis perpendicular to the ground.
+Relative to the center of mass, each point on the wheel has a tangential velocity $\vec{v}_{rot} = \vec{\omega} \times \vec{r}$.
+
+Relative to the ground, each point on the edge of the wheel has $\vec{v} = \vec{v}_{rot} + \vec{v}_{CM}$, where $\vec{v}_{CM}$ represents the net translational velocity of the center of mass.
+
+If the point at which the wheel touches the ground is at \textbf{instantaenous rest}, then we call this \textbf{rolling without slipping}.
+At that point, $|\vec{v}_{rot}| = |\vec{v}_{CM}|$ and the two vectors point in opposite directions.
+Thus, we have the following relation:
+\[v_{CM} = v_{rot} = R \omega\]
+And by proxy:
+\[\Delta x = R \Delta \theta\]
+\[a_{CM} = R \alpha\]
+
+For ideal cases, rolling without slipping implies the frictional force \textbf{does not} dissipate energy from the system.
+
+If a system is \textbf{rolling with slipping}, the system's center of mass and the system's rotational velocity cannot be related.
+Furthermore, rolling with sliping implies the frictional force does dissipate energy from the system.
+
+Rolling friction is beyond the scope of Physics C.
+
+\subsection{Motion of Orbiting Satellites}
+Satellites are considered as objects with negligible mass relative to the object it is orbiting around.
+
+In \textbf{circular orbit}, the system's total kinetic energy, gravitational potential energy (and thus mechanical energy), and angular momentum are constant.
+
+In \textbf{elliptical orbit}, the system's total mechanical energy and angular momentum is constant, BUT kinetic energy and gravitational potential energy can change.
+
+For circular path satellites, the kinetic energy can be directly related to the potential energy with the following (NOT ON THE EQUATION SHEET):
+
+The only force applied to the satellite is the gravitational force; thus, the gravitational force must be the centripetal force.
+\[G\frac{Mm}{r^2} = m\frac{v^2}{r} \implies \frac{1}{2}mv^2 = \textrm{KE} = G\frac{Mm}{2r}\]
+
+Recall the potential gravitational energy formula:
+\[\textrm{GPE} = - G\frac{Mm}{r}\]
+
+Hence,
+\[\boxed{\textrm{KE} = -\frac{1}{2}\textrm{GPE}}\]
+\[\boxed{E_{tot} = \textrm{KE} + \textrm{GPE} = \frac{1}{2}\textrm{GPE} = -G\frac{Mm}{2r}}\]
+
+The negative energy here suggests the satellite \textbf{lacks the energy to escape orbit}.
+
+However, if the satellite gains enough kinetic energy, it can escape from orbit.
+The precise velocity required to escape can be derived (NOT ON THE EQUATION SHEET):
+
+An object reaches escape velocity after all its kinetic energy has been transfered to gravitational potential energy:
+\[\frac{1}{2}mv_e^2 = G\frac{Mm}{r} \implies \boxed{v_e = \sqrt{\frac{2GM}{r}}}\]
+
+With the near-surface approximation $g = G\frac{M}{r^2}$:
+\[v_e \approx \sqrt{2gr}\]
+
+r represents the radius away from the center of the given planet.
+
 \newpage
 
 \section{Oscillations}
