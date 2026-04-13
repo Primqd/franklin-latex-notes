@@ -316,9 +316,13 @@ Terminal velocity is defined as the maximum velocity reached under a resistive f
         m \odv{v}{t} &= mg - bv \\
         \frac{m}{mg - bv} \odif{v} &= 1 \odif{t} \\
         \int \frac{m}{mg - bv} \odif{v} &= \int \odif{t} \\
-        -m \ln{mg - bv} &= t \\
-        mg - bv &= e^{-\frac{t}{m}} \\
-        &\implies \boxed{v = \frac{mg}{b} (1 - e^{-\frac{t}{m}})} \\
+        -\frac{m}{b} \ln(mg - bv) + C &= t \\
+        \textrm{init cond } &v = 0, t=0 \\
+        -\frac{m}{b} \ln(mg) + C &= 0 \\
+        &\implies C = \frac{m}{b}\ln(mg) \\
+        -\frac{m}{b} \ln(\frac{mg - bv}{mg}) &= t \\
+        \frac{mg - bv}{mg} &= e^{-\frac{bt}{m}} \\
+        &\implies \boxed{v = \frac{mg}{b} (1 - e^{-\frac{bt}{m}})} \\
     \end{align*}
     As $t \rightarrow \infty$, $\boxed{v \rightarrow \frac{mg}{b}}$
 \end{answer}
@@ -667,10 +671,33 @@ Changing the amplitude will change the energy of the system, per the spring ener
 
 
 \subsection{Simple and Physical Pendulums}
-see \url{https://phys.libretexts.org/Bookshelves/Classical_Mechanics/Classical_Mechanics_(Dourmashkin)/24%3A_Physical_Pendulums/24.02%3A_Physical_Pendulum}
+A \textbf{physical pendulum} is a rigid body that undergoes oscillation about a fixed axis.
+\begin{center}
+    \includegraphics[scale=0.5]{physical_pendulum.png}
+\end{center}
+The only force physical pendulums experience is gravity. Using the definition of torque and the small angle approximation $\sin{\theta} \approx \theta$ $(\theta < \ang{10})$ (NOT ON THE EQUATION SHEET),
+\begin{align*}
+    |\tau| &= |\vec{r} \times \vec{F_g}| \\
+    &= |l_{cm} \hat{r} \times m\vec{g}| \\
+    &= -l_{cm} mg \sin{\theta} \\
+    &\approx -l_{cm}mg\theta 
+\end{align*}
 
+Note the negative indicates that the force is restorative back towards the equilibrium angle.
+Applying the small-angle approximation with Newton's second law in rotational form can be used to show that this satisifes the characteristic equation of SHM in rotational form (without proof):
+\[\odv[2]{\theta}{t} = - \omega^2 \theta\]
 
-\newpage
+And thus, with a similar process to the derivation of angular frequency for spring SHM, this can be used to show (actually on the equation sheet)
+\[T = 2 \pi \sqrt{\frac{I}{mgl_{cm}}}\]
+and by proxy (not on the equation sheet)
+\[\omega = \sqrt{\frac{mgl_{cm}}{I}}\]
+
+\textbf{Torsional pendulums} also exist. They exert a restorative force directly proportional to $\Delta \theta$: $I \alpha = -k \Delta \theta$ (and thus, $\omega = \sqrt{\frac{k}{I}}$) (neither on the equation sheet).
+Note $k$ is the \textbf{torsion constant} of the wire/bar/spring/whatever.
+\begin{center}
+    \includegraphics[scale=0.5]{torsional_pendulum.png}
+\end{center}
+
 
 \section{Electric Charges, Fields, and Gauss's Law}
 \subsection{Electric Charge and the Electric Force}
