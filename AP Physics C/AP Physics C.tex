@@ -630,6 +630,46 @@ r represents the radius away from the center of the given planet.
 
 \section{Oscillations}
 
+\subsection{Defining Simple Harmonic Motion (SHM)}
+\textbf{Simple Harmonic Motion (SHM)} is a type of periodic (repeating) motion resulting from a \textit{restoring force} proportional to an object's displacement from an \textit{equilibrium position}.
+One common type of SHM is that caused by a spring (recall $F_{spr} = k \Delta x$) with no external forces acting on it.
+
+\subsection{Frequency and Period of SHM}
+Period (in the context of SHM) is defined as the time required for an object to complete one full cycle of its motion (time/cycle).
+Frequency is defined as its inverse: $f = \frac{1}{T}$ (cycles/time).
+
+There exists the notion of "angular position" of SHM. The "angle" represents the "relative completion" of the cycle, with one completion being $2\pi$.
+Angular frequency is defined similarly: $\omega = \frac{2\pi}{T} = 2 \pi f$.
+
+The period of an object-ideal-spring oscillator (BOTH HORIZONTAL AND VERTICAL) is given without proof:
+\[T_s = 2 \pi \sqrt{\frac{m}{k}}\]
+
+The period of a simple pendulum displaced by a small angle ($\Delta \theta < \ang{10}$) is also given without proof:
+\[T_p = 2 \pi \sqrt{\frac{l}{g}}\]
+
+\subsection{Representing and Analyzing SHM}
+For an object exhibiting SHM, the displacement of that object measured from equilibrium can be represented by the equation (cos or sin both work with conversion)
+\[x = x_{max} \cos(\omega w + \phi)\]
+Note that changing the amplitude of a system will not change it's period or frequency. Velocity and acceleration can also be derived from this equation, and can be used to show
+\[v_{max} = A\omega\]
+\[a_{max} = A\omega^2\]
+
+SHM follows the following second order DE from applying Newton's second law with $a = \odv[2]{x}{t}$ and $\omega^2 = \frac{k}{m}$ (see period of object-ideal-spring oscillator):
+\[\odv[2]{x}{t} = -\omega^2 x\]
+
+Physics C does not require us know how to solve the second order DE. Also, know that \textbf{resonance} exists.
+
+\subsection{Energy of Simple Harmonic Oscillators}
+Conservation of energy indicates the total energy of a SHM system is constant, being constantly converted between potential and kinetic energy.
+The minimum energy a SHM system can express is zero (no movement).
+Changing the amplitude will change the energy of the system, per the spring energy equation (and thus the energy of a SHM system):
+\[E_{tot} = \frac{1}{2} kA^2\]
+
+
+\subsection{Simple and Physical Pendulums}
+see \url{https://phys.libretexts.org/Bookshelves/Classical_Mechanics/Classical_Mechanics_(Dourmashkin)/24%3A_Physical_Pendulums/24.02%3A_Physical_Pendulum}
+
+
 \newpage
 
 \section{Electric Charges, Fields, and Gauss's Law}
