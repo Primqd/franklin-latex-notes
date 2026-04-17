@@ -843,6 +843,54 @@ EPE is a type of energy, so it is conserved by the law of energy conservation.
 
 \section{Conductors and Capacitors}
 
+\subsection{Electrostatics w/ Conductors}
+
+\textbf{Conductors} are materials in which the electrons are free to move.
+If they are in \textit{electrostatic equillbrium}, then they are \textit{stationary} within the object.
+
+The electric field inside a conductor in electrostatic equlibrium equals zero- all the electrons (or lack thereof) exists on \textbf{solely the surface of the conductor}.
+If there is a charge within an empty conducting shell, then charges will gather on the internal surface to oppose that charge.
+By proxy, the outside of the shell will gain an opposite change in charge depending on the charge in the internal surface.
+\textbf{No net charge will exist within between the surfaces of the conductor}.
+
+Furthermore, excess charges or lack therof will equally redistribute on the surface of the conductor such that 1) the electric field outside is perpendicular to the surface and 2) the electric field AND POTENTIAL equal wherever curvature is constant (local surface charge density is at its maximum where the radius of curvature is at its minimum.)
+Gauss's law with a small cylinder can be used to show that the magnitude of the electric field just outside a conductor in electrostatic equilibrium is
+\[E = \frac{\sigma_{local}}{\epsilon_0}\]
+
+Anything inside a conductor in electrostatic equliibrium is shielded from external electric fields. This is known as \textbf{electrostatic shielding}.
+
+\subsection{Charge Redistribution}
+When two conductors touch tips, charges will redistribute such that the surfaces of the conductors have equal electric potential.
+Ground can be treated as a point of zero electric potential that can absorb or emit an infinite amount of charge.
+Charge can be induced on a conductor by grounding it in the presence of an external electric field.
+
+\subsection{Capacitors}
+A \textbf{parallel state capacitor} consists of two seperated parallel conducting plates that can hold equal amounts of charge with opposite signs.
+\textit{Capacitance} relates the magnitude of the charge stored on the plates vs the voltage difference between them, and is dependent on the physical properties of the capacitor:
+\[C = \frac{Q}{\Delta V} = \frac{\kappa \epsilon_0 A}{d}\]
+
+The \textbf{dielectric constant} $\kappa$ comes from the inuslating material between the two plates. See 10.4 for more.
+
+Because it takes work to move charges from one plate to the next as the charge difference builds, there is a potential energy associated with the capacitor:
+
+\[W = q \Delta V \implies \odif{W} = \Delta V \odif{q}\]
+\begin{align*}
+    W &= \int_{0}^{Q} \Delta V \odif{q} \\
+    &= \int_{0}^{Q} \frac{q}{C} \odif{q} \\
+    &= \boxed{\frac{Q^2}{2C} = \frac{1}{2}Q\Delta V}
+\end{align*}
+
+If the gap between the plates is small relative to their size, then you can assume the plate is "infinitely large" and apply Gauss's law.
+With the assumption that the electric field outside the other side is zero, the electric field can be shown to be
+\[E = \frac{Q}{\epsilon_0 A}\]
+
+\subsection{Dielectrics}
+
+In a dielectric material, electrons cannot flow as easily in a material; the material becomes polarized in the presence of an external electric field.
+The dielectric constant is defined relative to the electric permativity of the field (note the second definition is not on the equation sheet)
+\[\kappa = \frac{\epsilon}{\epsilon_0} = \frac{E_0}{E}\]
+
+
 \newpage
 
 \section{Electric Circuits}
