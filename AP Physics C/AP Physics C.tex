@@ -890,10 +890,62 @@ In a dielectric material, electrons cannot flow as easily in a material; the mat
 The dielectric constant is defined relative to the electric permativity of the field (note the second definition is not on the equation sheet)
 \[\kappa = \frac{\epsilon}{\epsilon_0} = \frac{E_0}{E}\]
 
-
 \newpage
 
 \section{Electric Circuits}
+
+\subsection{Electric Current}
+Current is the rate at which charge passes through a given cross-sectional area of wire.
+\[I = \odv{q}{t}\]
+
+Current can also be modeled as the movement of \textbf{charge carriers} travelling through the conductor with a derived \textbf{drift velocity}.
+The equation $I = nqv_dA$ shows this (on the equation sheet), with n = charge carrier density (units $\unit{m^{-3}}$), q = charge per charge carrier (units $\unit{C}$), $v_d$ representing average drift velocity in metres per second, and A representing cross-sectional area.
+$nq$ is often given together to cancel out charge carriers.
+
+The quantity $nqv_d$ can also be modeled as \textbf{current density} $\vec{J} = nq\vec{v}_d$ (units $\unit{C m^{-3}}$), related to current with the following:
+\[I = \int \vec{J} \cdot \odif{\vec{A}}\]
+
+A potential difference across a conductor (the emf $\epsilon$) creates an electric field within the conductor that is proportional to the resistivity of the conductor and the current density:
+\[\vec{E} = \rho \vec{J}\]
+
+\subsection{Simple Circuits}
+Remember that all current on diagrams are drawn using conventional current (movement of "positive charges")
+
+\subsection{Resistance, Resistivity, and Ohm's Law}
+\[R = \frac{\rho l}{A} \implies R = \int \frac{\rho(l)}{A} \odif{l}\]
+
+\subsection{Electric Power}
+\[W = q \Delta V \implies P = \odv{q}{t} \Delta V = I \Delta V = I^2R = \frac{V^2}{R}\]
+Note last two are more used for power dissipated.
+
+\subsection{Compound DC circuits}
+Recall that voltmeters are attached parallel to the circuit.
+Also recall that non-ideal batteries can be modelled as an ideal battery in series with an "internal resistance" resistor for net terminal voltage (not on eq sheet)
+\[\Delta V_{terminal} = \epsilon - Ir\]
+
+\subsection{Kirchoff's Loop Rule}
+Kirchoff's Loop Rule is a consequence of the conservation of energy.
+
+\subsection{Kirchoff's Junction Rule}
+Kirchoff's Junction Rule is a consequence of the conservation of charge.
+
+\subsection{Resistor-Capacitor Circuits}
+(As a result of the conservation of charge, each of the capacitors in series must have an equal magnitude of charge on each plate.)
+
+A \textbf{Resistor-Capacitor (RC)} circuit is a circuit with a resistor and capacitor in series.
+\begin{center}
+    \includegraphics[scale=0.5]{rc_circuit.png}
+\end{center}
+
+Using Kirchoff's loop rule with the battery part of the circuit leads to the following:
+\[0 = \epsilon - IR - \Delta V_{capacitor} \implies \epsilon = \odv{q}{t}R - \frac{q}{C}\]
+
+This is a first-order differential equation that can be solved for charge in terms of time:
+\[q(t) = Q(1 - e^{-\frac{t}{RC}})\]
+The \textbf{time constant} of the circuit $\tau = R_{eq}C_{eq}$ represents the time for a charging capacitor (battery connected) to increase to $63\%$ of its final value and the time for a discharging capacitor (battery disconnected) to decrease by $37\%$ of its initial value.
+
+For an uncharged capacitor being connected to a battery, initially it acts as a wire as it charges, but eventually builds up resistance until it stops conducting charge.
+A discharing capacitor acts as a battery initially, but as it discharges down it decreases in emf.
 
 \newpage
 
