@@ -1034,4 +1034,55 @@ This is codified in \textbf{Maxwell's fourth equation} (which you do NOT need to
 \newpage
 
 \section{Electromagnetic Induction}
+\subsection{Magnetic Flux}
+Just like electric flux, \textbf{magnetic flux} is defined as the magnetic field that pierces through a given area:
+\[\Phi_{B} = \vec{B} \cdot \vec{A}\]
+
+The total magnetic flux passing through a surface is defined by the surface intergral of the magnetic field over surface area.
+\[\Phi_{B} = \int \vec{B} \cdot \odif{\vec{A}}\]
+
+\subsection{Electromagnetic Induction}
+Changing magnetic flux induces emf. This is known as \textbf{Faraday's Law of Electromagnetic Induction} (Maxwell's third equation):
+\[\epsilon = -\odv{\Phi_{B}}{t} = -\odv{(\vec{B} \cdot \vec{A})}{t} = \oint \vec{E} \cdot \odif{\vec{l}}\]
+
+\textbf{Lenz's law} states the emf induced by a magentic field is created to generate a current, which itself creates a magnetic field to oppose the change in magnetic flux.
+
+When emf is induced in a long solenoid, the total induced emf is equal to the induced emf produced by a single loop multiplied by the number of loops.
+\[|\epsilon_{sol}| = N \bigg|\odv{\Phi_B}{t}\bigg|\]
+
+\subsection{Induced Currents and Magnetic Forces}
+When an induced current is created in a loop, the already existing magnetic field will exert a magnetic force on the charge carriers within the loop?
+\[\vec{F}_b = \int I (\odif{\vec{l}} \times \vec{B})\]
+
+\subsection{Inductance}
+Consider a simple circuit with only a battery and a resistor in a loop.
+When the circuit is connected, the battery induces a current in the circuit, which induces a magnetic field.
+However, by Faraday's Law, \textbf{this also induces a current in the opposite direction to oppose the change in magnetic flux}. (However, as the magnetic field stabalizes, the opposite current decreases until only the original current is left.)
+The ability of a circuit to resist changes in current is known as \textbf{inductance} (L, units Henry).
+
+\[\epsilon_{ind} = -L \odv{I}{t}\]
+
+Faraday's law can be used to derive the inductance of a solenoid, given without proof here (and on the equation sheet too)
+\[L_{sol} = \frac{\mu_{core} N^2 A}{l}\]
+
+For a simple circuit with just an inductor, it can be shown the energy stored inside is (on the equation sheet)
+\[U_L = \frac{1}{2} LI_{max}^2\]
+
+\subsection{LR Circuits}
+With a circuit with just a resistor and an inductor, Kirchoff's loop rule suggests that
+\[\epsilon = IR + L \odv{I}{t}\]
+This is a first-order differential equation that can be used to solve for current as a function of time:
+\begin{align*}
+    I(t) &= \frac{\epsilon}{R} (1 - e^{-\frac{Rt}{L}}) \\
+    &= \frac{\epsilon}{R} (1 - e^{-\frac{t}{\tau_L}})
+\end{align*}
+
+Like RC circuits, the time constant $\tau_L$ gives how long for an inductor to reach approximately $63\%$ of its asymptoatic charge.
+
+\subsection{LC Circuits}
+The charge stored in the capacitor can be modelled as simple harmonic motion:
+\[\odv[2]{q}{t} = -\frac{1}{LC} q\]
+Hence,
+\[\omega = \frac{1}{sqrt{LC}}\]
+
 \end{document}
