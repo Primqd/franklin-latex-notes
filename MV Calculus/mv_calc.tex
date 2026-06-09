@@ -1,0 +1,157 @@
+\documentclass{article}
+
+\usepackage{amsmath, amsthm, amssymb, amsfonts}
+\usepackage{thmtools}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{framed}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+\usepackage{derivative}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=blue,
+    urlcolor=cyan
+}
+
+\graphicspath{{images/}}
+
+\colorlet{LightGray}{White!90!Periwinkle}
+\colorlet{LightOrange}{Orange!15}
+\colorlet{LightGreen}{Green!15}
+\colorlet{LightBlue}{Cyan!30}
+\colorlet{LightRed}{Red!30}
+
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+
+\declaretheoremstyle[
+    name=Theorem,
+    headpunct=\newline % Forces a newline after theorem title
+]{thmsty}
+\declaretheorem[style=thmsty,numberwithin=section]{theorem}
+\tcolorboxenvironment{theorem}{colback=LightGray}
+
+\declaretheoremstyle[
+    name=Proposition,
+    headpunct=\newline
+]{prosty}
+\declaretheorem[style=prosty,numberlike=theorem]{proposition}
+\tcolorboxenvironment{proposition}{colback=LightOrange}
+
+\declaretheoremstyle[
+    name=Principle,
+    headpunct=\newline
+]{prcpsty}
+\declaretheorem[style=prcpsty,numberlike=theorem]{principle}
+\tcolorboxenvironment{principle}{colback=LightGreen}
+
+\declaretheoremstyle[
+    name=Example,
+    headpunct=\newline
+]{exsty}
+\declaretheorem[style=exsty,numberlike=theorem]{example}
+\tcolorboxenvironment{example}{colback=LightBlue}
+
+\declaretheoremstyle[
+    name=Definition,
+    headpunct=\newline
+]{defsty}
+\declaretheorem[style=defsty,numberlike=theorem]{definition}
+\tcolorboxenvironment{definition}{colback=LightRed}
+
+
+\setstretch{1.2}
+\geometry{
+    textheight=9in,
+    textwidth=5.5in,
+    top=1in,
+    headheight=12pt,
+    headsep=25pt,
+    footskip=30pt
+}
+
+% ------------------------------------------------------------------------------
+
+\begin{document}
+
+% ------------------------------------------------------------------------------
+% Cover Page and ToC
+% ------------------------------------------------------------------------------
+
+\title{ \normalsize \textsc{}
+		\\ [2.0cm]
+		\HRule{1.5pt} \\
+		\LARGE \textbf{\uppercase{Multivariable Calculus}
+		\HRule{2.0pt} \\ [0.6cm] \LARGE{yeah} \vspace*{10\baselineskip}}
+		}
+\date{}
+\author{\textbf{Franklin Chen} \\ 
+		\date{}}
+
+\maketitle
+\newpage
+
+\tableofcontents
+\newpage
+
+% ------------------------------------------------------------------------------
+\subsection{intro}
+summary notes of Larson's \textit{Calculus (10th edition)} on specifically the multivariable chapters, 12-15.
+these are NOT meant as educational notes, more just a brief overview to remember what the things actually are.
+
+\section{Vector-Valued Functions}
+\subsection{Vector-Valued Functions}
+\textbf{Vector-valued functions} (VVFs) take in a scalar factor and return a vector from it and can always be expressed as $\vec{r}(t) = f(t) \hat{i} + g(t) \hat{j}$.
+Limits and continuity are defined based on the limits of the constituent functions f and g.
+
+\subsection{Differentiation and Intergration of Vector-Valued Functions}
+Differentiation and intergration of VVFs are done component-wise.
+Constant factor from intergration can be expressed as single vector $\vec{C}$.
+
+Most of the properties of differentiation of VVFs are pretty obvious, except for the "product rule" also applying to the cross product and the dot product.
+And if $\vec{r}(t) \cdot \vec{r}(t) = c$, then $(\vec{r}(t))' \cdot \vec{r}(t) = 0$.
+
+\subsection{Velocity and Acceleration}
+For a given VVF $\vec{r}(t)$, velocity = $(\vec{r}(t))'$ and acceleration = $(\vec{r}(t))''$.
+
+\subsection{Tangent Vectors and Normal Vectors}
+If $C$ is a smooth curve (continuous velocity + non-zero on the interval), then the \textbf{unit tangent vector} $\vec{T}(t)$ is defined as 
+\[\vec{T}(t) = \frac{(\vec{r}(t))'}{|(\vec{r}(t))'|}\]
+
+Note the unit tangent vector will flip directions depending on the orientation of the curve.
+
+From the constant dot product derivative property mentioned in "Differentation and Intergration of VVFs," the derivative of the unit tangent vector is perpendicular to the curve and results in the \textbf{principal unit normal vector}:
+\[\vec{N}(t) = \frac{(\vec{T}(t))'}{|(\vec{T}(t))'|}\]
+
+It can be proven that the acceleration vector will always lie in the plane created by $\vec{T}$ and $\vec{N}$, and thus can be expressed as a linear combination of the two:
+\[\vec{a}(t) = a_T \vec{T}(t) + a_N \vec{N}(t)\]
+where
+\[a_T = \vec{a} \cdot \vec{T} = \frac{\vec{v} \cdot \vec{a}}{|\vec{v}|}\]
+\[a_N = \vec{a} \cdot \vec{N} = \frac{|\vec{v} \times \vec{a}|}{|\vec{v}|} = \sqrt{|\vec{a}|^2 - a_T^2}\]
+Note the dot product definition of the coeffecients comes from the geometry of lying on the plane.
+
+
+\subsection{Arc Length and Curvature}
+The \textbf{arc length} of a curve given by a VVF on an interval $[a, b]$ is defined as the following:
+\[s = \int_{a}^{b} |(\vec{r}(t))'| \odif{t}\]
+
+The \textbf{arc length parameter} $s(t)$ is defined as the arc length along the interval $[a, t]$ for variable t.
+VVFs may be re-written to use the arc length parameter instead of a primary variable, which leads to the very nice property that $|(\vec{r}(s))'| = 1$ for all s.
+The converse is also true: if t is any parameter in which $|(\vec{r}(t))'| = 1$ for all t, then t is the arc length parameter.
+
+\textbf{Curvature} $K$, approximately "how much does the curve bend at this point," can be calculated using the arc length parameter:
+\[K = \bigg| \odv{\vec{T}}{s} \bigg| = |(\vec{T}(s))'|\]
+
+You can use curvature to create a general equation for the acceleration:
+\[\vec{a}(t) = \odv[2]{s}{t} \vec{T} + K\bigg( \odv{s}{t} \bigg) \vec{N}\]
+
+% ------------------------------------------------------------------------------
+
+\end{document}
