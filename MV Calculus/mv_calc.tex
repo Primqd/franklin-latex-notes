@@ -152,6 +152,74 @@ The converse is also true: if t is any parameter in which $|(\vec{r}(t))'| = 1$ 
 You can use curvature to create a general equation for the acceleration:
 \[\vec{a}(t) = \odv[2]{s}{t} \vec{T} + K\bigg( \odv{s}{t} \bigg) \vec{N}\]
 
+\section{Functions of Several Variables}
+\subsection{Introduction to Functions of Several Variables}
+they sure exist
+
+\subsection{Limits and Continuity}
+In 1d calc, we defined limits based on the distance between two x-values.
+Similarly, in multivariable calc, we can define limits based on the euclidean distance betwen two points.
+For 2d, we consider the \textbf{$\delta$ neighborhood} around a point $(x_0, y_0)$ to be a disc with radius $\delta$:
+\[\{(x,y) : \sqrt{(x - x_0)^2 + (y - y_0)^2} < \delta \}\]
+
+Hence, we can define the limit of a 2d function as "for every $\epsilon > 0$, we can find a circle around the point with radius $\delta$ such that for all points $(x, y)$ within the circle $|f(x,y) - L| < \epsilon$."
+Note this definition implicitly requires all possible "paths" to approach the same value.
+
+Continuity can thus be defined as
+\[\lim_{(x, y) \to (x_0, y_0)} f(x,y) = f(x_0, y_0)\]
+for all points within a region R.
+
+Similar approaches can be used to define limits and continuity for N-dimensional functions.
+
+\subsection{Partial Derivatives}
+\textbf{Partial Derivatives} of a multivariable function represent how the function changes with respect to ONE of its independent variables.
+For example, first partial derivative of $f$ with respect to $x$:
+\[\pdv{f}{x} = f_x(x,y) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x, y) - f(x, y)}{\Delta x}\]
+For calculation, this effectively means that other variables than the one being derived can be treated as effective constants.
+
+Higher order partial derivatives exist by deriving multiple times.
+While the notation for deriving to the same variable again is as expected ($f_{xx}$, $\pdv[2]{f}{x}$), deriving with respect to another variable is denoted
+\[f_{xy} = \pdv{f}{x, y}\]
+A partial derivative that involves deriving two different variables is known as a \textbf{mixed partial derivative}.
+
+If all the mixed partial derivatives are continuous, then the order of differentiation is irrelevant:
+\[f_{xy} = f_{yx}\]
+
+\subsection{Differentials}
+Recall for single variables, we defined the differential as
+\[\odif{f} = f'(x) \odif{x}\]
+
+We can extend this definition to develop \textbf{the total differential}.
+For a function $f(x_1, \dots x_n)$,
+\[\odif{f} = \sum_{i = 1}^{n} \pdv{f}{x_i} \odif{x_i}\]
+
+We call a multivariable function \textbf{differentiable} at a point $(x_0, y_0)$ if $\Delta z = f(x + \Delta x, y + \Delta y) - f(x, y)$ can be rewritten as
+\[\Delta z = \pdv{f}{x} \Delta x + \pdv{f}{y} \Delta y + \epsilon_1 \Delta x + \epsilon_2 \Delta y\]
+evaluated at the point, where $(\epsilon_1, \epsilon_2) \to (0,0)$ as $(\Delta x, \Delta y) \to (0, 0)$.
+
+Continuity of $\pdv{f}{x}$ and $\pdv{f}{y}$ in a region implies differentiability in that region.
+Differentiability also implies continuity.
+
+\subsection{Chain Rule for Multivariable Functions}
+If you have $w = f(x_1, x_2, \dots x_n)$ where each $x_i$ is a differentiable function of $t_1, t_2, \dots t_m$, then
+\[\pdv{w}{t_i} = \sum_{j = 1}^{n} \pdv{w}{x_j} \pdv{x_j}{t_i}\]
+Logically, how w changes with respect to a non-input variable is the sum of how w changes with respect to one of its input variables multiplied by how that input variable changes with respect to the non-input variable given. 
+
+\subsection{Directional Derivatives and Gradients}
+The \textbf{directional derivative} is defined for a unit direction vector $\vec{u} = \hat{i} \cos \theta + \hat{j} \sin \theta$:
+\[D_{\vec{u}}f(x,y) = \lim_{t \to 0} \frac{f(x + t\cos\theta, y + t\sin\theta) - f(x,y)}{t} = \pdv{f}{x}\cos\theta + \pdv{f}{y}\sin\theta\]
+The directional derivative measures the rate of change of the function in a specific direction.
+Note in the cases $\theta = 0$ and $\theta = \frac{\pi}{2}$ the directional derivative degenerates to $\pdv{f}{x}$ and $\pdv{f}{y}$ respectively.
+
+The \textbf{gradient} of f is defined as follows:
+\[\nabla f(x,y) = \pdv{f}{x} \hat{i} + \pdv{f}{y} \hat{j}\]
+Note this implies
+\[D_{\vec{u}} = \nabla f(x,y) \cdot \vec{u}\]
+The direction of the gradient gives the direction of greatest increase (other directions would cancel and result in less than maximal),
+and opposite direction of the gradient gives the direction of least increase.
+
+The definition of the gradient extends to more than 2 variables, and the directional derivative is defined relative to the second definition.
+
 % ------------------------------------------------------------------------------
 
 \end{document}
