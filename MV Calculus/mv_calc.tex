@@ -220,6 +220,36 @@ and opposite direction of the gradient gives the direction of least increase.
 
 The definition of the gradient extends to more than 2 variables, and the directional derivative is defined relative to the second definition.
 
+\subsection{Tangent Planes and Normal Lines}
+Planes tangent to a point $P$ can be constructed by constructing a plane that passes through $P$ and is normal to the gradient at P.
+The line through $P$ in the direction of the gradient is known as the normal line at that point.
+
+\subsection{Extrema of Functions of Two Variables}
+In two dimensions, a point $(x_0, y_0)$ is considered a relative maximum of a function if $f(x_0, y_0) \geq f(x,y)$ for all $(x, y)$ in an open disk around $(x_0, y_0)$.
+Relative minima are defined similarly.
+
+\textbf{Critical points} are points where the gradient is zero OR at least one partial derivative is zero.
+Like 1d, relative extrema only occur at critical points.
+
+Similar to the second derivative test, the \textbf{second partials test} can be used to determine the status of a critical point:
+\begin{definition}[Second Partials Test]
+    Let $f$ have continuous second partial derivatives in an open region containing the point $(x_0, y_0)$ s.t. the gradient is zero at the point.
+    Consider
+    \[d = f_{xx} f_{yy} - (f_{xy})^2 \]
+    where all partial derviatives are evaluated at the critical point.
+    \begin{enumerate}
+        \item If $d > 0$ and $f_xx > 0$, then the critical point is a relative minimum.
+        \item If $d > 0$ and $f_xx < 0$, then the crticial point is a relative maximum.
+        \item If $d < 0$, then the critical point is a \textbf{saddle point} (neither maxiumum nor minimum)
+        \item If $d = 0$, the test is inconclusive.
+    \end{enumerate}
+\end{definition}
+The proof of this has to do something with the multidimensional analog of a taylor polynomial.
+
+\subsection{Applications of Extrema}
+One interesting application of 2d extrema is its use in deriving regression functions.
+By minimizing the squared error $S = \sum_{i=1}^{n} (f(x_i) - y_i)^2$, explicit formulas can be derived for regression variables.
+
 % ------------------------------------------------------------------------------
 
 \end{document}
