@@ -60,6 +60,14 @@
 \tcolorboxenvironment{example}{colback=LightBlue}
 
 \declaretheoremstyle[
+    name=Answer,
+    headpunct=\newline
+]{anssty}
+\declaretheorem[style=anssty]{answer}
+\tcolorboxenvironment{answer}{colback=Goldenrod}
+
+
+\declaretheoremstyle[
     name=Definition,
     headpunct=\newline
 ]{defsty}
@@ -238,8 +246,8 @@ Similar to the second derivative test, the \textbf{second partials test} can be 
     \[d = f_{xx} f_{yy} - (f_{xy})^2 \]
     where all partial derviatives are evaluated at the critical point.
     \begin{enumerate}
-        \item If $d > 0$ and $f_xx > 0$, then the critical point is a relative minimum.
-        \item If $d > 0$ and $f_xx < 0$, then the crticial point is a relative maximum.
+        \item If $d > 0$ and $f_{xx} > 0$, then the critical point is a relative minimum.
+        \item If $d > 0$ and $f_{xx} < 0$, then the crticial point is a relative maximum.
         \item If $d < 0$, then the critical point is a \textbf{saddle point} (neither maxiumum nor minimum)
         \item If $d = 0$, the test is inconclusive.
     \end{enumerate}
@@ -250,6 +258,39 @@ The proof of this has to do something with the multidimensional analog of a tayl
 One interesting application of 2d extrema is its use in deriving regression functions.
 By minimizing the squared error $S = \sum_{i=1}^{n} (f(x_i) - y_i)^2$, explicit formulas can be derived for regression variables.
 
+\subsection{Lagrange Multipliers}
+Suppose you want to maximize the function $f(x,y)$ given its inputs must satisfy the constraint $g(x,y) = c$.
+The maximum and minimum values of $f$ subject to the constraint correspond to contour lines of $f$ that are TANGENT to the contour representing $g(x,y) = c$.
+Because the gradient of a point is always perpendicular to any contour line, this can be expressed as
+\[\nabla f = \lambda_0 \nabla g\]
+where $\lambda_0$ represents a proportionality constant.
+
+\begin{example}
+    Find the maximum area of a rectangle inscribed within the ellipse $(x^2/3^2) + (y^2/4^2) = 1$.
+\end{example}
 % ------------------------------------------------------------------------------
+\begin{answer}
+    The area of any rectangle with a point within the first quadrant can be expressed as $A(x,y) = 4xy$.
+    \[\nabla A = 4y\hat{i} + 4x \hat{j}\]
+    Let the constraint be $c(x,y) = (x^2/3^2) + (y^2/4^2) = 1$.
+    \[\nabla c = \frac{2}{9} x \hat{i} + \frac{1}{8} y \hat{j}\]
+    From the Lagrange multiplier equation, this leads to the following system of equations:
+    \begin{align*}
+        4y &= \frac{2}{9} \lambda x \\
+        4x &= \frac{1}{8} \lambda y \\
+        \frac{x^2}{9} + \frac{y^2}{16} &= 1
+    \end{align*}
+    This can be solved for $x,y$ to yield the maximum value of $f$.
+\end{answer}
+
+This can be explicitly codified using the \textbf{Lagrangian} $\mathcal{L}$:
+\[\mathcal{L}(x,y,\lambda) = f(x,y) + \lambda(g(x,y) - c)\]
+More constraints can be added like the following:
+\[\mathcal{L}(x,y,z,\lambda,\mu) = f(x,y,z) + \lambda(g(x,y,z) - c_1) + \mu (h(x,y,z) - c_2)\]
+Using the Lagrangian, the method of lagrange multipliers is equivalent to
+\[\nabla \mathcal{L} = \vec{0}\]
+
+
+
 
 \end{document}
