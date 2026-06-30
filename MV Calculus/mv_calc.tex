@@ -292,7 +292,33 @@ Using the Lagrangian, the method of lagrange multipliers is equivalent to
 
 \section{Multiple Intergration}
 \subsection{Iterated Intergrals and Area in the Plane}
+Similar to partial derivatives, multivariable functions can be intergrated with respect to one variable by treating other variables as effectively constant.
+However, note that the "constant" achieved will instead be a function of the non-intergrated variable(s).
+
+Because the other variables are treated as "constant," they can appear in variable bounds, and can be intergrated as well.
+The intergral of an intergral is known as a \textbf{iterated intergral}, and takes the following form:
+\[\int_{a}^{b} \int_{f(x)}^{g(x)} k(x,y) \odif{y}\odif{x}\]
+
+The order in which intergration is performed suggests different geometrical interpetations.
+If intergration over y is performed first, this results in the intergration of several vertical rectangles, and thus the region is known as \textbf{vertically simple.}
+Similarly, if intergration over x is performed first, this results in the intergration of several horizontal rectangles instead, and is thus known as \textbf{horizontally simple.}
+
 \subsection{Double Intergrals and Volume}
+Consider a 2d function $f(x,y)$.
+To calculate the volume between it and the xy plane for a region $R$, the region can be split into $n$ rectangular prisms of area $\Delta A_i$ and height $f(x_i, y_i)$.
+As the area of each prism decreases, the sum of the volumes approaches the true volume under the function:
+\begin{definition}[Double Intergral]
+    If $f$ is defined on a closed, bounded region $R$ in the xy-plane, then the \textbf{double-intergral of f over R} is
+    \[\int_{R} \int f(x,y) \odif{A} = \lim_{\Delta A \to 0} \sum_{i=1}^{n} f(x_i,y_i) \Delta A_i\]
+    provided the limit exists. If the limits exists, then f is \textbf{intergrable} over R.
+\end{definition}
+
+Note the double intergral is (typically) calculated using an iterated intergral, but itself is not an interated intergral.
+
+Similar to the average value of a function over an interval, the \textbf{average value of a function over a region is}
+\[\frac{1}{A} \int_{R} \int f(x,y) \odif{A}\]
+where A is the area of R.
+
 \subsection{Change of Variables: Polar Coordinates}
 \subsection{Surface Area}
 \subsection{Triple Intergrals}
